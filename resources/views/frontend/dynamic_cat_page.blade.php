@@ -30,22 +30,18 @@
                     <p>{{$category->pro_cat_description ?? ""}}</p>
 
                     <div class="pf-img-box mt-4">
-                        @foreach ($category_products as $category_product)  
+                          
                             <div class="row">
+                            @foreach ($category_products as $category_product)
                                 <div class="col-md-6">
                                     <div class="pbmit-animation-style1 me-md-3 first-img">
                                         <img src="{{asset('brahmani_frontend_assets')}}/images/portfolio/portfolio-detail-01.jpg"
                                             class="img-fluid" alt="">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="pbmit-animation-style2 ms-md-3">
-                                        <img src="{{asset('brahmani_frontend_assets')}}/images/portfolio/portfolio-detail-02.jpg"
-                                            class="img-fluid" alt="">
-                                    </div>
-                                </div>
+                            @endforeach
                             </div>
-                        @endforeach
+                        
 
                     </div>
 

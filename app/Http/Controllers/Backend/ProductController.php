@@ -64,7 +64,7 @@ class ProductController extends Controller
     public function create(Request $request)
     {
         $categories = DB::table('product_category')->get();
-        return view('backend.product.create',['categories'=>$categories]);
+        return view('backend.product.create',['categories'=>$categories,'product'=>null]);
     }
     public function edit(Request $request,$id)
     {
@@ -86,7 +86,10 @@ class ProductController extends Controller
         $product->product_category = $data['product_category'];
         $product->product_description = $data['product_description'];
         $product->product_status = $data['product_status'];
-        $product->pro_params = json_encode($this->processProductParams($data['pro_params']));
+        if(!empty($data['pro_params']))
+        {
+            $product->pro_params = json_encode($this->processProductParams($data['pro_params']));
+        }
         if($product->save()){
             return redirect()->back()->with('success', 'Product created successfully.');
         }else{

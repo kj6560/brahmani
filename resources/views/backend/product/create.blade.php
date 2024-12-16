@@ -28,7 +28,7 @@
                     <form method="POST" action="/admin/products/store" enctype="multipart/form-data"
                         class="forms-sample">
 
-                        @if (!empty($product->id))
+                        @if ($product && !empty($product->id))
                             <input type="text" name="id" value="{{!empty($product) && $product->id ? $product->id : null}}"
                                 class="form-control" id="exampleInputUsername1" hidden>
                         @endif
@@ -39,13 +39,13 @@
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Product Name</label>
                                 <input type="text" name="product_name"
-                                    value="{{!empty($product) && $product->product_name ? $product->product_name : old('product_name')}}"
+                                    value="{{$product && !empty($product) && $product->product_name ? $product->product_name : old('product_name')}}"
                                     class="form-control" id="exampleInputUsername1">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Product Short Description</label>
                                 <input type="text" name="product_short_description"
-                                    value="{{!empty($product) && $product->product_short_description ? $product->product_short_description : old('product_short_description')}}"
+                                    value="{{$product && !empty($product) && $product->product_short_description ? $product->product_short_description : old('product_short_description')}}"
                                     class="form-control" id="exampleInputUsername1">
                             </div>
                             <div class="form-group">
@@ -54,7 +54,7 @@
                                 <select name="product_category" class="form-select" id="exampleSelectGender">
                                     <option selected>Select Product Category</option>
                                     @foreach ($categories as $category)
-                                        <option value="{{$category->id}}" @if(isset($product) && $product->product_category == $category->id) selected @endif>
+                                        <option value="{{$category->id}}" @if($product && isset($product) && $product->product_category == $category->id) selected @endif>
                                             {{$category->pro_cat_name}}
                                         </option>
                                     @endforeach
@@ -65,7 +65,7 @@
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Product Description</label>
                                 <textarea class="exp_text" name="product_description" rows="5"
-                                    id="product_description">{{!empty($product) && $product->product_description ? $product->product_description : old('product_description')}}</textarea>
+                                    id="product_description">{{$product && !empty($product) && $product->product_description ? $product->product_description : old('product_description')}}</textarea>
                             </div>
 
                             <div class="form-group">
@@ -73,10 +73,10 @@
                                 <label for="exampleSelectGender">Product Status</label>
                                 <select name="product_status" class="form-select" id="exampleSelectGender">
                                     <option selected>Select Active</option>
-                                    <option value="1" @if(isset($product) && $product->product_status == 1) selected
+                                    <option value="1" @if($product && isset($product) && $product->product_status == 1) selected
                                     @endif>Yes
                                     </option>
-                                    <option value="0" @if(isset($product) && $product->product_status == 0) selected
+                                    <option value="0" @if($product && isset($product) && $product->product_status == 0) selected
                                     @endif>No
                                     </option>
                                 </select>

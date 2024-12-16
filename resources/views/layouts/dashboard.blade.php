@@ -61,39 +61,6 @@
             </li>
           </ul> -->
         <ul class="navbar-nav ms-auto">
-          <!-- <li class="nav-item dropdown d-none d-lg-block">
-              <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Select Category </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                <a class="dropdown-item py-3">
-                  <p class="mb-0 fw-medium float-start">Select category</p>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis fw-medium text-dark">Bootstrap Bundle </p>
-                    <p class="fw-light small-text mb-0">This is a Bundle featuring 16 unique dashboards</p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis fw-medium text-dark">Angular Bundle</p>
-                    <p class="fw-light small-text mb-0">Everything you’ll ever need for your Angular projects</p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis fw-medium text-dark">VUE Bundle</p>
-                    <p class="fw-light small-text mb-0">Bundle of 6 Premium Vue Admin Dashboard</p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis fw-medium text-dark">React Bundle</p>
-                    <p class="fw-light small-text mb-0">Bundle of 8 Premium React Admin Dashboard</p>
-                  </div>
-                </a>
-              </div>
-            </li> -->
           <li class="nav-item d-none d-lg-block">
             <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
               <span class="input-group-addon input-group-prepend border-right">
@@ -193,39 +160,14 @@
                 <li class="nav-item"> <a class="nav-link" href="/admin/categories">Page Settings</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/admin/products">Product
                     Settings</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Enquiries
+                <li class="nav-item"> <a class="nav-link" href="/admin/enquiries">Enquiries
                     Settings</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Account
+                <li class="nav-item"> <a class="nav-link" href="/accountSettings">Account
                     Settings</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false"
-              aria-controls="form-elements">
-              <i class="menu-icon mdi mdi-card-text-outline"></i>
-              <span class="menu-title">Tools</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Enquiry Logs</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Sitemap</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-
-
-
-          <li class="nav-item">
-            <a class="nav-link" href="../../docs/documentation.html">
-              <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
+          
         </ul>
       </nav>
       <!-- partial -->

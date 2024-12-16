@@ -18,7 +18,13 @@ class DynamicPageController extends Controller
     public function loadProductCategory(Request $request,$id){
 
         $product_category = ProductCategory::find($id);
-        $category_products = Product::where('product_category', $id)->get();
+        $category_products = Product::leftJoin('product_images as pi','pi.product_id','=','products.id')
+                            ->where('product_category', $id)
+                            ->select('products.*', 'pi.image as image','pi.image_alias as image_alias')
+                            ->where('pi.image_status',1)
+                            ->where('products.product_status',1)
+                            ->get();
+        dd($category_products);
         return view('frontend.dynamic_cat_page', ['settings'=>$request->settings,'category'=>$product_category,'category_products'=>$category_products]);
     }
 }
