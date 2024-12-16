@@ -6,11 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DynamicPageController extends Controller
 {
-    public function loadPage(Request $request){
+        public function loadPage(Request $request)
+    {
         return view('frontend.dynamic_page',['settings'=>$request->settings]);
+
     }
     public function loadProductCategory(Request $request,$id){
 

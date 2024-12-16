@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{asset('brahmani_frontend_assets')}}/css/style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('brahmani_frontend_assets')}}/css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
     .dropdown-menu {
     max-height: 200px; /* Set a fixed height for the dropdown */
@@ -49,7 +50,11 @@
 }
 </style>
 </head>
-
+@php
+  use App\Http\Controllers\Controller;
+  $success = Session::get('success');
+  $error = Session::get('error');
+@endphp
 <body>
 
     <!-- page wrapper -->
@@ -123,16 +128,15 @@
                                                         <li><a href="homepage-6.html">Homepage 06</a></li>
                                                     </ul> -->
                                                 </li>
-                                                <li class="dropdown">
+                                                <!-- <li class="dropdown">
                                                     <a href="#">Profile</a>
                                                     <ul>
-                                                        <li><a href="about-us.html">Testimonial</a></li>
-                                                        <li><a href="our-history.html">Quality & Compliance</a></li>
-                                                        <li><a href="our-team.html">DistributorEnquiryForm</a></li>
-                                                        <li><a href="team-single-details.html">Download Brochure</a>
+                                                        <li><a href="/qualityCompliance">Quality & Compliance</a></li>
+                                                        <li><a href="/distributorEnquiryForm">DistributorEnquiryForm</a></li>
+                                                        <li><a href="/downloadBrochure">Download Brochure</a>
                                                         </li>
                                                     </ul>
-                                                </li>
+                                                </li> -->
                                                 <li class="dropdown">
                                                     <a href="#">Products & Services</a>
                                                     <ul>
@@ -142,7 +146,7 @@
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <a href="/contactUs">Contact Us</a>
+                                                    <a href="/contact_us">Contact Us</a>
                                                     <ul>
                                                         <!-- <li class="dropdown">
                                                             <a href="#">Masonry View</a>
@@ -173,7 +177,7 @@
                                     </a>
                                 </div>
                                 <div class="pbmit-button-box-second">
-                                    <a class="pbmit-btn" href="/contactUs">
+                                    <a class="pbmit-btn" href="/contact_us">
                                         <span class="pbmit-button-content-wrapper">
                                             <span class="pbmit-button-text">Book Consult</span>
                                         </span>
@@ -370,9 +374,33 @@
     <script src="{{asset('brahmani_frontend_assets')}}/js/isotope.pkgd.min.js"></script>
     <!-- Scripts JS -->
     <script src="{{asset('brahmani_frontend_assets')}}/js/scripts.js"></script>
+    <script>
+  var success = "{{!empty($success) ? $success : 'NA'}}";
+  var error = "{{!empty($error) ? $error : 'NA'}}";
+  console.log(success, error);
+  if (success != 'NA') {
+    Swal.fire({
+      title: 'Done',
+      text: success,
+      icon: 'success',
+      confirmButtonText: 'Okay',
 
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //window.location.reload();
+      }
+    })
+  }
+  if (error != 'NA') {
+    Swal.fire({
+      title: 'Failed!',
+      text: error,
+      icon: 'error',
+      confirmButtonText: 'Okay',
+
+    });
+  }
+</script>
 </body>
-
-<!-- Mirrored from xinterio-demo.pbminfotech.com/html-demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Dec 2024 09:49:33 GMT -->
-
+@yield('custom_javascript')
 </html>

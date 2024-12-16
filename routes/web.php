@@ -16,30 +16,36 @@ use App\Http\Controllers\Frontend\ManufacturersCategory;
 use App\Http\Controllers\Frontend\SiteController;
 use App\Http\Controllers\Frontend\SuppliersCategory;
 use App\Http\Middleware\settings;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\RateLimiter;
 
+RateLimiter::for('storeQuery', function ($request) {
+    return Limit::perMinute(5)->by($request->ip());
+});
 
 
 //frontend routes
 Route::get('/', [SiteController::class, 'index'])->middleware([settings::class])->name('frontend.index');
 Route::get('/companyProfile', [SiteController::class, 'companyProfile'])->middleware([settings::class])->name('frontend.companyProfile');
-Route::get('/ourPresence', [SiteController::class, 'ourPresence'])->middleware([settings::class])->name('frontend.ourPresence');
 Route::get('/pageError', [SiteController::class, 'pageError'])->name('frontend.pageError');
 Route::get('/sitemap', [SiteController::class, 'sitemap'])->middleware([settings::class])->name('frontend.sitemap');
-//Route::get('/contactUs', [SiteController::class,'contactUs'])->middleware([settings::class])->name('frontend.contactUs');
+Route::get('/contact_us', [SiteController::class,'contactUs'])->middleware([settings::class])->name('frontend.contactUs');
+Route::post('/storeQuery', [SiteController::class,'storeQuery'])->middleware([settings::class])->name('frontend.storeQuery');
 Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::get('/logout', [AdminController::class, 'logout'])->name('backend.logout');
 
-//dynamic pages
+//product_category
+Route::get('/product_category/{id}', [DynamicPageController::class, 'loadProductCategory'])->middleware([settings::class])->name("product_category");
 
-$pages = DB::table('pages')->whereNotNull('page_city')->get();
+//dynamic pages
+$pages = DB::table('pages')->get();
 foreach($pages as $page){
     Route::get('/'.$page->page_url, [DynamicPageController::class, 'loadPage'])->middleware([settings::class])->name("dynamic".$page->page_url);
 }
 
-//product_category
-Route::get('/product_category/{id}', [DynamicPageController::class, 'loadProductCategory'])->middleware([settings::class])->name("product_category");
+
 //backend routes
 Route::prefix('admin')->post('/loginUser', [AdminController::class, 'loginUser'])->name('admin.loginUser');
 Route::prefix('admin')->get('/register', [AdminController::class, 'register'])->name('admin.register');
