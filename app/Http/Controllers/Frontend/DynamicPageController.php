@@ -24,7 +24,6 @@ class DynamicPageController extends Controller
                             ->where('pi.image_status',1)
                             ->where('products.product_status',1)
                             ->get();
-        dd($category_products);
         return view('frontend.dynamic_cat_page', ['settings'=>$request->settings,'category'=>$product_category,'category_products'=>$category_products]);
     }
 }
