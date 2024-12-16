@@ -190,7 +190,6 @@
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/admin/createSiteSettings">General Settings</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/admin/sliders">Slider Settings</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/admin/categories">Page Settings</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/admin/products">Product
                     Settings</a></li>
