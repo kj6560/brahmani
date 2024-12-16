@@ -1537,3 +1537,52 @@ Context: {"exception":{"errorInfo":["HY000",2002,"No route to host"],"connection
 
    INFO  No scheduled commands are ready to run.  
 
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+   INFO  No scheduled commands are ready to run.  
+
+
+  2024-12-16 20:00:01 Running ['artisan' inspire] .............. 162.97ms DONE
+  ⇂ '/usr/bin/php8.2' 'artisan' inspire > '/dev/null' 2>&1  
+
+
+   INFO  No scheduled commands are ready to run.  
+
