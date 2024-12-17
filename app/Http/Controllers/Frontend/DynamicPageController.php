@@ -40,7 +40,6 @@ class DynamicPageController extends Controller
             )
             ->groupBy('products.id')
             ->first();
-        dd($product);
         return view('frontend.dynamic_product_page', ['settings' => $request->settings, 'product' => $product]);
     }
 }
