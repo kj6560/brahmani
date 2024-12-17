@@ -46,10 +46,10 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="/">
-            <img src="{{asset('dashboard/assets')}}/images/logo.svg" alt="logo" />
+            <img src="{{asset('brahmani_frontend_assets')}}/images/logo.png" alt="logo" />Brahmani Enterprises
           </a>
           <a class="navbar-brand brand-logo-mini" href="/">
-            <img src="{{asset('dashboard/assets')}}/images/logo-mini.svg" alt="logo" />
+            <img src="{{asset('brahmani_frontend_assets')}}/images/logo.png" alt="logo" />Brahmani Enterprises
           </a>
         </div>
       </div>
