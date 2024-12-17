@@ -3,7 +3,10 @@
 <?php
 
 $page_data = !empty($settings['page_data']) ? $settings['page_data'] : [];
-$metas = json_decode($page_data['page_meta']);
+if(!empty($page_data['page_meta'])){
+    $metas = json_decode($page_data['page_meta']);
+}
+
     
 ?>
 
@@ -56,7 +59,9 @@ $metas = json_decode($page_data['page_meta']);
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php
 		echo $settings['gtag']??"";
-		echo prepareSchema($settings,$page_data['page_schema']);
+        if(!empty($settings['schema'])){
+            echo prepareSchema($settings, $settings['schema']);
+        }
 	?>
     <style>
         .dropdown-menu {
