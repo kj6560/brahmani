@@ -38,7 +38,7 @@ Route::get('/logout', [AdminController::class, 'logout'])->name('backend.logout'
 
 //product_category
 Route::get('/product_category/{id}', [DynamicPageController::class, 'loadProductCategory'])->middleware([settings::class])->name("product_category");
-
+Route::get('/products/{id}', [DynamicPageController::class, 'loadProducts'])->middleware([settings::class])->name("products.load");
 //dynamic pages
 $pages = DB::table('pages')->get();
 foreach($pages as $page){

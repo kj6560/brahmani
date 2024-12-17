@@ -1,5 +1,13 @@
 @extends('layouts.site')
 @section('content')
+<style>
+    .img-fluid {
+        width: 392px !important;
+        height: 435px;
+        padding: 30px;
+        object-fit: cover;
+    }
+</style>
 <!-- Title Bar -->
 <div class="pbmit-title-bar-wrapper">
     <div class="container">
@@ -34,10 +42,10 @@
                             </div>
                             <div class="pbminfotech-box-content">
                                 <div class="pbminfotech-titlebox">
+                                    <div class="pbmit-port-cat">
+                                        <h2><a href="/products/{{$category_product->id}}" rel="tag">{{$category_product->product_name??""}}</a></h2>
+                                    </div>
                                     
-                                    <h3 class="pbmit-portfolio-title">
-                                        <a href="portfolio-detail-style-1.html">{{$category_product->pro_name}}</a>
-                                    </h3>
                                 </div>
                             </div>
                         </div>
