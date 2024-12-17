@@ -37,24 +37,33 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('brahmani_frontend_assets')}}/css/responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<style>
-    .dropdown-menu {
-    max-height: 200px; /* Set a fixed height for the dropdown */
-    overflow-y: auto; /* Add scroll functionality if content exceeds the height */
-    list-style: none; /* Remove default bullet points */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    border: 1px solid #ccc; /* Optional: Add a border */
-    background-color: #fff; /* Optional: Set background color */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-}
-</style>
+    <style>
+        .dropdown-menu {
+            max-height: 200px;
+            /* Set a fixed height for the dropdown */
+            overflow-y: auto;
+            /* Add scroll functionality if content exceeds the height */
+            list-style: none;
+            /* Remove default bullet points */
+            padding: 0;
+            /* Remove padding */
+            margin: 0;
+            /* Remove margin */
+            border: 1px solid #ccc;
+            /* Optional: Add a border */
+            background-color: #fff;
+            /* Optional: Set background color */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            /* Optional: Add a subtle shadow */
+        }
+    </style>
 </head>
 @php
-  use App\Http\Controllers\Controller;
-  $success = Session::get('success');
-  $error = Session::get('error');
+    use App\Http\Controllers\Controller;
+    $success = Session::get('success');
+    $error = Session::get('error');
 @endphp
+
 <body>
 
     <!-- page wrapper -->
@@ -141,7 +150,9 @@
                                                     <a href="#">Products & Services</a>
                                                     <ul>
                                                         @foreach ($settings['product_categories'] as $category)
-                                                            <li><a href="/product_category/{{$category->id}}">{{$category->pro_cat_name??""}}</a></li>
+                                                            <li><a
+                                                                    href="/product_category/{{$category->id}}">{{$category->pro_cat_name ?? ""}}</a>
+                                                            </li>
                                                         @endforeach
                                                     </ul>
                                                 </li>
@@ -172,7 +183,7 @@
                             </div>
                             <div class="pbmit-right-box d-flex align-items-center">
                                 <div class="pbmit-header-search-btn">
-                                    <a href="#" title="Search">
+                                    <a href="/headerSearch" title="Search">
                                         <i class="pbmit-base-icon-search-1"></i>
                                     </a>
                                 </div>
@@ -331,7 +342,50 @@
         </svg>
     </div>
     <!-- Scroll To Top End -->
+    <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productDetailModalLabel">Products</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
+                @if(isset($settings['search']))
+                    @foreach ($settings['search'] as $pro)
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                            <div class="row">
+                                <!-- Product Image -->
+                                <div class="col-md-5">
+                                    <img src="{{asset('storage')}}/{{$pro->product_banner??''}}" class="img-fluid rounded" alt="{{$pro->product_name??''}}">
+                                </div>
+
+                                <!-- Product Details -->
+                                <div class="col-md-7">
+                                    <h3>{{$pro->product_name ??""}}</h3>
+                                    <p class="text-muted">Category: {{$pro->category_name??""}}</p>
+                                    <!-- <p><strong>Price:</strong> $299.99</p> -->
+                                    <p>
+                                        {{$pro->product_description ??""}}
+                                    </p>
+                                    <div class="mt-3">
+                                        <button class="btn btn-success">Add to Wishlist</button>
+                                        <a class="btn btn-secondary" href="/products/{{$pro->id??1}}">See Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- JS
 		============================================ -->
     <!-- jQuery JS -->
@@ -375,32 +429,49 @@
     <!-- Scripts JS -->
     <script src="{{asset('brahmani_frontend_assets')}}/js/scripts.js"></script>
     <script>
-  var success = "{{!empty($success) ? $success : 'NA'}}";
-  var error = "{{!empty($error) ? $error : 'NA'}}";
-  console.log(success, error);
-  if (success != 'NA') {
-    Swal.fire({
-      title: 'Done',
-      text: success,
-      icon: 'success',
-      confirmButtonText: 'Okay',
+        document.addEventListener('DOMContentLoaded', function () {
+            var search = "<?php echo isset($settings['search']) ? addslashes($settings['search']) : ''; ?>";
+            console.log(search);
+            if (search !== "") {
+                var productDetailModal = new bootstrap.Modal(document.getElementById('productDetailModal'));
+                productDetailModal.show();
+            }
+        });
+        document.getElementById('productDetailModal').addEventListener('hide.bs.modal', function () {
+            // Remove query string
+            const url = new URL(window.location.href);
+            url.search = ""; // Clear the query string
+            window.history.replaceState({}, document.title, url.toString());
 
-    }).then((result) => {
-      if (result.isConfirmed) {
-        //window.location.reload();
-      }
-    })
-  }
-  if (error != 'NA') {
-    Swal.fire({
-      title: 'Failed!',
-      text: error,
-      icon: 'error',
-      confirmButtonText: 'Okay',
+            // Reload the page
+            location.reload();
+        });
+        var success = "{{!empty($success) ? $success : 'NA'}}";
+        var error = "{{!empty($error) ? $error : 'NA'}}";
+        console.log(success, error);
+        if (success != 'NA') {
+            Swal.fire({
+                title: 'Done',
+                text: success,
+                icon: 'success',
+                confirmButtonText: 'Okay',
 
-    });
-  }
-</script>
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    //window.location.reload();
+                }
+            })
+        }
+        if (error != 'NA') {
+            Swal.fire({
+                title: 'Failed!',
+                text: error,
+                icon: 'error',
+                confirmButtonText: 'Okay',
+
+            });
+        }
+    </script>
 </body>
 @yield('custom_javascript')
 </html>

@@ -32,6 +32,14 @@
         <div class="container-fluid px-4">
             <div class="row pbmit-element-posts-wrapper">
                 @foreach ($category_products as $category_product)
+                <?php
+                    $all_images = $category_product->all_images;
+                    $allImagesArr = explode(',', $all_images);
+                    $category_product->image = $allImagesArr[0];
+                    $image_alias = $category_product->image_alias;
+                    $image_aliasArr = explode(', ', $image_alias);
+                    $category_product->image_alias = $image_aliasArr[0];
+                ?>
                     <article class="pbmit-ele-portfolio pbmit-portfolio-style-2 col-md-6 col-lg-3">
                         <div class="pbminfotech-post-content">
                             <div class="pbmit-featured-img-wrapper">

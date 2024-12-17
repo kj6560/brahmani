@@ -289,15 +289,18 @@
 		$( ".pbmit-header-search-btn a" ).on('click', function() {     
 			$(".pbmit-search-overlay").addClass('st-show');
 			$("body").addClass('st-prevent-scroll');            
+			
 			return false;
 		});   
 		$( ".pbmit-icon-close" ).on('click', function() {
 				$(".pbmit-search-overlay").removeClass('st-show');
-			$("body").removeClass('st-prevent-scroll');            
+			$("body").removeClass('st-prevent-scroll'); 
+			console.log("clicked search");           
 			return false;
 		}); 
 		$('.pbmit-site-searchform').on('click', function(event){
-			event.stopPropagation();
+			
+			event.prevent_default;
 		});
 	
 	/*-------------------------------------
