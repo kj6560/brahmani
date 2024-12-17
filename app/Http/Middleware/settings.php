@@ -21,6 +21,7 @@ class settings
     public function handle(Request $request, Closure $next): Response
     {
         $allSettings = [];
+        //header search
         if (isset($request->s)) {
             $query = $request->s;
             if (strlen($query) > 2) {
@@ -37,17 +38,30 @@ class settings
                 $allSettings['search'] = $product;
             }
         }
+        //fetch general website settings
         $settings = WebsiteSetting::where('is_active', 1)->first();
-
         if (!empty($settings) && $settings != null) {
             $attr = $settings->getAttributes();
             foreach ($attr as $key => $value) {
                 $allSettings[$key] = $value;
             }
         }
+        //fetch product categories for menu
         $productCategories = ProductCategory::where('pro_cat_active', 1)->get();
-
         $allSettings['product_categories'] = $productCategories;
+
+        //page settings
+        $current_url = parse_url(url()->current());
+        if (empty($current_url['path'])) {
+            $page = Pages::where('page_url', null)->first();
+        } else {
+            $page = Pages::where('page_url', last(explode("/", $current_url['path'])))->first();
+        }
+        if (!empty($page->id)) {
+            $allSettings['page_data'] = $page;
+            
+        }
+        
         $request->merge(['settings' => $allSettings]);
         return $next($request);
 

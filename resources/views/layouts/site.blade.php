@@ -1,13 +1,30 @@
 <!doctype html>
 <html class="no-js" lang="en">
+<?php
+
+$page_data = !empty($settings['page_data']) ? $settings['page_data'] : [];
+$metas = json_decode($page_data['page_meta']);
+    
+?>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Xinterio Demo1 – Interior Design HTML Template</title>
-    <meta name="robots" content="noindex, follow">
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{$page_data['seo_title'] ?? ""}}</title>
+    <meta name="description" content="{{$page_data['seo_desc'] ?? ''}}">
+    <meta name="keywords" content="{{$page_data['seo_keywords'] ?? ''}}">
+    <meta name="robots" content="noindex, follow">
+    <meta name="Robots" content="all">
+	<meta name="language" content="en-gb">
+	<meta name="rating" content="General">
+	<meta name="audience" content="All">
+	<meta name="Revisit-After" content="7 days">
+@if (!empty($metas))
+    @foreach ($metas as $meta)
+<meta name="{{$meta->name}}" content="{{$meta->value}}">
+	@endforeach
+@endif
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('brahmani_frontend_assets')}}/images/fevicon.ico">
     <!-- CSS
@@ -37,6 +54,10 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('brahmani_frontend_assets')}}/css/responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php
+		echo $settings['gtag']??"";
+		echo prepareSchema($settings,$page_data['page_schema']);
+	?>
     <style>
         .dropdown-menu {
             max-height: 200px;
@@ -359,20 +380,21 @@
                             <div class="row">
                                 <!-- Product Image -->
                                 <div class="col-md-5">
-                                    <img src="{{asset('storage')}}/{{$pro->product_banner??''}}" class="img-fluid rounded" alt="{{$pro->product_name??''}}">
+                                    <img src="{{asset('storage')}}/{{$pro->product_banner ?? ''}}" class="img-fluid rounded"
+                                        alt="{{$pro->product_name ?? ''}}">
                                 </div>
 
                                 <!-- Product Details -->
                                 <div class="col-md-7">
-                                    <h3>{{$pro->product_name ??""}}</h3>
-                                    <p class="text-muted">Category: {{$pro->category_name??""}}</p>
+                                    <h3>{{$pro->product_name ?? ""}}</h3>
+                                    <p class="text-muted">Category: {{$pro->category_name ?? ""}}</p>
                                     <!-- <p><strong>Price:</strong> $299.99</p> -->
                                     <p>
-                                        {{$pro->product_description ??""}}
+                                        {{$pro->product_description ?? ""}}
                                     </p>
                                     <div class="mt-3">
                                         <button class="btn btn-success">Add to Wishlist</button>
-                                        <a class="btn btn-secondary" href="/products/{{$pro->id??1}}">See Details</a>
+                                        <a class="btn btn-secondary" href="/products/{{$pro->id ?? 1}}">See Details</a>
                                     </div>
                                 </div>
                             </div>
