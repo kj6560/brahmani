@@ -42,7 +42,7 @@ Route::get('/products/{id}', [DynamicPageController::class, 'loadProducts'])->mi
 //dynamic pages
 $pages = DB::table('pages')->get();
 foreach($pages as $page){
-    Route::get('/'.$page->page_url, [DynamicPageController::class, 'loadPage'])->middleware([settings::class])->name("dynamic".$page->page_url);
+    Route::get('/dPage/'.$page->page_url, [DynamicPageController::class, 'loadPage'])->middleware([settings::class])->name("dynamic".$page->page_url);
 }
 
 

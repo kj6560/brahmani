@@ -42,14 +42,11 @@
                                     value="{{!empty($product) && $product->pro_cat_name ? $product->pro_cat_name : old('pro_cat_name')}}"
                                     class="form-control" id="exampleInputUsername1">
                             </div>
-                            
-                            
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Product Category Description</label>
                                 <textarea class="exp_text" name="pro_cat_description" rows="5"
                                     id="pro_cat_description">{{!empty($product) && $product->pro_cat_description ? $product->pro_cat_description : old('pro_cat_description')}}</textarea>
                             </div>
-
                             <div class="form-group">
                                 <label>Product Category Image</label>
                                 <div class="input-group col-xs-12">
@@ -57,19 +54,24 @@
                                         placeholder="Product Category images">
                                 </div>
                             </div>
-
                             <div class="form-group">
-
+                                <label for="exampleInputUsername1">Product Category Order</label>
+                                <input type="text" name="product_category_order"
+                                    value="{{!empty($product) && $product->product_category_order ? $product->product_category_order : $nextOrder}}"
+                                    class="form-control" id="exampleInputUsername1">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleSelectGender">Product Status</label>
                                 <select name="pro_cat_status" class="form-select" id="exampleSelectGender">
                                     <option selected>Select Active</option>
-                                    <option value="1" @if(isset($product) && $product->pro_cat_active == 1) selected @endif>Yes
+                                    <option value="1" @if(isset($product) && $product->pro_cat_active == 1) selected
+                                    @endif>Yes
                                     </option>
-                                    <option value="0" @if(isset($product) && $product->pro_cat_active == 0) selected @endif>No
+                                    <option value="0" @if(isset($product) && $product->pro_cat_active == 0) selected
+                                    @endif>No
                                     </option>
                                 </select>
                             </div>
-                            
                         </div>
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
                     </form>

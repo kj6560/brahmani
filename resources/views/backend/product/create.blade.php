@@ -43,6 +43,12 @@
                                     class="form-control" id="exampleInputUsername1">
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputUsername1">Product Sku</label>
+                                <input type="text" name="product_sku"
+                                    value="{{$product && !empty($product) && $product->product_sku ? $product->product_sku : old('product_sku')}}"
+                                    class="form-control" id="exampleInputUsername1">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputUsername1">Product Short Description</label>
                                 <input type="text" name="product_short_description"
                                     value="{{$product && !empty($product) && $product->product_short_description ? $product->product_short_description : old('product_short_description')}}"
@@ -61,6 +67,13 @@
 
 
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Product Banner Image</label>
+                                <div class="input-group col-xs-12">
+                                    <input type="file" class="form-control file-upload-info" name="product_banner"
+                                        placeholder="Product Banner">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Product Description</label>

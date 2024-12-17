@@ -18,6 +18,7 @@
             <tr class="text-nowrap">
               <th>Id</th>
               <th>Product Category</th>
+              <th>Product Category Order</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -56,6 +57,11 @@
       {
         data: 'pro_cat_name',
         name: 'pro_cat_name',
+        orderable: true
+      },
+      {
+        data: 'product_category_order',
+        name: 'product_category_order',
         orderable: true
       },
       {

@@ -75,13 +75,19 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        //dd($data);
         if(!empty($data['id'])){
             $product = Product::find($data['id']);
         }else{
             $product = new Product();
         }
         $product->product_name = $data['product_name'];
+        $product_banner = $request->file('product_banner');
+        if(!empty($product_banner)){
+            $imageName = time() . '.' . $product_banner->getClientOriginalExtension();
+            $productBanner = $product_banner->storeAs('uploads', $imageName, 'public');
+            $product->product_banner = $productBanner;
+        }
+        $product->product_sku = $data['product_sku'];
         $product->product_short_description = $data['product_short_description'];
         $product->product_category = $data['product_category'];
         $product->product_description = $data['product_description'];

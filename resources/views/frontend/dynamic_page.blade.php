@@ -1,4 +1,5 @@
 @extends('layouts.site')
 @section('content')
-<?php dd($settings); ?>
+<?php $page_content = $settings['page_data']->page_desc; ?>
+{{$page_content??""}}
 @endsection
