@@ -28,17 +28,15 @@
                         <div class="pbminfotech-post-content">
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/portfolio/portfolio-01b.jpg"
-                                        class="img-fluid" alt="">
+                                    <img src="{{asset('storage')}}/{{$category_product->image}}"
+                                        class="img-fluid" alt="{{$category_product->image_alias}}">
                                 </div>
                             </div>
                             <div class="pbminfotech-box-content">
                                 <div class="pbminfotech-titlebox">
-                                    <div class="pbmit-port-cat">
-                                        <a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
-                                    </div>
+                                    
                                     <h3 class="pbmit-portfolio-title">
-                                        <a href="portfolio-detail-style-1.html">Innovation</a>
+                                        <a href="portfolio-detail-style-1.html">{{$category_product->pro_name}}</a>
                                     </h3>
                                 </div>
                             </div>
