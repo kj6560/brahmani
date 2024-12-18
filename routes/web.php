@@ -54,7 +54,7 @@ foreach($pages as $page){
 Route::prefix('admin')->post('/loginUser', [AdminController::class, 'loginUser'])->name('admin.loginUser');
 Route::prefix('admin')->get('/register', [AdminController::class, 'register'])->name('admin.register');
 Route::prefix('admin')->post('/registerUser', [AdminController::class, 'registerUser'])->name('admin.registerUser');
-Route::prefix('admin')->middleware(['auth:web'])->group(function () {
+Route::prefix('admin')->middleware(['auth:web',settings::class])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.index');
 
     //general settings

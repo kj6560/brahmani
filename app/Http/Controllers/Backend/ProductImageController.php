@@ -53,12 +53,12 @@ class ProductImageController extends Controller
                 ->make(true);
 
         }
-        return view('backend.product_image.index');
+        return view('backend.product_image.index',['settings' => $request->settings]);
     }
     public function create(Request $request)
     {
         $products = Product::all();
-        return view('backend.product_image.create', ['products' => $products]);
+        return view('backend.product_image.create', ['products' => $products,'settings' => $request->settings]);
     }
     public function edit(Request $request, $id)
     {
@@ -66,11 +66,12 @@ class ProductImageController extends Controller
             ->where('pi.id', $id)
             ->first();
         $products = Product::all();
-        return view('backend.product_image.create', ['products' => $products, 'product_image' => $product_image]);
+        return view('backend.product_image.create', ['settings' => $request->settings,'products' => $products, 'product_image' => $product_image]);
     }
     public function store(Request $request)
     {
         $data = $request->all();
+        unset($data['settings']);
         $images = $request->file('images');
         foreach ($images as $image) {
             $productImage = new ProductImages();

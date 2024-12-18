@@ -59,7 +59,7 @@ class ProductCategoryController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.product_category.index');
+        return view('backend.product_category.index',['settings' => $request->settings]);
     }
     public function create(Request $request)
     {
@@ -69,18 +69,18 @@ class ProductCategoryController extends Controller
         }else{
             $nextProductCategoryOrders =1;
         }
-        return view('backend.product_category.create', ['nextOrder' => $nextProductCategoryOrders]);
+        return view('backend.product_category.create', ['settings' => $request->settings,'nextOrder' => $nextProductCategoryOrders]);
     }
     public function edit(Request $request, $id)
     {
         $product = DB::table('product_category')->where('id', $id)->first();
         $nextProductCategoryOrders = max(ProductCategory::pluck('product_category_order')->toArray()) + 1;
-        return view('backend.product_category.create', ['product' => $product, 'nextOrder' => $nextProductCategoryOrders]);
+        return view('backend.product_category.create', ['settings' => $request->settings,'product' => $product, 'nextOrder' => $nextProductCategoryOrders]);
     }
     public function store(Request $request)
     {
         $data = $request->all();
-
+        unset($data['settings']);
         // Check if the request is for updating an existing product category
         if (!empty($data['id'])) {
             $product = ProductCategory::find($data['id']);

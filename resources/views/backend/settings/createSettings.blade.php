@@ -32,7 +32,7 @@
               <div class="form-group">
                 <label for="exampleInputUsername1">Company Name</label>
                 <input type="text" name="Company_Name"
-                  value="{{!empty($settings) && $settings['Company_Name'] ? $settings['Company_Name'] : old('Company_Name')}}"
+                  value="{{!empty($setting) && $settings['Company_Name'] ? $settings['Company_Name'] : old('Company_Name')}}"
                   class="form-control" id="exampleInputUsername1">
               </div>
               <div class="form-group">

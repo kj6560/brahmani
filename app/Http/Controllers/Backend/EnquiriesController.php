@@ -50,7 +50,7 @@ class EnquiriesController extends Controller
             ->rawColumns(['action'])
             ->make(true);
     }
-        return view('backend.enquiries.index');
+        return view('backend.enquiries.index',['settings' => $request->settings]);
     }
     public function delete($id)
     {

@@ -66,26 +66,21 @@ class SettingsController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.settings');
+        return view('backend.settings',['settings' => $request->settings]);
     }
     public function create(Request $request)
     {
-        $settings = WebsiteSetting::where('is_active', 1)->first();
-        if ($settings != null) {
-            $settings = $settings->toArray();
-        }
-        return view('backend.settings.createSettings', ['settings' => $settings]);
+        
+        return view('backend.settings.createSettings', ['settings' => $request->settings]);
     }
     public function edit(Request $request, $id)
     {
-        $settings = WebsiteSetting::find($request->id);
-
-        return view('backend.settings.createSettings', ['settings' => $settings]);
+        return view('backend.settings.createSettings', ['settings' => $request->settings]);
     }
     public function store(Request $request)
     {
         $data = $request->all();
-        //dd($data);
+        unset($data['settings']);
         unset($data['_token']);
         $settings = WebsiteSetting::where('is_active', 1)->first();
         if (empty($settings->id)) {
@@ -111,7 +106,7 @@ class SettingsController extends Controller
     public function citiesSettings(Request $request)
     {
         $cities = City::all();
-        return view('backend.settings.citiesSettings', ['cities' => $cities]);
+        return view('backend.settings.citiesSettings', ['cities' => $cities,'settings' => $request->settings]);
     }
     public function storeCities(Request $request)
     {
@@ -138,7 +133,7 @@ class SettingsController extends Controller
     public function statesSettings(Request $request)
     {
         $states = State::all();
-        return view('backend.settings.statesSettings', ['states' => $states]);
+        return view('backend.settings.statesSettings', ['states' => $states,'settings' => $request->settings]);
     }
     public function storeStates(Request $request)
     {
@@ -165,7 +160,7 @@ class SettingsController extends Controller
     public function countriesSettings(Request $request)
     {
         $countries = Country::all();
-        return view('backend.settings.countriesSettings', ['countries' => $countries]);
+        return view('backend.settings.countriesSettings', ['countries' => $countries,'settings' => $request->settings]);
     }
     public function storeCountries(Request $request)
     {

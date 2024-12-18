@@ -60,6 +60,6 @@ class AdminController extends Controller
         return redirect('/admin/login')->with('success', 'Registration successful. Please login.');
     }
     public function accountSettings(Request $request){
-        return view('backend.account_settings');
+        return view('backend.account_settings',['settings' => $request->settings]);
     }
 }

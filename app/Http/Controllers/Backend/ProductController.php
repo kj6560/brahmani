@@ -59,22 +59,23 @@ class ProductController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.product.index');
+        return view('backend.product.index',['settings' => $request->settings]);
     }
     public function create(Request $request)
     {
         $categories = DB::table('product_category')->get();
-        return view('backend.product.create',['categories'=>$categories,'product'=>null]);
+        return view('backend.product.create',['categories'=>$categories,'product'=>null,'settings' => $request->settings]);
     }
     public function edit(Request $request,$id)
     {
         $product = DB::table('products')->where('id', $id)->first();
         $categories = DB::table('product_category')->get();
-        return view('backend.product.create',['categories'=>$categories,'product'=>$product]);
+        return view('backend.product.create',['categories'=>$categories,'product'=>$product,'settings' => $request->settings]);
     }
     public function store(Request $request)
     {
         $data = $request->all();
+        unset($data['settings']);
         if(!empty($data['id'])){
             $product = Product::find($data['id']);
         }else{

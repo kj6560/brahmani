@@ -46,7 +46,7 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="/">
-            <img src="{{asset('brahmani_frontend_assets')}}/images/logo.png" alt="logo" />Brahmani Enterprises
+            <img src="{{asset('storage')}}/{{$settings['logo']}}" alt="logo" />Brahmani Enterprises
           </a>
           <a class="navbar-brand brand-logo-mini" href="/">
             <img src="{{asset('brahmani_frontend_assets')}}/images/logo.png" alt="logo" />Brahmani Enterprises
@@ -137,7 +137,6 @@
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -186,7 +185,7 @@
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block"><a href="#"
-                target="_blank">DigitalVyapaar</a> </span>
+                target="_blank">{{$settings['Company_Name']??""}}</a> </span>
             <span class="float-none float-sm-end d-block mt-1 mt-sm-0 text-center">Copyright © {{date('Y')}}. All rights
               reserved.</span>
           </div>

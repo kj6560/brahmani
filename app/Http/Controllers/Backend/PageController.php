@@ -64,23 +64,23 @@ class PageController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.pages.index');
+        return view('backend.pages.index',['settings' => $request->settings]);
     }
     public function create(Request $request)
     {
         $parents = Pages::where('page_parent', 0)->get();
-        return view('backend.pages.create', ['parents' => $parents, 'page' => null]);
+        return view('backend.pages.create', ['parents' => $parents, 'page' => null,'settings' => $request->settings]);
     }
     public function edit(Request $request)
     {
         $page = Pages::find($request->id);
         $parents = Pages::where('page_parent', 0)->get();
-        return view('backend.pages.create', ['parents' => $parents, 'page' => $page]);
+        return view('backend.pages.create', ['parents' => $parents, 'page' => $page,'settings' => $request->settings]);
     }
     public function store(Request $request)
     {
         $data = $request->all();
-
+        unset($data['settings']);
         if (!empty($data['meta_tags'])) {
             $metaTags = $data['meta_tags'];
             $processedMetaTags = $this->processMetaTags($metaTags);
@@ -134,6 +134,7 @@ class PageController extends Controller
     public function storeBulkPages(Request $request,$location)
     {
         $data = $request->all();
+        unset($data['settings']);
         if($location == 'city'){
             $allLocations = City::where('is_active', 1)->get();
         }else if($location == 'state'){
@@ -256,20 +257,20 @@ class PageController extends Controller
         $bulkPage = BulkPage::where('page_category_location','city')->first();
         $parents = Pages::where('page_parent', 0)->get();
         $cities = City::all();
-        return view('backend.pages.createCityWise', ['parents' => $parents, 'page' => $bulkPage, 'cities' => $cities]);
+        return view('backend.pages.createCityWise', ['settings' => $request->settings,'parents' => $parents, 'page' => $bulkPage, 'cities' => $cities]);
     }
     public function createStateWise(Request $request)
     {
         $bulkPage = BulkPage::where('page_category_location','state')->first();
         $parents = Pages::where('page_parent', 0)->get();
         $state = State::all();
-        return view('backend.pages.createStateWise', ['parents' => $parents, 'page' => $bulkPage, 'states' => $state]);
+        return view('backend.pages.createStateWise', ['settings' => $request->settings,'parents' => $parents, 'page' => $bulkPage, 'states' => $state]);
     }
     public function createCountryWise(Request $request)
     {
         $bulkPage = BulkPage::where('page_category_location','country')->first();
         $parents = Pages::where('page_parent', 0)->get();
-        return view('backend.pages.createCountryWise', ['parents' => $parents, 'page' => $bulkPage]);
+        return view('backend.pages.createCountryWise', ['settings' => $request->settings,'parents' => $parents, 'page' => $bulkPage]);
     }
     public function disable(Request $request)
     {
