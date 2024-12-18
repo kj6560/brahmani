@@ -105,9 +105,11 @@ if(!empty($page_data['page_meta'])){
                                 <div class="site-branding">
                                     <h6 class="site-title">
                                         <a href="/">
-                                            <img class="logo-img"
-                                                src="{{asset('brahmani_frontend_assets')}}/images/logo.png" </a>
-                                            Brahmani Enterprises
+                                        @if (!empty($settings['logo']))
+                                        <img src="{{asset('storage')}}/{{$settings['logo']}}" alt="{{$settings['Company_Name'] ??''}}">
+                                        @endif        
+                                    </a>
+                                    {{$settings['Company_Name'] ??''}}
                                     </h6>
                                     <div class="pbmit-sticky-corner  pbmit-top-right-corner">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill=""
@@ -124,7 +126,7 @@ if(!empty($page_data['page_meta'])){
                                 </div>
                                 <div class="pbmit-button-box">
                                     <div class="pbmit-header-button">
-                                        <a href="tel:{{htmlspecialchars($settings['Official_Number']) ?? ''}}">
+                                        <a href="tel:{{htmlspecialchars(!empty($settings['Official_Number']) ? $settings['Official_Number']:'')}}">
                                             <span
                                                 class="pbmit-header-button-text-1">{{$settings['Official_Number'] ?? ''}}</span>
                                         </a>
@@ -154,24 +156,9 @@ if(!empty($page_data['page_meta'])){
                                             <ul class="navigation clearfix">
                                                 <li class="active">
                                                     <a href="/">Home</a>
-                                                    <!-- <ul>
-                                                        <li class="active"><a href="index.html">Homepage 01</a></li>
-                                                        <li><a href="homepage-2.html">Homepage 02</a></li>
-                                                        <li><a href="homepage-3.html">Homepage 03</a></li>
-                                                        <li><a href="homepage-4.html">Homepage 04</a></li>
-                                                        <li><a href="homepage-5.html">Homepage 05</a></li>
-                                                        <li><a href="homepage-6.html">Homepage 06</a></li>
-                                                    </ul> -->
+                                                    
                                                 </li>
-                                                <!-- <li class="dropdown">
-                                                    <a href="#">Profile</a>
-                                                    <ul>
-                                                        <li><a href="/qualityCompliance">Quality & Compliance</a></li>
-                                                        <li><a href="/distributorEnquiryForm">DistributorEnquiryForm</a></li>
-                                                        <li><a href="/downloadBrochure">Download Brochure</a>
-                                                        </li>
-                                                    </ul>
-                                                </li> -->
+                                                
                                                 <li class="dropdown">
                                                     <a href="#">Products & Services</a>
                                                     <ul>
@@ -184,22 +171,7 @@ if(!empty($page_data['page_meta'])){
                                                 </li>
                                                 <li>
                                                     <a href="/contact_us">Contact Us</a>
-                                                    <ul>
-                                                        <!-- <li class="dropdown">
-                                                            <a href="#">Masonry View</a>
-                                                            <ul>
-                                                                <li><a href="portfolio-m-grid-col-2.html">Grid Col 2</a>
-                                                                </li>
-                                                                <li><a href="portfolio-m-grid-col-3.html">Grid Col 3</a>
-                                                                </li>
-                                                                <li><a href="portfolio-m-grid-col-4.html">Grid Col 4</a>
-                                                                </li>
-                                                                <li><a href="portfolio-m-grid-col-wide.html">Grid
-                                                                        Wide</a></li>
-                                                            </ul>
-                                                        </li> -->
-
-                                                    </ul>
+                                                    
                                                 </li>
 
                                             </ul>
@@ -216,7 +188,7 @@ if(!empty($page_data['page_meta'])){
                                 <div class="pbmit-button-box-second">
                                     <a class="pbmit-btn" href="/contact_us">
                                         <span class="pbmit-button-content-wrapper">
-                                            <span class="pbmit-button-text">Book Consult</span>
+                                            <span class="pbmit-button-text">Consult Us</span>
                                         </span>
                                     </a>
                                 </div>
@@ -261,7 +233,10 @@ if(!empty($page_data['page_meta'])){
                             <aside class="widget">
                                 <div class="textwidget">
                                     <div class="pbmit-footer-logo">
-                                        <img src="{{asset('brahmani_frontend_assets')}}/images/favicon.svg" alt="">
+                                        @if (!empty($settings['logo']) && !empty($settings['Company_Name']))
+                                        <img src="{{asset('storage')}}/{{$settings['logo']}}" alt="{{$settings['Company_Name'] ??''}}">
+                                        @endif
+                                        
                                     </div>
                                 </div>
                             </aside>
@@ -291,7 +266,7 @@ if(!empty($page_data['page_meta'])){
                                 <span class="pbmit-email-text"> <a
                                         href="https://xinterio-demo.pbminfotech.com/cdn-cgi/l/email-protection"
                                         class="__cf_email__"
-                                        data-cfemail="2c44494040436c49544d415c4049024f4341">{{$settings['Official_Email']}}</a></span>
+                                        data-cfemail="2c44494040436c49544d415c4049024f4341">{{$settings['Official_Email'] ?? ""}}</a></span>
                                 <span class="pbmit-phone-number"> {{$settings['Official_Number'] ?? ''}}</span>
                             </div>
                             <div class="col-md-4 pbmit-footer-right">
@@ -300,22 +275,22 @@ if(!empty($page_data['page_meta'])){
                             <div class="col-md-4 pbmit-footer-right-social">
                                 <ul class="pbmit-social-links">
                                     <li class="pbmit-social-li pbmit-social-facebook">
-                                        <a title="Facebook" href="{{$setting['Facebook_Link'] ?? ''}}" target="_blank">
+                                        <a title="Facebook" href="{{$setting['Facebook_Link'] ?? '#'}}" target="_blank">
                                             <span><i class="pbmit-base-icon-facebook-f"></i></span>
                                         </a>
                                     </li>
                                     <li class="pbmit-social-li pbmit-social-twitter">
-                                        <a title="Twitter" href="#" target="_blank">
+                                        <a title="Twitter" href="{{$setting['Twitter_Link'] ?? '#'}}" target="_blank">
                                             <span><i class="pbmit-base-icon-twitter-2"></i></span>
                                         </a>
                                     </li>
                                     <li class="pbmit-social-li pbmit-social-linkedin">
-                                        <a title="LinkedIn" href="#" target="_blank">
+                                        <a title="LinkedIn" href="{{$setting['Linkedin_Link'] ?? '#'}}" target="_blank">
                                             <span><i class="pbmit-base-icon-linkedin-in"></i></span>
                                         </a>
                                     </li>
                                     <li class="pbmit-social-li pbmit-social-instagram">
-                                        <a title="Instagram" href="#" target="_blank">
+                                        <a title="Instagram" href="{{$setting['Instagram_Link'] ?? '#'}}" target="_blank">
                                             <span><i class="pbmit-base-icon-instagram"></i></span>
                                         </a>
                                     </li>
@@ -416,7 +391,6 @@ if(!empty($page_data['page_meta'])){
     <!-- JS
 		============================================ -->
     <!-- jQuery JS -->
-    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="{{asset('brahmani_frontend_assets')}}/js/jquery.min.js"></script>
     <!-- Popper JS -->
     <script src="{{asset('brahmani_frontend_assets')}}/js/popper.min.js"></script>

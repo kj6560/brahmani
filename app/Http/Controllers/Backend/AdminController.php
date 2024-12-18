@@ -37,7 +37,7 @@ class AdminController extends Controller
     {
         $count = User::count();
         if($count >0){
-            return redirect('/admin/login');
+            return redirect('/login');
         }
         return view('backend.register');
     }
