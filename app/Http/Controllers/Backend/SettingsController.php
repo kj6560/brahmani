@@ -70,8 +70,8 @@ class SettingsController extends Controller
     }
     public function create(Request $request)
     {
-        
-        return view('backend.settings.createSettings', ['settings' => $request->settings]);
+        $settings = WebsiteSetting::where('is_active', 1)->first();
+        return view('backend.settings.createSettings', ['settings' => $request->settings,'setting'=>$settings]);
     }
     public function edit(Request $request, $id)
     {
@@ -82,6 +82,7 @@ class SettingsController extends Controller
         $data = $request->all();
         unset($data['settings']);
         unset($data['_token']);
+        
         $settings = WebsiteSetting::where('is_active', 1)->first();
         if (empty($settings->id)) {
             $settings = new WebsiteSetting();
