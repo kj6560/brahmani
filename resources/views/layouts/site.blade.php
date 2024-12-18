@@ -173,7 +173,10 @@ if(!empty($page_data['page_meta'])){
                                                     <a href="/contact_us">Contact Us</a>
                                                     
                                                 </li>
-
+                                                <li>
+                                                    <a href="/showWishlist">Wishlist</a>
+                                                    
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -375,8 +378,8 @@ if(!empty($page_data['page_meta'])){
                                         {{$pro->product_description ?? ""}}
                                     </p>
                                     <div class="mt-3">
-                                        <button class="btn btn-success">Add to Wishlist</button>
-                                        <a class="btn btn-secondary" href="/products/{{$pro->id ?? 1}}">See Details</a>
+                                        <button class="btn btn-success" id="wishlist" onclick="processWishlist({{$pro->id}})">Add to Wishlist</button>
+                                        <a class="btn btn-secondary " href="/products/{{$pro->id ?? 1}}">See Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -449,6 +452,33 @@ if(!empty($page_data['page_meta'])){
             // Reload the page
             location.reload();
         });
+        
+        function processWishlist(id) {
+        console.log("processing: ",id);
+            $.ajax({
+                url: '/wishlist/' + id,
+                type: 'GET',
+                success: function (response) {
+                    console.log(response);
+                    if(response.success){
+                        Swal.fire({
+                        title: 'Done',
+                        text: "Product Added To Wishlist",
+                        icon: 'success',
+                        confirmButtonText: 'Okay',
+
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            //window.location.reload();
+                        }
+                    })
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        }
         var success = "{{!empty($success) ? $success : 'NA'}}";
         var error = "{{!empty($error) ? $error : 'NA'}}";
         console.log(success, error);

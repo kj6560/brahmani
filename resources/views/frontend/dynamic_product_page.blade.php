@@ -77,7 +77,7 @@ $params = json_decode($product->pro_params);
                         <label for="quantity" class="form-label">Quantity:</label>
                         <input type="number" class="form-control" id="quantity" value="1" min="1" style="width: 80px;">
                     </div>
-                    <button class="btn btn-primary btn-lg mb-3 me-2">
+                    <button class="btn btn-primary btn-lg mb-3 me-2" id="wishlist" onclick="processWishlist({{$product->id}})">
                         <i class="bi bi-cart-plus"></i> Add to Wishlist
                     </button>
                     <div class="mt-4">
@@ -102,6 +102,7 @@ $params = json_decode($product->pro_params);
         document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
         event.target.classList.add('active');
     }
+    
 </script>
 
 @endsection

@@ -7,9 +7,12 @@ use App\Models\City;
 use App\Models\ContactQuery;
 use App\Models\Country;
 use App\Models\Pages;
+use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\State;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class SiteController extends Controller
 {
@@ -80,5 +83,54 @@ class SiteController extends Controller
     {
         return view('frontend.pageError');
     }
-
+    public function wishlist(Request $request,$id)
+    {
+        $product_ids = Session::get('wishlist', []);
+        if (!in_array($id, $product_ids)) {
+            $product_ids[] = $id;
+        }
+        Session::put('wishlist', $product_ids);
+        return response()->json(['success' => true, 'message' => 'Product added to wishlist']);
+    }
+    public function showWishlist(Request $request)
+    {
+        $product_ids = Session::get('wishlist', []);
+        $products = [];
+        foreach ($product_ids as $product_id) {
+            $product = Product::find($product_id);
+            if ($product) {
+                $products[] = $product;
+            }
+        }
+        return view('frontend.wishlist', ['products' => $products,'settings' => $request->settings]);
+    }
+    public function removeFromWishlist(Request $request)
+    {
+        $id = $request->id;
+        $product_ids = Session::get('wishlist', []);
+        $product_ids = array_diff($product_ids, [$id]);
+        Session::put('wishlist', $product_ids);
+        return response()->json(['success' => true, 'message' => 'Product removed from wishlist']);
+    }
+    public function raiseQuery(Request $request)
+    {
+        $name = $request->name;
+        $phone = $request->phone;
+        $product_ids = Session::get('wishlist', []);
+        $queryContact = new ContactQuery();
+        $queryContact->name = $name;
+        $queryContact->number = $phone;
+        $queryContact->message = "I want to raise query for following products: " . implode(", ", $product_ids);
+        $queryContact->is_active = 1;
+        if($product_ids != null && !empty($product_ids)){
+            $queryContact->product_ids = json_encode($product_ids);
+        }
+        
+        if ($queryContact->save()) {
+            Session::forget('wishlist');
+            return response()->json(['success' => true, 'message' => 'Query raised successfully']);
+        } else {
+            return response()->json(['success' => false, 'message' => 'Something went wrong. Please try again later']);
+        }
+    }
 }

@@ -36,7 +36,10 @@ Route::get('/contact_us', [SiteController::class,'contactUs'])->middleware([sett
 Route::post('/storeQuery', [SiteController::class,'storeQuery'])->middleware([settings::class])->name('frontend.storeQuery');
 Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::get('/logout', [AdminController::class, 'logout'])->name('backend.logout');
-
+Route::get('/wishlist/{id}',[SiteController::class,'wishlist'])->middleware([settings::class])->name('frontend.wishlist');
+Route::get('/removeFromWishlist',[SiteController::class,'removeFromWishlist'])->middleware([settings::class])->name('frontend.removeFromWishlist');
+Route::get('/showWishlist',[SiteController::class,'showWishlist'])->middleware([settings::class])->name('frontend.showWishlist');
+Route::get('/raiseQuery',[SiteController::class,'raiseQuery'])->middleware([settings::class])->name('frontend.raiseQuery');
 //product_category
 Route::get('/product_category/{id}', [DynamicPageController::class, 'loadProductCategory'])->middleware([settings::class])->name("product_category");
 Route::get('/products/{id}', [DynamicPageController::class, 'loadProducts'])->middleware([settings::class])->name("products.load");

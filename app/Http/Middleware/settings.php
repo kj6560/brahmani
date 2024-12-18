@@ -49,7 +49,6 @@ class settings
         //fetch product categories for menu
         $productCategories = ProductCategory::where('pro_cat_active', 1)->orderBy('product_category_order','asc')->get();
         $allSettings['product_categories'] = $productCategories;
-
         //page settings
         $current_url = parse_url(url()->current());
         if (empty($current_url['path'])) {
