@@ -173,7 +173,7 @@ class PageController extends Controller
         if ($bulkPage->save()) {
             foreach ($allLocations as $key => $loc) {
                 if (!empty($data['id'])) {
-                    $page = Pages::where('page_city', $city->city_name)->first();
+                    $page = Pages::where('page_city', $loc->city_name)->first();
                     $process = "updated";
                 } else {
                     $page = new Pages();
@@ -206,7 +206,7 @@ class PageController extends Controller
                         $page->page_name = str_replace('country_name', $loc->country_name, $data['page_name']);
                         $page->page_city = $loc->country_name;
                     }
-                    $page->page_url = str_replace(' ', '-', $page->page_name);
+                    $page->page_url = str_replace(' ', '-', strtolower($page->page_name));
                 }
                 
                 $page->page_parent = $data['page_parent'];
