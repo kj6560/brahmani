@@ -114,7 +114,7 @@
                                 <a href="portfolio-grid-col-3.html" rel="tag"></a>
                             </div> -->
                             <h3 class="pbmit-portfolio-title">
-                                <a href="portfolio-detail-style-1.html">{{$categories->pro_cat_name}}</a>
+                                <a href="/product_category/{{$categories->id}}">{{$categories->pro_cat_name}}</a>
                             </h3>
                         </div>
                     </div>
