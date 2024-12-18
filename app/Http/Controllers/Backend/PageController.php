@@ -171,9 +171,13 @@ class PageController extends Controller
             $bulkPage->page_meta = json_encode($processedMetaTags);
         }
         if ($bulkPage->save()) {
+            $page_name = $bulkPage->page_name;
             foreach ($allLocations as $key => $loc) {
                 if (!empty($data['id'])) {
                     $page = Pages::where('page_city', $loc->city_name)->first();
+                    if(empty($page->id)){
+                        $page = new Pages();
+                    }
                     $process = "updated";
                 } else {
                     $page = new Pages();
@@ -195,19 +199,17 @@ class PageController extends Controller
                     }
                     $page->page_sliders = json_encode($sliderArr);
                 }
-                if(empty($data['id'])){
-                    if($location == 'city'){
-                        $page->page_name = str_replace('city_name', $loc->city_name, $data['page_name']);
-                        $page->page_city = $loc->city_name;
-                    }else if($location == 'state'){
-                        $page->page_name = str_replace('state_name', $loc->state_name, $data['page_name']);
-                        $page->page_city = $loc->state_name;
-                    }else if($location == 'country'){
-                        $page->page_name = str_replace('country_name', $loc->country_name, $data['page_name']);
-                        $page->page_city = $loc->country_name;
-                    }
-                    $page->page_url = str_replace(' ', '-', strtolower($page->page_name));
+                if($location == 'city'){
+                    $page->page_name = str_replace('city_name', $loc->city_name, $page_name);
+                    $page->page_city = $loc->city_name;
+                }else if($location == 'state'){
+                    $page->page_name = str_replace('state_name', $loc->state_name, $page_name);
+                    $page->page_city = $loc->state_name;
+                }else if($location == 'country'){
+                    $page->page_name = str_replace('country_name', $loc->country_name, $page_name);
+                    $page->page_city = $loc->country_name;
                 }
+                $page->page_url = str_replace(' ', '-', strtolower($page->page_name));
                 
                 $page->page_parent = $data['page_parent'];
                 $page->page_status = $data['page_status'];
