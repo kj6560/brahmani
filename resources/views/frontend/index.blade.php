@@ -119,11 +119,11 @@
                         </div>
                     </div>
                     <div class="pbmit-portfolio-btn">
-                        <a href="portfolio-detail-style-1.html">
+                        <a href="/product_category/{{$categories->id}}">
                             <i class="pbmit-base-icon-pbmit-up-arrow"></i>
                         </a>
                     </div>
-                    <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
+                    <a class="pbmit-link" href="/product_category/{{$categories->id}}"></a>
                 </div>
             </article>
             @endforeach
