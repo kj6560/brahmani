@@ -54,6 +54,7 @@
     </div>
 </div>
 
+@if (!empty($latest_categories) && count($latest_categories)>0)
 <!-- Marquee Start -->
 <section class="marquee-one">
     <div class="container-fluid p-0">
@@ -68,15 +69,12 @@
                     </div>
                 </article>
                 @endforeach
-                
-                
             </div>
         </div>
     </div>
 </section>
 <!-- Marquee End -->
-
-<!-- Portfolio Start -->
+ <!-- Portfolio Start -->
 <section class="pbmit-bg-color-light portfolio-one pbmit-sortable-yes">
     <div class="container">
         <div class="row align-items-center">
@@ -129,12 +127,12 @@
                 </div>
             </article>
             @endforeach
-            
-            
-            
         </div>
     </div>
 </section>
 <!-- Portfolio End -->
+@endif
+
+
 
 @endsection
