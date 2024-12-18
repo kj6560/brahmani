@@ -74,13 +74,13 @@ class SettingsController extends Controller
         if ($settings != null) {
             $settings = $settings->toArray();
         }
-        return view('backend.createSettings', ['settings' => $settings]);
+        return view('backend.settings.createSettings', ['settings' => $settings]);
     }
     public function edit(Request $request, $id)
     {
         $settings = WebsiteSetting::find($request->id);
 
-        return view('backend.createSettings', ['settings' => $settings]);
+        return view('backend.settings.createSettings', ['settings' => $settings]);
     }
     public function store(Request $request)
     {
@@ -106,64 +106,7 @@ class SettingsController extends Controller
         $settings->save();
         return redirect()->back()->with('success', 'Settings created successfully.');
     }
-    public function uploadLogo(Request $request)
-    {
-        $settings = WebsiteSetting::where('is_active', 1)->get();
-        $allSettings = [];
-        foreach ($settings as $setting) {
-            $allSettings[$setting->settings_key] = $setting->settings_value;
-        }
-        return view('backend.uploadLogo', ['logo' => $allSettings['logo']]);
-    }
-    public function storeLogo(Request $request)
-    {
-
-        $logo = $request->file('logo');
-        // Generate a unique file name
-        $logoName = time() . '.' . $logo->getClientOriginalExtension();
-
-        // Store the file in the 'storage/app/public/uploads' directory
-        $filePath = $logo->storeAs('uploads', $logoName, 'public');
-
-        // Save file name to the database
-        $settings = WebsiteSetting::where('settings_key', 'logo')->first();
-        if (!$settings) {
-            $settings = new WebsiteSetting();
-            $settings->category = 'logo';
-            $settings->is_active = 1;
-            $settings->settings_key = 'logo';
-        }
-        $settings->settings_value = $filePath; // Save the full path relative to 'storage/app/public'
-        $settings->save();
-
-        return redirect()->back()->with('success', 'Logo uploaded successfully.');
-    }
-    public function uploadSliderImages(Request $request)
-    {
-        return view('backend.uploadSliderImages');
-    }
-    public function storeSliderImages(Request $request)
-    {
-        $sliderImages = $request->file('sliderImages');
-        $sliderImagesNames = [];
-        foreach ($sliderImages as $sliderImage) {
-            // Generate a unique file name
-            $sliderImageName = time() . '_' . $sliderImage->getClientOriginalName();
-            // Store the file in the 'storage/app/public/uploads' directory
-            $filePath = $sliderImage->storeAs('uploads', $sliderImageName, 'public');
-            $sliderImagesNames[] = $filePath;
-        }
-        $settings = WebsiteSetting::where('settings_key', 'slider_images')->first();
-        if (!$settings) {
-            $settings = new WebsiteSetting();
-            $settings->category = 'slider_images';
-            $settings->is_active = 1;
-            $settings->settings_key = 'slider_images';
-        }
-        $settings->settings_value = json_encode($sliderImagesNames); // Save the full path relative to 'storage/app/public'
-        $settings->save();
-        return redirect()->back()->with('success', 'Slider images uploaded successfully.');
-    }
+    
 
     public function citiesSettings(Request $request)
     {

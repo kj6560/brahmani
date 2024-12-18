@@ -18,7 +18,7 @@ class AdminController extends Controller
         if (Auth::check()) {
             return redirect('/admin/dashboard');
         }
-        return view('backend.login');
+        return view('backend.auth.login');
     }
     public function loginUser(Request $request)
     {
@@ -39,7 +39,7 @@ class AdminController extends Controller
         if($count >0){
             return redirect('/login');
         }
-        return view('backend.register');
+        return view('backend.auth.register');
     }
     public function logout(Request $request)
     {
