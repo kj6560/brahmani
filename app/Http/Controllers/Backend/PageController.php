@@ -106,7 +106,7 @@ class PageController extends Controller
             $page_sliders = $request->file('pageSliders');
             $sliderArr = [];
             foreach ($page_sliders as $slider) {
-                $sliderName = time() . '.' . $slider->getClientOriginalExtension();
+                $sliderName = time() . '_' . str_replace(' ', '', $slider->getClientOriginalName());
                 $slide = $slider->storeAs('uploads', $sliderName, 'public');
                 array_push($sliderArr, $slide);
             }
@@ -132,7 +132,20 @@ class PageController extends Controller
 
     }
 
-    
+    public function processMetaTags($metaTags)
+    {
+        $processedMetaTags = [];
+        for ($i = 0; $i < count($metaTags); $i += 2) {
+            // Combine 'name' and 'value' into a single array.
+            if (isset($metaTags[$i]['name'], $metaTags[$i + 1]['value'])) {
+                $processedMetaTags[] = [
+                    'name' => $metaTags[$i]['name'],
+                    'value' => $metaTags[$i + 1]['value'],
+                ];
+            }
+        }
+        return $processedMetaTags;
+    }
     public function disable(Request $request)
     {
         $page = Pages::find($request->id);
