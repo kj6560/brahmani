@@ -63,7 +63,12 @@ class ProductCategoryController extends Controller
     }
     public function create(Request $request)
     {
-        $nextProductCategoryOrders = max(ProductCategory::pluck('product_category_order')->toArray()) + 1;
+        $categories = ProductCategory::pluck('product_category_order')->toArray();
+        if(!empty($categories)){
+            $nextProductCategoryOrders = max($categories) + 1;
+        }else{
+            $nextProductCategoryOrders =1;
+        }
         return view('backend.product_category.create', ['nextOrder' => $nextProductCategoryOrders]);
     }
     public function edit(Request $request, $id)
