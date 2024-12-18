@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('backend.index');
+        return view('backend.index',['settings' => $request->settings]);
     }
     public function login()
     {
