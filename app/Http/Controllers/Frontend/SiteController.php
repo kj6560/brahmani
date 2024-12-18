@@ -115,7 +115,7 @@ class SiteController extends Controller
     public function raiseQuery(Request $request)
     {
         $name = $request->name;
-        $phone = $request->phone;
+        $phone = $request->number;
         $product_ids = Session::get('wishlist', []);
         $queryContact = new ContactQuery();
         $queryContact->name = $name;
