@@ -49,6 +49,12 @@
                                     class="form-control" id="exampleInputUsername1">
                             </div>
                             <div class="form-group">
+                                <label for="exampleInputUsername1">Product Price</label>
+                                <input type="text" name="product_price"
+                                    value="{{$product && !empty($product) && $product->product_price ? $product->product_price : old('product_price')}}"
+                                    class="form-control" id="exampleInputUsername1">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputUsername1">Product Short Description</label>
                                 <input type="text" name="product_short_description"
                                     value="{{$product && !empty($product) && $product->product_short_description ? $product->product_short_description : old('product_short_description')}}"
