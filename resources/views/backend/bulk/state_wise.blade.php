@@ -4,16 +4,12 @@
   <div class="card">
     <div class="card-body">
       <div class="row">
-        <h4 class="card-title">Pages</h4>
+        <h4 class="card-title">StateWise Pages</h4>
         <div class="col-sm-12">
-          <a class="btn btn-primary" href="/admin/categories/create"><i class="fa fa-solid fa-plus"></i>
-            Create Single Page</a>
-            <a class="btn btn-primary" href="/admin/categories/bulkPages/cityWise"><i class="fa fa-solid fa-plus"></i>
-            City Wise Pages</a>
-            <a class="btn btn-primary" href="/admin/categories/bulkPages/stateWise"><i class="fa fa-solid fa-plus"></i>
-            State Wise Pages</a>
-            <a class="btn btn-primary" href="/admin/categories/bulkPages/countryWise"><i class="fa fa-solid fa-plus"></i>
-            Country Wise Pages</a>
+          
+            <a class="btn btn-primary" href="/admin/categories/create/stateWise"><i class="fa fa-solid fa-plus"></i>
+            Create State Wise Pages</a>
+            
         </div>
       </div>
       <div class="table-responsive text-nowrap" style="margin: 10px;padding: 10px;">
@@ -22,7 +18,6 @@
             <tr class="text-nowrap">
               <th>Id</th>
               <th>Page Name</th>
-              <th>Page Url</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -62,12 +57,6 @@
         data: 'page_name',
         name: 'page_name',
         orderable: true
-      },
-      { 
-        data: 'page_url',
-        name: 'page_url',
-        orderable: true,
-        
       },
       {
         data: 'page_status',

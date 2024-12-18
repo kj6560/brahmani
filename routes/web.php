@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\BulkPageController;
 use App\Http\Controllers\Backend\EnquiriesController;
 use App\Http\Controllers\Backend\ForwardController;
 use App\Http\Controllers\Backend\FrontendMenuController;
@@ -65,11 +66,6 @@ Route::prefix('admin')->middleware(['auth:web',settings::class])->group(function
     Route::get('/uploadLogo', [SettingsController::class, 'uploadLogo'])->name('admin.uploadLogo');
     Route::post('/storeLogo', [SettingsController::class, 'storeLogo'])->name('store.settings.logo');
 
-    //sliders
-    Route::get('/sliders', [SliderController::class, 'index'])->name('admin.sliders');
-    Route::get('/sliders/create', [SliderController::class, 'create'])->name('admin.sliders.create');
-    Route::post('/sliders/store', [SliderController::class, 'store'])->name('store.sliders.store');
-
     //pages
     Route::get('/categories', [PageController::class, 'index'])->name('admin.categories.index');
     Route::get('/categories/create', [PageController::class, 'create'])->name('admin.categories.create');
@@ -77,10 +73,21 @@ Route::prefix('admin')->middleware(['auth:web',settings::class])->group(function
     Route::get('/categories/delete/{id}', [PageController::class, 'delete'])->name('admin.categories.delete');
     Route::get('/categories/disable/{id}', [PageController::class, 'disable'])->name('admin.categories.disable');
     Route::post('/categories/store', [PageController::class, 'store'])->name('admin.categories.store');
-    Route::get('/categories/create/cityWise', [PageController::class, 'createCityWise'])->name('admin.categories.createCityWise');
-    Route::get('/categories/create/stateWise', [PageController::class, 'createStateWise'])->name('admin.categories.createStateWise');
-    Route::get('/categories/create/countryWise', [PageController::class, 'createCountryWise'])->name('admin.categories.createCountryWise');
-    Route::post('/categories/storeBulkPages/{location}', [PageController::class, 'storeBulkPages'])->name('admin.categories.storeCountryWise');
+    
+    //city wise
+    Route::get('/categories/bulkPages/cityWise', [BulkPageController::class, 'cityWise'])->name('admin.categories.cityWise');
+    Route::get('/categories/create/cityWise', [BulkPageController::class, 'createCityWise'])->name('admin.categories.createCityWise');
+    Route::get('/categories/edit/cityWise/{id}', [BulkPageController::class, 'editCityWise'])->name('admin.categories.editCityWise');
+    //state wise
+    Route::get('/categories/bulkPages/stateWise', [BulkPageController::class, 'stateWise'])->name('admin.categories.stateWise');
+    Route::get('/categories/create/stateWise', [BulkPageController::class, 'createStateWise'])->name('admin.categories.createStateWise');
+    Route::get('/categories/edit/stateWise/{id}', [BulkPageController::class, 'editStateWise'])->name('admin.categories.editStateWise');
+    //country wise
+    Route::get('/categories/bulkPages/countryWise', [BulkPageController::class, 'countryWise'])->name('admin.categories.countryWise');
+    Route::get('/categories/create/countryWise', [BulkPageController::class, 'createCountryWise'])->name('admin.categories.createCountryWise');
+    Route::get('/categories/edit/countryWise/{id}', [BulkPageController::class, 'editCountryWise'])->name('admin.categories.editCountryWise');
+    
+    Route::post('/categories/storeBulkPages/{location}', [BulkPageController::class, 'storeBulkPages'])->name('admin.categories.storeCountryWise');
 
     //products
     Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
