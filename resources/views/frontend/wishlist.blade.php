@@ -125,6 +125,10 @@
                             text: "We have noted your request. Someone from our team will contact you soon",
                             icon: 'success',
                             confirmButtonText: 'Okay',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.reload();
+                            }
                         });
                     })
                     .catch(error => {
