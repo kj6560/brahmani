@@ -26,7 +26,7 @@
                     <!-- Example Product Card -->
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
-                            <img src="{{$product['product_banner'] ?? ""}}" class="card-img-top" alt="Product Image">
+                            <img src="{{asset('storage')}}/{{$product['product_banner'] ?? ""}}" class="card-img-top" alt="Product Image">
                             <div class="card-body">
                                 <h5 class="card-title">{{$product['product_name'] ?? ""}}</h5>
                                 <p class="card-text">₹ {{$product['product_price'] ?? ""}}</p>
