@@ -160,7 +160,7 @@ if(!empty($page_data['page_meta'])){
                                                 </li>
                                                 
                                                 <li class="dropdown">
-                                                    <a href="#">Products & Services</a>
+                                                    <a href="/product_category/0">Products & Services</a>
                                                     <ul>
                                                         @foreach ($settings['product_categories'] as $category)
                                                             <li><a
