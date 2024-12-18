@@ -168,7 +168,7 @@ class SettingsController extends Controller
     public function citiesSettings(Request $request)
     {
         $cities = City::all();
-        return view('backend.citiesSettings', ['cities' => $cities]);
+        return view('backend.settings.citiesSettings', ['cities' => $cities]);
     }
     public function storeCities(Request $request)
     {
@@ -195,7 +195,7 @@ class SettingsController extends Controller
     public function statesSettings(Request $request)
     {
         $states = State::all();
-        return view('backend.statesSettings', ['states' => $states]);
+        return view('backend.settings.statesSettings', ['states' => $states]);
     }
     public function storeStates(Request $request)
     {
@@ -222,7 +222,7 @@ class SettingsController extends Controller
     public function countriesSettings(Request $request)
     {
         $countries = Country::all();
-        return view('backend.countriesSettings', ['countries' => $countries]);
+        return view('backend.settings.countriesSettings', ['countries' => $countries]);
     }
     public function storeCountries(Request $request)
     {

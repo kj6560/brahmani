@@ -117,5 +117,7 @@ Route::prefix('admin')->middleware(['auth:web'])->group(function () {
     //countries
     Route::get('/countriesSettings', [SettingsController::class, 'countriesSettings'])->name('admin.countries.create');
     Route::post('/storeCountries', [SettingsController::class, 'storeCountries'])->name('admin.cities.storeCountries');
+    //account settings
+    Route::get('/accountSettings', [AdminController::class, 'accountSettings'])->name('admin.accountSettings');
 });
 
