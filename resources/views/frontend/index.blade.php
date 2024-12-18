@@ -105,7 +105,7 @@
                     <div class="pbmit-featured-img-wrapper">
                         <div class="pbmit-featured-wrapper">
                         <img src="{{asset('storage')}}/{{$categories->pro_cat_image}}"
-                        class="img-fluid" alt="{{$categories->pro_cat_name?''}}">
+                        class="img-fluid" alt="{{$categories->pro_cat_name??''}}">
                         </div>
                     </div>
                     <div class="pbminfotech-box-content">
