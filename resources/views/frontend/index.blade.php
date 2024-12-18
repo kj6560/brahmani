@@ -63,7 +63,7 @@
                 @foreach ($latest_categories as $cats)
                 <article class="pbmit-marquee-effect-style-1 swiper-slide">
                     <div class="pbmit-tag-wrapper">
-                        <h2 class="pbmit-element-title" data-text="Master Bedroom ">
+                        <h2 class="pbmit-element-title" data-text="{{$cats->pro_cat_name??''}}">
                             {{$cats->pro_cat_name??''}}
                         </h2>
                     </div>
