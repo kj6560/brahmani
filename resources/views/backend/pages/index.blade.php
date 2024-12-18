@@ -8,11 +8,11 @@
         <div class="col-sm-12">
           <a class="btn btn-primary" href="/admin/categories/create"><i class="fa fa-solid fa-plus"></i>
             Create Single Page</a>
-            <a class="btn btn-primary" href="/admin/categories/bulkPages/cityWise"><i class="fa fa-solid fa-plus"></i>
+          <a class="btn btn-primary" href="/admin/categories/bulkPages/cityWise"><i class="fa fa-solid fa-plus"></i>
             City Wise Pages</a>
-            <a class="btn btn-primary" href="/admin/categories/bulkPages/stateWise"><i class="fa fa-solid fa-plus"></i>
+          <a class="btn btn-primary" href="/admin/categories/bulkPages/stateWise"><i class="fa fa-solid fa-plus"></i>
             State Wise Pages</a>
-            <a class="btn btn-primary" href="/admin/categories/bulkPages/countryWise"><i class="fa fa-solid fa-plus"></i>
+          <a class="btn btn-primary" href="/admin/categories/bulkPages/countryWise"><i class="fa fa-solid fa-plus"></i>
             Country Wise Pages</a>
         </div>
       </div>
@@ -63,11 +63,28 @@
         name: 'page_name',
         orderable: true
       },
-      { 
+      {
         data: 'page_url',
         name: 'page_url',
         orderable: true,
-        
+        render: function (data, type, row) {
+          console.log(row.page_city);
+          var link = '';
+          if (row.page_city != undefined) {
+            d = window.location.origin + '/dPage/' + data;
+            link =  `<a href="${d}" target="_blank">${data}</a>`;
+          }else{
+            if(data){
+              d = window.location.origin + '/' + data;
+            }else{
+              d = window.location.origin;
+              data = 'Home Page';
+            }
+            
+            link =  `<a href="${d}" target="_blank">${data}</a>`;
+          }
+          return link;
+        }
       },
       {
         data: 'page_status',

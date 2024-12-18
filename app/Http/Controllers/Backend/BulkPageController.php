@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\BulkPage;
 use App\Models\City;
+use App\Models\Country;
 use App\Models\Pages;
 use App\Models\State;
 use Illuminate\Http\Request;
@@ -240,7 +241,7 @@ class BulkPageController extends Controller
                     $page->page_name = str_replace('country_name', $loc->country_name, $page_name);
                     $page->page_city = $loc->country_name;
                 }
-                $page->page_url = str_replace(' ', '-', strtolower($page->page_name));
+                $page->page_url = $this->slugify(strtolower($page->page_name));
                 
                 $page->page_parent = $data['page_parent'];
                 $page->page_status = $data['page_status'];
@@ -286,7 +287,7 @@ class BulkPageController extends Controller
     {
         $parents = Pages::where('page_parent', 0)->get();
         $cities = City::all();
-        return view('backend.pages.createCityWise', ['settings' => $request->settings,'parents' => $parents, 'cities' => $cities]);
+        return view('backend.pages.createCityWise', ['settings' => $request->settings,'parents' => $parents, 'cities' => $cities,'page' => null]);
     }
     public function editCityWise(Request $request,$id)
     {
@@ -299,7 +300,7 @@ class BulkPageController extends Controller
     {
         $parents = Pages::where('page_parent', 0)->get();
         $state = State::all();
-        return view('backend.pages.createStateWise', ['settings' => $request->settings,'parents' => $parents, 'states' => $state]);
+        return view('backend.pages.createStateWise', ['settings' => $request->settings,'parents' => $parents, 'states' => $state,'page' => null]);
     }
     public function editStateWise(Request $request,$id)
     {
@@ -311,7 +312,7 @@ class BulkPageController extends Controller
     public function createCountryWise(Request $request)
     {
         $parents = Pages::where('page_parent', 0)->get();
-        return view('backend.pages.createCountryWise', ['settings' => $request->settings,'parents' => $parents]);
+        return view('backend.pages.createCountryWise', ['settings' => $request->settings,'parents' => $parents,'page' => null]);
     }
     public function editCountryWise(Request $request,$id)
     {

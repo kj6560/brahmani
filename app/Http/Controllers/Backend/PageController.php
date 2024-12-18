@@ -20,7 +20,7 @@ class PageController extends Controller
         if ($request->ajax()) {
             $orders = DB::table('pages')
                 ->distinct()
-                ->select('id', 'page_name', 'page_url', 'page_status');
+                ->select('id', 'page_name', 'page_url', 'page_status','page_city');
 
             return DataTables::of($orders)
                 ->orderColumn('id', function ($query, $order) {

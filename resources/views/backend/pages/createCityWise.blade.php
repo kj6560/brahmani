@@ -40,7 +40,7 @@
                                 <label for="exampleInputUsername1">Page Name</label>
                                 <input type="text" name="page_name"
                                     value="{{!empty($page) && $page->page_name ? $page->page_name : old('page_name')}}"
-                                    {{ !empty($page) && !empty($page->id) ? 'disabled' : '' }}
+                                    
                                     class="form-control" id="exampleInputUsername1">
                             </div>
                             
