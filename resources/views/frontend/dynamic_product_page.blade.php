@@ -27,7 +27,7 @@
             <div class="pbmit-title-bar-content-inner">
                 <div class="pbmit-tbar">
                     <div class="pbmit-tbar-inner container">
-                        <h1 class="pbmit-tbar-title"> Some Product</h1>
+                        <h1 class="pbmit-tbar-title"> {{$product->product_name ??""}}</h1>
                     </div>
                 </div>
             </div>
