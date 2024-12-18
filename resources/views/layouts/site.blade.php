@@ -236,10 +236,12 @@ if(!empty($page_data['page_meta'])){
                                         @if (!empty($settings['logo']) && !empty($settings['Company_Name']))
                                         <img src="{{asset('storage')}}/{{$settings['logo']}}" alt="{{$settings['Company_Name'] ??''}}">
                                         @endif
-                                        
+                                        <h3 style="color: white;">{{$settings['Company_Name'] ??''}}</h3>
+                            <p style="color: white;">{{$settings['Office_Address'] ??''}}</p>
                                     </div>
                                 </div>
                             </aside>
+                            
                         </div>
                         <div class="col-md-4">
                             <aside class="widget pbmit-two-column-menu">
@@ -270,7 +272,7 @@ if(!empty($page_data['page_meta'])){
                                 <span class="pbmit-phone-number"> {{$settings['Official_Number'] ?? ''}}</span>
                             </div>
                             <div class="col-md-4 pbmit-footer-right">
-                                <span class="pbmit-address"> {{$settings['Office_Address'] ?? ''}}</span>
+                                <span class="pbmit-address"> </span>
                             </div>
                             <div class="col-md-4 pbmit-footer-right-social">
                                 <ul class="pbmit-social-links">
@@ -306,7 +308,7 @@ if(!empty($page_data['page_meta'])){
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="pbmit-footer-copyright-text-area"> Copyright © {{date('Y')}} <a
-                                        href="index.html">Brahmani Enterprises</a>, All Rights Reserved.</div>
+                                        href="/">Brahmani Enterprises</a>, All Rights Reserved.</div>
                             </div>
                         </div>
                     </div>
