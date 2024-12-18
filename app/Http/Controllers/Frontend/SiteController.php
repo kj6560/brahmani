@@ -15,7 +15,7 @@ class SiteController extends Controller
 {
     public function index(Request $request)
     {
-        $product_categories = ProductCategory::where('pro_cat_active', 1)->orderBy('id', 'desc')->limit(9)->get();
+        $product_categories = ProductCategory::where('pro_cat_active', 1)->orderBy('product_category_order', 'asc')->limit(9)->get();
         return view('frontend.index', ['settings' => $request->settings, 'latest_categories' => $product_categories]);
     }
     public function companyProfile(Request $request)
@@ -59,6 +59,7 @@ class SiteController extends Controller
         $query->name = $data['name'];
         $query->number = $data['phone'];
         $query->message = $data['message'];
+        $query->is_active = 1;
         if($query->save()){
             return redirect()->back()->with('success', 'Your query has been submitted successfully. We will get back to you soon');
         }else{

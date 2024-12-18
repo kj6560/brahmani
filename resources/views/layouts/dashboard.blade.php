@@ -162,7 +162,13 @@
                     Settings</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/admin/enquiries">Enquiries
                     Settings</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/accountSettings">Account
+                <li class="nav-item"> <a class="nav-link" href="/admin/accountSettings">Account
+                    Settings</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/admin/citiesSettings">Cities
+                    Settings</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/admin/statesSettings">States
+                    Settings</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/admin/countriesSettings">Countries
                     Settings</a></li>
               </ul>
             </div>

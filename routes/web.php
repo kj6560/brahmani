@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\EnquiriesController;
 use App\Http\Controllers\Backend\ForwardController;
 use App\Http\Controllers\Backend\FrontendMenuController;
 use App\Http\Controllers\Backend\PageContentController;
@@ -96,11 +97,9 @@ Route::prefix('admin')->middleware(['auth:web'])->group(function () {
     Route::get('/products/categories/delete/{id}', [ProductCategoryController::class, 'delete'])->name('admin.products.categories.delete');
     Route::get('/products/categories/disable/{id}', [ProductCategoryController::class, 'disable'])->name('admin.products.categories.disable');
 
-
-    Route::get('/menus', [FrontendMenuController::class, 'index'])->name('admin.menus.index');
-    Route::get('/menus/create', [FrontendMenuController::class, 'create'])->name('admin.menus.create');
-    Route::get('/menus/edit/{id}', [FrontendMenuController::class, 'edit'])->name('admin.menus.edit');
-    Route::post('/menus/store', [FrontendMenuController::class, 'store'])->name('store.menus.store');
-    Route::get('/menus/delete/{id}', [FrontendMenuController::class, 'delete'])->name('delete.menus.delete');
+    //enquiries
+    Route::get('/enquiries', [EnquiriesController::class, 'index'])->name('admin.enquiries.index');
+    Route::get('/enquiries/delete/{id}', [EnquiriesController::class, 'delete'])->name('admin.enquiries.delete');
+    
 });
 

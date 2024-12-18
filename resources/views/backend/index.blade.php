@@ -74,13 +74,13 @@
         window.location.href = "/admin/categories";
     }
     document.getElementById('product').onclick = function() {
-        window.location.href = "/admin";
+        window.location.href = "/admin/products";
     }
     document.getElementById('enquiries').onclick = function() {
-        window.location.href = "/admin";
+        window.location.href = "/admin/enquiries";
     }
     document.getElementById('account').onclick = function() {
-        window.location.href = "/admin";
+        window.location.href = "/admin/accountSettings";
     }
 </script>
 @endsection
