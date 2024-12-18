@@ -102,8 +102,8 @@ Route::prefix('admin')->middleware(['auth:web'])->group(function () {
     Route::get('/enquiries/delete/{id}', [EnquiriesController::class, 'delete'])->name('admin.enquiries.delete');
     
     //cities,states,countries
-    Route::get('/citiesSettings', [SettingsController::class, 'cities'])->name('admin.cities.create');
-    Route::get('/statesSettings', [SettingsController::class, 'states'])->name('admin.states.create');
-    Route::get('/countriesSettings', [SettingsController::class, 'countries'])->name('admin.countries.create');
+    Route::get('/citiesSettings', [SettingsController::class, 'citiesSettings'])->name('admin.cities.create');
+    Route::get('/statesSettings', [SettingsController::class, 'statesSettings'])->name('admin.states.create');
+    Route::get('/countriesSettings', [SettingsController::class, 'countriesSettings'])->name('admin.countries.create');
 });
 

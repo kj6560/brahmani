@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
+use App\Models\Country;
+use App\Models\State;
 use App\Models\WebsiteSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -160,5 +163,49 @@ class SettingsController extends Controller
         $settings->settings_value = json_encode($sliderImagesNames); // Save the full path relative to 'storage/app/public'
         $settings->save();
         return redirect()->back()->with('success', 'Slider images uploaded successfully.');
+    }
+
+    public function citiesSettings(Request $request)
+    {
+        $cities = City::all();
+        return view('backend.citiesSettings', ['cities'=>$cities]);
+    }
+    public function storeCities(Request $request)
+    {
+        $data = $request->all();
+        //dd($data);
+        unset($data['_token']);
+        foreach ($data as $key => $value) {
+            if(!empty($value)){
+                $city = City::find($key);
+                $city->is_active = $value;
+                $city->save();
+            }
+        }
+        return redirect()->back()->with('success', 'Cities updated successfully.');
+    }
+    public function statesSettings(Request $request)
+    {
+        $states = State::all();
+        return view('backend.statesSettings', ['states'=>$states]);
+    }
+    public function storeStates(Request $request)
+    {
+        $data = $request->all();
+        //dd($data);
+        unset($data['_token']);
+        foreach ($data as $key => $value) {
+            if(!empty($value)){
+                $state = State::find($key);
+                $state->is_active = $value;
+                $state->save();
+            }
+        }
+        return redirect()->back()->with('success', 'States updated successfully.');
+    }
+    public function countriesSettings(Request $request)
+    {
+        $countries = Country::all();
+        return view('backend.countriesSettings', ['countries'=>$countries]);
     }
 }
