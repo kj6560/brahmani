@@ -18,7 +18,7 @@ class SettingsController extends Controller
         if ($request->ajax()) {
             $orders = DB::table('website_settings')
                 ->distinct()
-                ->select('id', 'settings_key', 'settings_value','is_active');
+                ->select('id', 'settings_key', 'settings_value', 'is_active');
 
             return DataTables::of($orders)
                 ->orderColumn('id', function ($query, $order) {
@@ -71,35 +71,35 @@ class SettingsController extends Controller
     public function create(Request $request)
     {
         $settings = WebsiteSetting::where('is_active', 1)->first();
-        if($settings !=null){
+        if ($settings != null) {
             $settings = $settings->toArray();
         }
-        return view('backend.createSettings',['settings'=>$settings]);
+        return view('backend.createSettings', ['settings' => $settings]);
     }
-    public function edit(Request $request,$id)
+    public function edit(Request $request, $id)
     {
         $settings = WebsiteSetting::find($request->id);
 
-        return view('backend.createSettings', ['settings'=>$settings]);
-    }   
+        return view('backend.createSettings', ['settings' => $settings]);
+    }
     public function store(Request $request)
     {
         $data = $request->all();
         //dd($data);
         unset($data['_token']);
         $settings = WebsiteSetting::where('is_active', 1)->first();
-        if(empty($settings->id)){
+        if (empty($settings->id)) {
             $settings = new WebsiteSetting();
         }
-        if(!empty($data['logo'])){
+        if (!empty($data['logo'])) {
             $logo = $request->file('logo');
             $logoName = time() . '.' . $logo->getClientOriginalExtension();
             $filePath = $logo->storeAs('uploads', $logoName, 'public');
         }
         foreach ($data as $key => $value) {
-            if($key !="logo" && !empty($value)){
+            if ($key != "logo" && !empty($value)) {
                 $settings->$key = $value;
-            }else if($key=="logo"){
+            } else if ($key == "logo") {
                 $settings->$key = $filePath;
             }
         }
@@ -113,18 +113,18 @@ class SettingsController extends Controller
         foreach ($settings as $setting) {
             $allSettings[$setting->settings_key] = $setting->settings_value;
         }
-        return view('backend.uploadLogo',['logo'=>$allSettings['logo']]);
+        return view('backend.uploadLogo', ['logo' => $allSettings['logo']]);
     }
     public function storeLogo(Request $request)
     {
-        
+
         $logo = $request->file('logo');
         // Generate a unique file name
         $logoName = time() . '.' . $logo->getClientOriginalExtension();
-    
+
         // Store the file in the 'storage/app/public/uploads' directory
         $filePath = $logo->storeAs('uploads', $logoName, 'public');
-    
+
         // Save file name to the database
         $settings = WebsiteSetting::where('settings_key', 'logo')->first();
         if (!$settings) {
@@ -135,7 +135,7 @@ class SettingsController extends Controller
         }
         $settings->settings_value = $filePath; // Save the full path relative to 'storage/app/public'
         $settings->save();
-    
+
         return redirect()->back()->with('success', 'Logo uploaded successfully.');
     }
     public function uploadSliderImages(Request $request)
@@ -168,44 +168,82 @@ class SettingsController extends Controller
     public function citiesSettings(Request $request)
     {
         $cities = City::all();
-        return view('backend.citiesSettings', ['cities'=>$cities]);
+        return view('backend.citiesSettings', ['cities' => $cities]);
     }
     public function storeCities(Request $request)
     {
         $data = $request->all();
-        //dd($data);
         unset($data['_token']);
-        foreach ($data as $key => $value) {
-            if(!empty($value)){
-                $city = City::find($key);
-                $city->is_active = $value;
-                $city->save();
+        $active = [];
+        $cities =City::all();
+        if(!empty($data['status'])){
+            $active = array_keys($data['status']);
+        }else{
+            $active = [];
+        }
+        
+        foreach ($cities as $city) {
+            if(in_array($city->id,$active)){
+                $city->is_active = 1;
+            }else{
+                $city->is_active = 0;
             }
+            $city->save();
         }
         return redirect()->back()->with('success', 'Cities updated successfully.');
     }
     public function statesSettings(Request $request)
     {
         $states = State::all();
-        return view('backend.statesSettings', ['states'=>$states]);
+        return view('backend.statesSettings', ['states' => $states]);
     }
     public function storeStates(Request $request)
     {
         $data = $request->all();
-        //dd($data);
         unset($data['_token']);
-        foreach ($data as $key => $value) {
-            if(!empty($value)){
-                $state = State::find($key);
-                $state->is_active = $value;
-                $state->save();
-            }
+        $active = [];
+        $states =State::all();
+        if(!empty($data['status'])){
+            $active = array_keys($data['status']);
+        }else{
+            $active = [];
         }
-        return redirect()->back()->with('success', 'States updated successfully.');
+        
+        foreach ($states as $state) {
+            if(in_array($state->id,$active)){
+                $state->is_active = 1;
+            }else{
+                $state->is_active = 0;
+            }
+            $state->save();
+        }
+        return redirect()->back()->with('success', 'Cities updated successfully.');
     }
     public function countriesSettings(Request $request)
     {
         $countries = Country::all();
-        return view('backend.countriesSettings', ['countries'=>$countries]);
+        return view('backend.countriesSettings', ['countries' => $countries]);
+    }
+    public function storeCountries(Request $request)
+    {
+        $data = $request->all();
+        unset($data['_token']);
+        $active = [];
+        $countries =Country::all();
+        if(!empty($data['status'])){
+            $active = array_keys($data['status']);
+        }else{
+            $active = [];
+        }
+
+        foreach ($countries as $country) {
+            if(in_array($country->id, $active)){
+                $country->is_active = 1;
+            }else{
+                $country->is_active = 0;
+            }
+            $country->save();
+        }
+        return redirect()->back()->with('success', 'Countries updated successfully.');
     }
 }

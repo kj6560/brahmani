@@ -53,16 +53,20 @@ Route::prefix('admin')->get('/register', [AdminController::class, 'register'])->
 Route::prefix('admin')->post('/registerUser', [AdminController::class, 'registerUser'])->name('admin.registerUser');
 Route::prefix('admin')->middleware(['auth:web'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.index');
+
     //general settings
     Route::get('/createSiteSettings', [SettingsController::class, 'create'])->name('create.settings');
     Route::post('/storeSiteSettings', [SettingsController::class, 'store'])->name('store.settings');
+
     //logo
     Route::get('/uploadLogo', [SettingsController::class, 'uploadLogo'])->name('admin.uploadLogo');
     Route::post('/storeLogo', [SettingsController::class, 'storeLogo'])->name('store.settings.logo');
+
     //sliders
     Route::get('/sliders', [SliderController::class, 'index'])->name('admin.sliders');
     Route::get('/sliders/create', [SliderController::class, 'create'])->name('admin.sliders.create');
     Route::post('/sliders/store', [SliderController::class, 'store'])->name('store.sliders.store');
+
     //pages
     Route::get('/categories', [PageController::class, 'index'])->name('admin.categories.index');
     Route::get('/categories/create', [PageController::class, 'create'])->name('admin.categories.create');
@@ -101,9 +105,14 @@ Route::prefix('admin')->middleware(['auth:web'])->group(function () {
     Route::get('/enquiries', [EnquiriesController::class, 'index'])->name('admin.enquiries.index');
     Route::get('/enquiries/delete/{id}', [EnquiriesController::class, 'delete'])->name('admin.enquiries.delete');
     
-    //cities,states,countries
+    //cities
     Route::get('/citiesSettings', [SettingsController::class, 'citiesSettings'])->name('admin.cities.create');
+    Route::post('/storeCities', [SettingsController::class, 'storeCities'])->name('admin.cities.storeCities');
+    //states
     Route::get('/statesSettings', [SettingsController::class, 'statesSettings'])->name('admin.states.create');
+    Route::post('/storeStates', [SettingsController::class, 'storeStates'])->name('admin.cities.storeStates');
+    //countries
     Route::get('/countriesSettings', [SettingsController::class, 'countriesSettings'])->name('admin.countries.create');
+    Route::post('/storeCountries', [SettingsController::class, 'storeCountries'])->name('admin.cities.storeCountries');
 });
 
