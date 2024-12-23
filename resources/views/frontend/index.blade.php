@@ -473,17 +473,8 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 <h4 class="pbmit-subtitle">Contact Us</h4>
                                 <h2 class="pbmit-title">Happy to answer all your questions</h2>
                                 <div class="pbmit-heading-desc">
-                                    <p>CONTACT Details
-
-                                        Head office Vadodara :: Trading Unit no 8,9,9A Plot no 141,
-                                        Baroda Mosaic and Marble Company Compound ,
-                                        Opp TP-13 Water Tank, Dharamsinh Desai Marg,
-                                        Chhani Road. Vadodara 390002
-                                        Branch Office Meerut : : Rain Basera, Sardhana Road, Kanker Khera, Meerut-
-                                        250001 U.P.
-                                        : alkesh@b-ent.in
-                                        : +91-9978380007 , +91-9276869295, +91 8285257376
-                                    </p>
+                                    <p>Our team is here to help you with any questions you may have. Fill out the form
+                                    and we will get back to you as soon as possible.</p>
                                 </div>
                             </div>
                         </div>
