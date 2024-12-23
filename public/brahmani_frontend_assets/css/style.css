@@ -26,6 +26,7 @@
 .about-one-leftbox{
 	position: relative;
 	background-image: url(/brahmani_frontend_assets/images/homepage-1/other/about-us.jpg);
+    
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
