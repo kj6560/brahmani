@@ -69,7 +69,7 @@
               <input type="text" class="form-control">
             </div>
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown"
               aria-expanded="false">
               <i class="icon-mail icon-lg"></i>
@@ -112,7 +112,7 @@
                 </div>
               </a>
             </div>
-          </li>
+          </li> -->
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-xs rounded-circle" src="{{asset('dashboard/assets')}}/images/faces/face8.jpg"
