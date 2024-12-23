@@ -3,7 +3,7 @@
 <?php
 
 $page_data = !empty($settings['page_data']) ? $settings['page_data'] : [];
-if(!empty($page_data['page_meta'])){
+if (!empty($page_data['page_meta'])) {
     $metas = json_decode($page_data['page_meta']);
 }
 
@@ -19,15 +19,15 @@ if(!empty($page_data['page_meta'])){
     <meta name="keywords" content="{{$page_data['seo_keywords'] ?? ''}}">
     <meta name="robots" content="noindex, follow">
     <meta name="Robots" content="all">
-	<meta name="language" content="en-gb">
-	<meta name="rating" content="General">
-	<meta name="audience" content="All">
-	<meta name="Revisit-After" content="7 days">
-@if (!empty($metas))
-    @foreach ($metas as $meta)
-<meta name="{{$meta->name}}" content="{{$meta->value}}">
-	@endforeach
-@endif
+    <meta name="language" content="en-gb">
+    <meta name="rating" content="General">
+    <meta name="audience" content="All">
+    <meta name="Revisit-After" content="7 days">
+    @if (!empty($metas))
+        @foreach ($metas as $meta)
+            <meta name="{{$meta->name}}" content="{{$meta->value}}">
+        @endforeach
+    @endif
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('brahmani_frontend_assets')}}/images/fevicon.ico">
     <!-- CSS
@@ -58,10 +58,10 @@ if(!empty($page_data['page_meta'])){
     <link rel="stylesheet" href="{{asset('brahmani_frontend_assets')}}/css/responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php
-		echo $settings['gtag']??"";
-        if(!empty($settings['schema'])){
-            echo prepareSchema($settings, $settings['schema']);
-        }
+echo $settings['gtag'] ?? "";
+if (!empty($settings['schema'])) {
+    echo prepareSchema($settings, $settings['schema']);
+}
 	?>
     <style>
         .dropdown-menu {
@@ -105,11 +105,12 @@ if(!empty($page_data['page_meta'])){
                                 <div class="site-branding">
                                     <h6 class="site-title">
                                         <a href="/">
-                                        @if (!empty($settings['logo']))
-                                        <img src="{{asset('storage')}}/{{$settings['logo']}}" alt="{{$settings['Company_Name'] ??''}}">
-                                        @endif        
-                                    </a>
-                                    {{$settings['Company_Name'] ??''}}
+                                            @if (!empty($settings['logo']))
+                                                <img src="{{asset('storage')}}/{{$settings['logo']}}"
+                                                    alt="{{$settings['Company_Name'] ?? ''}}">
+                                            @endif
+                                        </a>
+                                        {{$settings['Company_Name'] ?? ''}}
                                     </h6>
                                     <div class="pbmit-sticky-corner  pbmit-top-right-corner">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill=""
@@ -126,7 +127,8 @@ if(!empty($page_data['page_meta'])){
                                 </div>
                                 <div class="pbmit-button-box">
                                     <div class="pbmit-header-button">
-                                        <a href="tel:{{htmlspecialchars(!empty($settings['Official_Number']) ? $settings['Official_Number']:'')}}">
+                                        <a
+                                            href="tel:{{htmlspecialchars(!empty($settings['Official_Number']) ? $settings['Official_Number'] : '')}}">
                                             <span
                                                 class="pbmit-header-button-text-1">{{$settings['Official_Number'] ?? ''}}</span>
                                         </a>
@@ -156,9 +158,9 @@ if(!empty($page_data['page_meta'])){
                                             <ul class="navigation clearfix">
                                                 <li class="active">
                                                     <a href="/">Home</a>
-                                                    
+
                                                 </li>
-                                                
+
                                                 <li class="dropdown">
                                                     <a href="/product_category/0">Products & Services</a>
                                                     <ul>
@@ -171,11 +173,11 @@ if(!empty($page_data['page_meta'])){
                                                 </li>
                                                 <li>
                                                     <a href="/contact_us">Contact Us</a>
-                                                    
+
                                                 </li>
                                                 <li>
                                                     <a href="/showWishlist">Wishlist</a>
-                                                    
+
                                                 </li>
                                             </ul>
                                         </div>
@@ -237,14 +239,15 @@ if(!empty($page_data['page_meta'])){
                                 <div class="textwidget">
                                     <div class="pbmit-footer-logo">
                                         @if (!empty($settings['logo']) && !empty($settings['Company_Name']))
-                                        <img src="{{asset('storage')}}/{{$settings['logo']}}" alt="{{$settings['Company_Name'] ??''}}">
+                                            <img src="{{asset('storage')}}/{{$settings['logo']}}"
+                                                alt="{{$settings['Company_Name'] ?? ''}}">
                                         @endif
-                                        <h3 style="color: white;">{{$settings['Company_Name'] ??''}}</h3>
-                            <p style="color: white;">{{$settings['Office_Address'] ??''}}</p>
+                                        <h3 style="color: white;">{{$settings['Company_Name'] ?? ''}}</h3>
+                                        <p style="color: white;">{{$settings['Office_Address'] ?? ''}}</p>
                                     </div>
                                 </div>
                             </aside>
-                            
+
                         </div>
                         <div class="col-md-4">
                             <aside class="widget pbmit-two-column-menu">
@@ -295,7 +298,8 @@ if(!empty($page_data['page_meta'])){
                                         </a>
                                     </li>
                                     <li class="pbmit-social-li pbmit-social-instagram">
-                                        <a title="Instagram" href="{{$setting['Instagram_Link'] ?? '#'}}" target="_blank">
+                                        <a title="Instagram" href="{{$setting['Instagram_Link'] ?? '#'}}"
+                                            target="_blank">
                                             <span><i class="pbmit-base-icon-instagram"></i></span>
                                         </a>
                                     </li>
@@ -310,8 +314,7 @@ if(!empty($page_data['page_meta'])){
                     <div class="pbmit-footer-text-inner">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="pbmit-footer-copyright-text-area"> Copyright © {{date('Y')}} <a
-                                        href="/">Brahmani Enterprises</a>, All Rights Reserved.</div>
+                                <div class="pbmit-footer-copyright-text-area"> Copyright © {{date('Y')}} {{$settings['Company_Name']??""}}, All Rights Reserved.</div>
                             </div>
                         </div>
                     </div>
@@ -373,12 +376,12 @@ if(!empty($page_data['page_meta'])){
                                 <div class="col-md-7">
                                     <h3>{{$pro->product_name ?? ""}}</h3>
                                     <p class="text-muted">Category: {{$pro->category_name ?? ""}}</p>
-                                    <!-- <p><strong>Price:</strong> $299.99</p> -->
                                     <p>
                                         {{$pro->product_description ?? ""}}
                                     </p>
                                     <div class="mt-3">
-                                        <button class="btn btn-success" id="wishlist" onclick="processWishlist({{$pro->id}})">Add to Wishlist</button>
+                                        <button class="btn btn-success" id="wishlist"
+                                            onclick="processWishlist({{$pro->id}})">Add to Wishlist</button>
                                         <a class="btn btn-secondary " href="/products/{{$pro->id ?? 1}}">See Details</a>
                                     </div>
                                 </div>
@@ -452,26 +455,25 @@ if(!empty($page_data['page_meta'])){
             // Reload the page
             location.reload();
         });
-        
         function processWishlist(id) {
-        console.log("processing: ",id);
+            console.log("processing: ", id);
             $.ajax({
                 url: '/wishlist/' + id,
                 type: 'GET',
                 success: function (response) {
                     console.log(response);
-                    if(response.success){
+                    if (response.success) {
                         Swal.fire({
-                        title: 'Done',
-                        text: "Product Added To Wishlist",
-                        icon: 'success',
-                        confirmButtonText: 'Okay',
+                            title: 'Done',
+                            text: "Product Added To Wishlist",
+                            icon: 'success',
+                            confirmButtonText: 'Okay',
 
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            //window.location.reload();
-                        }
-                    })
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                //window.location.reload();
+                            }
+                        })
                     }
                 },
                 error: function (xhr, status, error) {
