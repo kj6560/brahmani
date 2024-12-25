@@ -7,6 +7,18 @@
         padding: 30px;
         object-fit: cover;
     }
+    .pagination-nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    .pagination {
+        list-style: none;
+        display: flex;
+    }
+    .pagination .page-item {
+        margin: 0 5px;
+    }
 </style>
 <!-- Title Bar -->
 <div class="pbmit-title-bar-wrapper">
@@ -59,8 +71,10 @@
                         </div>
                     </article>
                 @endforeach
-
-
+            </div>
+            <!-- Render pagination links -->
+            <div class="pagination-wrapper">
+                {{ $category_products->links('vendor.pagination.custom') }}
             </div>
         </div>
     </section>

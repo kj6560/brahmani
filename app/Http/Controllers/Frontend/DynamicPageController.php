@@ -19,30 +19,14 @@ class DynamicPageController extends Controller
     {
 
         $product_category = ProductCategory::find($id);
-        if($id==0){
-            $category_products = Product::leftJoin('product_images as pi', 'pi.product_id', '=', 'products.id')
-            ->select(
-                'products.*',
-                DB::raw('GROUP_CONCAT(pi.image SEPARATOR ",") as all_images'),
-                DB::raw('GROUP_CONCAT(CONCAT(pi.image_alias) SEPARATOR ",") as image_aliases')
-            )
-            ->where('pi.image_status', 1)
-            ->where('products.product_status', 1)
-            ->groupBy('products.id')
-            ->get();
-        }else{
-            $category_products = Product::leftJoin('product_images as pi', 'pi.product_id', '=', 'products.id')
-            ->where('product_category', $id)
-            ->select(
-                'products.*',
-                DB::raw('GROUP_CONCAT(pi.image SEPARATOR ",") as all_images'),
-                DB::raw('GROUP_CONCAT(CONCAT(pi.image_alias) SEPARATOR ",") as image_aliases')
-            )
-            ->where('pi.image_status', 1)
-            ->where('products.product_status', 1)
-            ->groupBy('products.id')
-            ->get();
+        $category_products = Product::
+            where('product_status', 1)
+            ->groupBy('id');
+        if($id!=0){
+            $category_products = $category_products->where('product_category', $id);
+            
         }
+        $category_products = $category_products->paginate(10);
         return view('frontend.dynamic_cat_page', ['settings' => $request->settings, 'category' => $product_category, 'category_products' => $category_products]);
     }
     public function loadProducts(Request $request, $id)
