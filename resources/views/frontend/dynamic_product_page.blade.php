@@ -59,7 +59,7 @@ $params = json_decode($product->pro_params);
                 <!-- Product Details -->
                 <div class="col-md-6">
                     <h2 class="mb-3">{{$product->product_name??""}}</h2>
-                    <p class="text-muted mb-4">SKU: {{$product->sku??""}}</p>
+                    <p class="text-muted mb-4">SKU: {{$product->product_sku??""}}</p>
                     <div class="mb-3">
                         <span class="h4 me-2">₹ {{$product->product_price??"Not Available"}}</span>
                     </div>
