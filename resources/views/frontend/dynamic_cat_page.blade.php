@@ -56,8 +56,8 @@
                         <div class="pbminfotech-post-content">
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('storage')}}/{{$category_product->image}}"
-                                        class="img-fluid" alt="{{$category_product->image_alias}}">
+                                    <img src="{{asset('storage')}}/{{$category_product->product_banner}}"
+                                        class="img-fluid" alt="{{$category_product->product_name??''}}">
                                 </div>
                             </div>
                             <div class="pbminfotech-box-content">
