@@ -83,9 +83,12 @@ $params = json_decode($product->pro_params);
                     <div class="mt-4">
                         <h5>Key Features:</h5>
                         <ol>
-                            @foreach ($params as $param )
-                            <li>{{$param->name}}  :  {{$param->value}}</li>
-                            @endforeach
+                            @if ($params != null)
+                                @foreach ($params as $key => $value)
+                                    <li>{{$key}}: {{$value}}</li>
+                                @endforeach
+                            
+                            @endif
                             
                         </ol>
                     </div>
