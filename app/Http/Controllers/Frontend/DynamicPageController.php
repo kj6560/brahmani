@@ -26,7 +26,7 @@ class DynamicPageController extends Controller
             $category_products = $category_products->where('product_category', $id);
             
         }
-        $category_products = $category_products->paginate(10);
+        $category_products = $category_products->paginate(12);
         return view('frontend.dynamic_cat_page', ['settings' => $request->settings, 'category' => $product_category, 'category_products' => $category_products]);
     }
     public function loadProducts(Request $request, $id)
