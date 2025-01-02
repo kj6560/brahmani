@@ -13,13 +13,13 @@
 					<div class="pbmit-breadcrumb">
 						<div class="pbmit-breadcrumb-inner">
 							<span>
-								<a title="" href="#" class="home"><span>Xinterio</span></a>
+								<a title="" href="/" class="home"><span>{{$settings['Company_Name']}}</span></a>
 							</span>
 							<span class="sep">
 								<i class="pbmit-base-icon-angle-right"></i>
 							</span>
 							<span>
-								<a title="" href="#" class="home"><span>Interior</span></a>
+								<a title="" href="/blog" class="home"><span>Blogs</span></a>
 							</span>
 							<span class="sep">
 								<i class="pbmit-base-icon-angle-right"></i>
