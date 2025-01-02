@@ -19,7 +19,10 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                             <div class="row text-center">
                                 <div class="col-md-12">
                                     <div class="pbmit-slider-content">
-
+                                        <h5 class="pbmit-sub-title transform-top transform-delay-1">Build Smart.</h5>
+                                        <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
+                                            Innovative Materials<br> Lasting Impact.
+                                        </h2>
                                         <div class="pbmit-button transform-bottom-1 transform-delay-3">
                                             <a class="pbmit-btn pbmit-btn-outline" href="/contact_us">
                                                 <span class="pbmit-button-content-wrapper">
@@ -67,7 +70,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                     </div>
                                 </div>
                                 <div class="pbmit-ihbox-contents">
-                                    <h2 class="pbmit-element-title">Best <br>Supplier </h2>
+                                    <h2 class="pbmit-element-title">Best Awarded <br>Company </h2>
                                 </div>
                                 <div class="pbmit-sticky-corner  pbmit-bottom-left-corner">
                                     <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
@@ -87,44 +90,17 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
             <div class="col-md-12 col-xl-6">
                 <div class="about-one-rightbox">
                     <div class="pbmit-heading-subheading animation-style2">
-                        <h4 class="pbmit-subtitle">Trusted Name</h4>
-                        <h2 class="pbmit-title">PVC Panels and PVC Louver Suppliers in Vadodara.</h2>
+                        <h4 class="pbmit-subtitle">since 2009</h4>
+                        <h2 class="pbmit-title">Building Excellence, Together.</h2>
                         <div class="pbmit-heading-desc">
-                            <p>PVC Panels and PVC Louver Suppliers in Vadodara
-                                We have a renowned brand named- Krock India Gypsum that has made it's place in the
-                                market as the leading company to provide a
-                                range of construction items. Incase you are looking for a reliable brand that has a
-                                history of durability then consider Krock
-                                India Gypsum , is the most sturdy Gypsum Board Suppliers in Vadodara, is your trusted
-                                source for everything you need to build,
-                                renovate, or repair. We started out as a construction essential giving company and still
-                                staying to our roots we have advanced
-                                our portfolio to a massive number of items that we provide to our customers. Our goal at
-                                our company is simple: to provide
-                                top-quality construction essentials at prices that won't exceed your budget. We believe
-                                that everyone should have access to the
-                                tools and materials they need to bring their construction projects to life. No matter
-                                what you need for all your construction
-                                essentials may it is screws or floor or tile protection sheets you can trust that our
-                                tools and materials will stand up to the toughest jobs.
-
-                                We are the most durable Gypsum Ceiling Trader in Gujarat. We know construction can be
-                                expensive. That's why we work hard to keep
-                                our prices affordable, so you can get the job done without emptying your wallet. Our
-                                website is designed with simplicity in mind.
-                                Browse our wide range of products and place your order with ease, any time of day or
-                                night. We'll deliver your order to your doorstep,
-                                so you can focus on your project without the hassle of transportation.
-                                We have been the most lasting Gypsum Board Ceiling exporters in Gujarat. Stay safe on
-                                the job with our range of safety gear and equipment.
-                                Your well-being is our priority. If you are looking for this kind of product or
-                                materials then do consider us. We would love to serve you
-                                the best. Give us a chance to experience the difference of shopping with us. Build with
-                                confidence – start today!
-                            </p>
+                            Brahmani Enterprises is a leading provider of high-quality construction materials, serving
+                            the Indian market for over 16 years. We specialize in a wide range of products, including
+                            PVC panels, louvers, gypsum boards, and more. Our commitment to quality, customer
+                            satisfaction, and innovation has made us a trusted partner for builders, contractors, and
+                            homeowners across the country.
                         </div>
                     </div>
-                    <!-- <div class="row g-3">
+                    <div class="row g-3">
                         <div class="col-md-6">
                             <article class="pbmit-miconheading-style-9">
                                 <div class="pbmit-ihbox-style-9">
@@ -205,23 +181,641 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 </div>
                             </article>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- <div class="pbmit-ihbox pbmit-ihbox-style-5 pt-5">
-                        <div class="pbmit-ihbox-box d-flex align-items-center">
-                            <div class="pbmit-content-wrapper">
-                                <h2 class="pbmit-element-title">Jemilin E william</h2>
-                                <div class="pbmit-heading-desc">Founder</div>
+									<div class="pbmit-ihbox-box d-flex align-items-center">
+										<div class="pbmit-content-wrapper">
+											<h2 class="pbmit-element-title">Jemilin E william</h2>
+											<div class="pbmit-heading-desc">Founder</div>
+										</div>
+										<div class="pbmit-icon-wrapper">
+											<div class="pbmit-ihbox-icon">
+												<div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
+													<img src="images/homepage-1/sign.png" alt="Jemilin E william">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fid Start -->
+<section class="section-lgb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <div class="pbminfotech-ele-fid-style-2">
+                    <div class="pbmit-fld-contents">
+                        <div class="pbmit-fld-wrap">
+                            <div class="pbmit-fid-icon-title">
+                                <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
+                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-offer"></i>
+                                </div>
+                                <span class="pbmit-fid-title">Years of Experience</span>
                             </div>
-                            <div class="pbmit-icon-wrapper">
-                                <div class="pbmit-ihbox-icon">
-                                    <div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/sign.png" alt="Jemilin E william">
+                            <h4 class="pbmit-fid-inner">
+                                <span class="pbmit-fid-before"></span>
+                                <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits"
+                                    data-from="0" data-to="16" data-interval="1" data-before="" data-before-style=""
+                                    data-after="" data-after-style="">16</span>
+                                <span class="pbmit-fid"><sup>+</sup></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="pbminfotech-ele-fid-style-2">
+                    <div class="pbmit-fld-contents">
+                        <div class="pbmit-fld-wrap">
+                            <div class="pbmit-fid-icon-title">
+                                <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
+                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-engineer"></i>
+                                </div>
+                                <span class="pbmit-fid-title">Satisfied Customers</span>
+                            </div>
+                            <h4 class="pbmit-fid-inner">
+                                <span class="pbmit-fid-before"></span>
+                                <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits"
+                                    data-from="0" data-to="5483" data-interval="1" data-before="" data-before-style=""
+                                    data-after="" data-after-style="">5483</span>
+                                <span class="pbmit-fid"><sup>+</sup></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="pbminfotech-ele-fid-style-2">
+                    <div class="pbmit-fld-contents">
+                        <div class="pbmit-fld-wrap">
+                            <div class="pbmit-fid-icon-title">
+                                <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
+                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-client"></i>
+                                </div>
+                                <span class="pbmit-fid-title">Product Range</span>
+                            </div>
+                            <h4 class="pbmit-fid-inner">
+                                <span class="pbmit-fid-before"></span>
+                                <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits"
+                                    data-from="0" data-to="30" data-interval="1" data-before="" data-before-style=""
+                                    data-after="" data-after-style="">30</span>
+                                <span class="pbmit-fid"><span>+</span></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="pbminfotech-ele-fid-style-2">
+                    <div class="pbmit-fld-contents">
+                        <div class="pbmit-fld-wrap">
+                            <div class="pbmit-fid-icon-title">
+                                <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
+                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-conversation"></i>
+                                </div>
+                                <span class="pbmit-fid-title">Staff members</span>
+                            </div>
+                            <h4 class="pbmit-fid-inner">
+                                <span class="pbmit-fid-before"></span>
+                                <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits"
+                                    data-from="0" data-to="305" data-interval="1" data-before="" data-before-style=""
+                                    data-after="" data-after-style="">305</span>
+                                <span class="pbmit-fid"><sup>+</sup></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fid End -->
+
+<!-- Service Start -->
+<section class="pbmit-extend-animation service-one pbmit-bg-color-secondary">
+    <div class="container">
+        <div class="text-center position-relative">
+            <div class="pbmit-heading-subheading text-center animation-style2">
+                <h4 class="pbmit-subtitle">Exlpore</h4>
+                <h2 class="pbmit-title">What we offer for you</h2>
+            </div>
+            <div class="pbmit-service-highlight">
+                <h2>Our Products</h2>
+            </div>
+        </div>
+        <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false"
+            data-columns="3" data-margin="30" data-effect="slide">
+            <div class="swiper-wrapper">
+                <!-- Slide1 -->
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-01.jpg"
+                                            class="img-fluid" alt="service-01">
                                     </div>
                                 </div>
                             </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">PVC Panels</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Durable, versatile, and easy-to-clean wall and ceiling panels.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div> -->
-                </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Transforming Rooms">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <!-- Slide2 -->
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-02.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">PVC Louvers</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Efficient ventilation solutions for various applications.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Weaving Dreams">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <!-- Slide3 -->
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-03.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Charcoal Louvers</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Stylish and functional louvers with a unique aesthetic.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Interior Decorator">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <!-- Slide4 -->
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Fluted Panels</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Lightweight and aesthetically pleasing wall and ceiling panels.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <!-- Slide5 -->
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-05.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">WPC Panels</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Eco-friendly and durable wood-plastic composite panels.o</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Interior Work Plan">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Soffit Panels</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Ideal for covering the underside of roof overhangs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Super Heavy Panels</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>High-density panels for enhanced durability and strength.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Cement Sheets</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Versatile and cost-effective building material.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Glass Wool</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Excellent thermal and acoustic insulation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Gypsum Board</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Smooth and durable wall and ceiling material.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Gypsum Powder</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Used for creating smooth finishes and plastering.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Mineral Fiber Tiles</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Lightweight and fire-resistant ceiling tiles.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">Mouldings</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Decorative elements for enhancing the look of walls and ceilings.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">PVC Gypsum Tiles</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Decorative and durable ceiling tiles.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                    <div class="pbminfotech-post-item">
+                        <div class="pbminfotech-box-content">
+                            <div class="pbmit-service-image-wrapper">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/service/service-04.jpg"
+                                            class="img-fluid" alt="service-01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbmit-service-icon elementor-icon">
+                                <i class=""></i>
+                            </div>
+                            <div class="pbmit-content-box">
+                                <div class="pbmit-serv-cat">
+                                    <a href="#" rel="tag">Kitchen</a>
+                                </div>
+                                <h3 class="pbmit-service-title">
+                                    <a href="service-details.html">T-grid</a>
+                                </h3>
+                                <div class="pbmit-service-description">
+                                    <p>Suspension system for ceiling grids.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
+                            <span class="pbmit-button-icon">
+                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="text-center">
+            <div class="pbmit-service-text">
+                <p>Have a specific need? We can help! <span class="pbmit-globalcolor">Contact us</span></p>
             </div>
         </div>
     </div>
@@ -232,18 +826,20 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
         <div class="row">
             <div class="col-md-12 col-xl-4">
                 <div class="pbmit-heading-subheading animation-style2">
-                    <h4 class="pbmit-subtitle">industry Leader</h4>
+                    <h4 class="pbmit-subtitle">since 2009</h4>
                     <h2 class="pbmit-title">Why choose us</h2>
                 </div>
             </div>
             <div class="col-md-12 col-xl-6">
                 <div class="pbmit-heading-desc">
+                    At Brahmani Enterprises, we are more than just a supplier of construction materials. <br>We are your
+                    trusted partners, dedicated to providing exceptional service and ensuring your project's success.
                 </div>
             </div>
             <div class="col-md-12 col-xl-2">
                 <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
                     <span class="pbmit-button-content-wrapper">
-                        <span class="pbmit-button-text">Book Consult</span>
+                        <span class="pbmit-button-text">Contact Us Today</span>
                     </span>
                 </a>
             </div>
@@ -257,17 +853,16 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 <div class="pbmit-ihbox-icon">
                                     <div class="pbmit-ihbox-icon-wrapper">
                                         <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/other/Fire-Resistance.png"
-                                                class="pbmit-xinterio-icon pbmit-xinterio-icon-3d"></img>
+                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-stairs"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pbmit-ihbox-contents">
                                     <h2 class="pbmit-element-title">
-                                        Fire Resistance
+                                        Quality Assurance
                                     </h2>
-                                    <div class="pbmit-heading-desc">Fire-resistant materials prevent ignition and slow
-                                        fire spread for safety.</div>
+                                    <div class="pbmit-heading-desc">We prioritize the highest quality standards in all
+                                        our products.</div>
                                 </div>
                             </div>
                         </div>
@@ -278,39 +873,36 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 <div class="pbmit-ihbox-icon">
                                     <div class="pbmit-ihbox-icon-wrapper">
                                         <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/other/Cost-Effective.png"
-                                                class="pbmit-xinterio-icon pbmit-xinterio-icon-stairs"></i>
+                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-3d"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pbmit-ihbox-contents">
                                     <h2 class="pbmit-element-title">
-                                        Cost Effective
+                                        Extensive Experience
                                     </h2>
-                                    <div class="pbmit-heading-desc">Budget-friendly solutions offering value without
-                                        compromising quality or performance.</div>
+                                    <div class="pbmit-heading-desc">With over 16 years in the industry, we possess
+                                        in-depth knowledge and expertise.</div>
                                 </div>
                             </div>
                         </div>
                     </article>
-
                     <article class="pbmit-miconheading-style-8 col-md-12">
                         <div class="pbmit-ihbox-style-8">
                             <div class="pbmit-ihbox-box d-flex">
                                 <div class="pbmit-ihbox-icon">
                                     <div class="pbmit-ihbox-icon-wrapper">
                                         <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/other/Durability.png"
-                                                class="pbmit-xinterio-icon pbmit-xinterio-icon-stairs"></i>
+                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-kitchen"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pbmit-ihbox-contents">
                                     <h2 class="pbmit-element-title">
-                                        Durability
+                                        Wide Selection
                                     </h2>
-                                    <div class="pbmit-heading-desc">High durability ensures long-lasting performance and
-                                        resilience in challenging conditions.</div>
+                                    <div class="pbmit-heading-desc">Explore a comprehensive range of construction
+                                        materials to suit your every need.</div>
                                 </div>
                             </div>
                         </div>
@@ -331,17 +923,16 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 <div class="pbmit-ihbox-icon">
                                     <div class="pbmit-ihbox-icon-wrapper">
                                         <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/other/Versatility.png"
-                                                class="pbmit-xinterio-icon pbmit-xinterio-icon-stairs"></i>
+                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-axis"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pbmit-ihbox-contents">
                                     <h2 class="pbmit-element-title">
-                                        Versatility
+                                        Customer Focus
                                     </h2>
-                                    <div class="pbmit-heading-desc">Versatile design adapts to various needs, ensuring
-                                        flexible functionality.</div>
+                                    <div class="pbmit-heading-desc">We are dedicated to providing personalized service
+                                        and exceeding your expectations.</div>
                                 </div>
                             </div>
                         </div>
@@ -352,17 +943,16 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 <div class="pbmit-ihbox-icon">
                                     <div class="pbmit-ihbox-icon-wrapper">
                                         <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/other/Easy-Installation.png"
-                                                class="pbmit-xinterio-icon pbmit-xinterio-icon-stairs"></i>
+                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-brickwall-1"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pbmit-ihbox-contents">
                                     <h2 class="pbmit-element-title">
-                                        Easy Installation
+                                        Competitive Pricing
                                     </h2>
-                                    <div class="pbmit-heading-desc">Simple installation process for quick and
-                                        hassle-free setup convenience.</div>
+                                    <div class="pbmit-heading-desc">Enjoy competitive prices and attractive deals on a
+                                        wide range of products.</div>
                                 </div>
                             </div>
                         </div>
@@ -373,17 +963,16 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 <div class="pbmit-ihbox-icon">
                                     <div class="pbmit-ihbox-icon-wrapper">
                                         <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/other/Sound-Insulation.png"
-                                                class="pbmit-xinterio-icon pbmit-xinterio-icon-stairs"></i>
+                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-pantone"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pbmit-ihbox-contents">
                                     <h2 class="pbmit-element-title">
-                                        Sound Insulation
+                                        Reliable Delivery
                                     </h2>
-                                    <div class="pbmit-heading-desc">Materials dampen sound, enhancing privacy and
-                                        reducing noise for comfort.</div>
+                                    <div class="pbmit-heading-desc">We ensure timely and reliable delivery of your
+                                        orders.</div>
                                 </div>
                             </div>
                         </div>
@@ -440,8 +1029,8 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbminfotech-box-content">
                             <div class="pbminfotech-titlebox">
                                 <!-- <div class="pbmit-port-cat">
-                                                <a href="portfolio-grid-col-3.html" rel="tag"></a>
-                                            </div> -->
+                                                                                        <a href="portfolio-grid-col-3.html" rel="tag"></a>
+                                                                                    </div> -->
                                 <h3 class="pbmit-portfolio-title">
                                     <a href="/product_category/{{$categories->id}}">{{$categories->pro_cat_name}}</a>
                                 </h3>
@@ -461,6 +1050,520 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
     </section>
     <!-- Portfolio End -->
 @endif
+
+<!-- Testimonial Start -->
+<section class="pbmit-bg-color-light testimonial-one">
+    <div class="container pbmit-col-stretched-yes pbmit-col-right">
+        <div class="pbmit-col-stretched-right">
+            <div class="row g-0">
+                <div class="col-md-12 col-lg-3">
+                    <div class="pbmit-testimonialbox-left">
+                        <div class="pbmit-heading-subheading animation-style2">
+                            <h4 class="pbmit-subtitle">Client feedback</h4>
+                            <h2 class="pbmit-title">Hear from clients.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-9 pbmit-testimonialbox-right">
+                    <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false"
+                        data-arrows="true" data-columns="2.6" data-margin="30" data-effect="slide">
+                        <div class="swiper-wrapper">
+                            <!-- Slide1 -->
+                            <article class="pbmit-testimonial-style-1 swiper-slide">
+                                <div class="pbminfotech-post-item">
+                                    <div class="pbmit-box-content-wrap">
+                                        <div class="pbminfotech-box-star-ratings">
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                        </div>
+                                        <div class="pbminfotech-box-desc">
+                                            <blockquote class="pbminfotech-testimonial-text">
+                                                <p>We used Brahmani Enterprises' PVC panels for our new office in
+                                                    Mumbai. The quality is excellent, and the installation was seamless.
+                                                    The team was very professional and helpful throughout the process.
+                                                </p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="pbminfotech-box-author">
+                                            <div class="pbmit-auther-content">
+                                                <h3 class="pbminfotech-box-title">Mr. Rajesh Sharma</h3>
+                                                <div class="pbminfotech-testimonial-detail">Mumbai</div>
+                                            </div>
+                                        </div>
+                                        <div class="pbminfotech-box-img">
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/reviewer/reviewer-01.jpg"
+                                                        class="img-fluid" alt="reviewer-04">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- Slide2 -->
+                            <article class="pbmit-testimonial-style-1 swiper-slide">
+                                <div class="pbminfotech-post-item">
+                                    <div class="pbmit-box-content-wrap">
+                                        <div class="pbminfotech-box-star-ratings">
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                        </div>
+                                        <div class="pbminfotech-box-desc">
+                                            <blockquote class="pbminfotech-testimonial-text">
+                                                <p>We were extremely impressed with the quality of the gypsum boards
+                                                    from Brahmani Enterprises. We used them for our restaurant
+                                                    renovation in Vadodara, and they have significantly improved the
+                                                    overall look and feel of the space.</p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="pbminfotech-box-author">
+                                            <div class="pbmit-auther-content">
+                                                <h3 class="pbminfotech-box-title">Ms. Priya Singh</h3>
+                                                <div class="pbminfotech-testimonial-detail">Vadodara</div>
+                                            </div>
+                                        </div>
+                                        <div class="pbminfotech-box-img">
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/reviewer/reviewer-02.jpg"
+                                                        class="img-fluid" alt="reviewer-04">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- Slide3 -->
+                            <article class="pbmit-testimonial-style-1 swiper-slide">
+                                <div class="pbminfotech-post-item">
+                                    <div class="pbmit-box-content-wrap">
+                                        <div class="pbminfotech-box-star-ratings">
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                        </div>
+                                        <div class="pbminfotech-box-desc">
+                                            <blockquote class="pbminfotech-testimonial-text">
+                                                <p>Brahmani Enterprises provided us with excellent service and a wide
+                                                    range of high-quality construction materials for our residential
+                                                    project in Channi We are very satisfied with their products and
+                                                    would highly recommend them.</p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="pbminfotech-box-author">
+                                            <div class="pbmit-auther-content">
+                                                <h3 class="pbminfotech-box-title">Mr. Vijay Kumar</h3>
+                                                <div class="pbminfotech-testimonial-detail">Channi, Vadodara</div>
+                                            </div>
+                                        </div>
+                                        <div class="pbminfotech-box-img">
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/reviewer/reviewer-03.jpg"
+                                                        class="img-fluid" alt="reviewer-04">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- Slide4 -->
+                            <article class="pbmit-testimonial-style-1 swiper-slide">
+                                <div class="pbminfotech-post-item">
+                                    <div class="pbmit-box-content-wrap">
+                                        <div class="pbminfotech-box-star-ratings">
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                            <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                        </div>
+                                        <div class="pbminfotech-box-desc">
+                                            <blockquote class="pbminfotech-testimonial-text">
+                                                <p>We used Brahmani Enterprises' PVC panels for our new showroom in
+                                                    Meerut. The panels are durable, easy to clean, and give our showroom
+                                                    a modern and professional look.</p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="pbminfotech-box-author">
+                                            <div class="pbmit-auther-content">
+                                                <h3 class="pbminfotech-box-title">Mr. Arun Kumar</h3>
+                                                <div class="pbminfotech-testimonial-detail">Meerut</div>
+                                            </div>
+                                        </div>
+                                        <div class="pbminfotech-box-img">
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/reviewer/reviewer-04.jpg"
+                                                        class="img-fluid" alt="reviewer-04">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Testimonial End -->
+<!-- Client Start -->
+<section class="section-lgb pbmit-bg-color-light">
+    <div class="container">
+        <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="false"
+            data-columns="6" data-margin="0" data-effect="slide">
+            <div class="swiper-wrapper">
+                <!-- Slide1 -->
+                <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                            <h4 class="pbmit-hide">Client 12</h4>
+                            <div class="pbmit-client-hover-img">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-01.png" class="img-fluid" alt="">
+
+                            </div>
+                            <div class="pbmit-featured-img-wrapper">
+                                <div class="pbmit-featured-wrapper">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-01.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Slide2 -->
+                <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                            <h4 class="pbmit-hide">Client 12</h4>
+                            <div class="pbmit-client-hover-img">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-02.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="pbmit-featured-img-wrapper">
+                                <div class="pbmit-featured-wrapper">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-02.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Slide3 -->
+                <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                            <h4 class="pbmit-hide">Client 12</h4>
+                            <div class="pbmit-client-hover-img">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-03.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="pbmit-featured-img-wrapper">
+                                <div class="pbmit-featured-wrapper">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-03.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Slide4 -->
+                <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                            <h4 class="pbmit-hide">Client 12</h4>
+                            <div class="pbmit-client-hover-img">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-04.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="pbmit-featured-img-wrapper">
+                                <div class="pbmit-featured-wrapper">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-04.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Slide5 -->
+                <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                            <h4 class="pbmit-hide">Client 12</h4>
+                            <div class="pbmit-client-hover-img">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-05.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="pbmit-featured-img-wrapper">
+                                <div class="pbmit-featured-wrapper">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-05.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Slide6 -->
+                <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                            <h4 class="pbmit-hide">Client 12</h4>
+                            <div class="pbmit-client-hover-img">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-06.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="pbmit-featured-img-wrapper">
+                                <div class="pbmit-featured-wrapper">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-06.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Slide7 -->
+                <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                            <h4 class="pbmit-hide">Client 12</h4>
+                            <div class="pbmit-client-hover-img">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-07.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="pbmit-featured-img-wrapper">
+                                <div class="pbmit-featured-wrapper">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-07.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Slide8 -->
+                <article class="pbmit-client-style-1 swiper-slide">
+                    <div class="pbmit-border-wrapper">
+                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                            <h4 class="pbmit-hide">Client 12</h4>
+                            <div class="pbmit-client-hover-img">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-08.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="pbmit-featured-img-wrapper">
+                                <div class="pbmit-featured-wrapper">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-08.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Client End -->
+
+<!-- Video Start -->
+<section class="pbmit-bg-color-secondary video-section-one fadeIn animated animated-slow">
+    <div class="pbmit-bg-overlay"></div>
+    <div class="container">
+        <div class="text-center">
+            <div class="pbmit-heading-subheading-style-1 animation-style4">
+                <h4 class="pbmit-subtitle">Brahmani Enterprise</h4>
+                <h2 class="pbmit-title">Experience the luxury of elegant interiors. Explore our products and elevate
+                    your <br><span id="js-rotating">Houses, Apratemnts, Villas, Offices, Restaurants, Shopping
+                        Malls</span> spaces.</h2>
+            </div>
+            <div class="play-button">
+                <a class="pbmit-icon pbmin-lightbox-video" href="https://www.youtube.com/watch?v=Sv2_JktdvmQ">
+                    <i class="fa fa-play"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Video Start -->
+
+<!-- Blog Start -->
+<section class="section-md">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="pbmit-heading-subheading animation-style4">
+                    <h4 class="pbmit-subtitle">What we do</h4>
+                    <h2 class="pbmit-title">Latest posts & articles</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="blog-btn">
+                    <a class="pbmit-btn pbmit-btn-outline" href="blog-grid-col-4.html">
+                        <span class="pbmit-button-content-wrapper">
+                            <span class="pbmit-button-text">See all blogs</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row g-0 align-items-center">
+            <div class="col-md-12 col-xl-4">
+                <div class="row">
+                    <div class="blog-one-left-col">
+                        <article class="pbmit-ele-blog pbmit-blog-style-2 col-md-12">
+                            <div class="post-item">
+                                <div class="pbminfotech-box-content">
+                                    <div class="pbminfotech-content-inner">
+                                        <div class="pbmit-featured-img-wrapper">
+                                            <div class="pbmit-featured-wrapper">
+                                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-01.jpg" class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="pbmit-meta-wraper">
+                                            <div class="pbmit-meta-date-wrapper pbmit-meta-line">
+                                                <div class="pbmit-meta-date">
+                                                    <span class="pbmit-post-date">
+                                                        <i class="pbmit-base-icon-calendar-3"></i>May 09. 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-meta-author pbmit-meta-line">
+                                                <span class="pbmit-post-author">
+                                                    <i class="pbmit-base-icon-user-3"></i>
+                                                    <span>By</span>admin
+                                                </span>
+                                            </div>
+                                            <div class="pbmit-content-wrapper">
+                                                <h3 class="pbmit-post-title">
+                                                    <a href="blog-single-details.html">Frequently Utilized Metal Welding
+                                                        System</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="pbmit-ele-blog pbmit-blog-style-2 col-md-12">
+                            <div class="post-item">
+                                <div class="pbminfotech-box-content">
+                                    <div class="pbminfotech-content-inner">
+                                        <div class="pbmit-featured-img-wrapper">
+                                            <div class="pbmit-featured-wrapper">
+                                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-02.jpg" class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="pbmit-meta-wraper">
+                                            <div class="pbmit-meta-date-wrapper pbmit-meta-line">
+                                                <div class="pbmit-meta-date">
+                                                    <span class="pbmit-post-date">
+                                                        <i class="pbmit-base-icon-calendar-3"></i>May 09. 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-meta-author pbmit-meta-line">
+                                                <span class="pbmit-post-author">
+                                                    <i class="pbmit-base-icon-user-3"></i>
+                                                    <span>By</span>admin
+                                                </span>
+                                            </div>
+                                            <div class="pbmit-content-wrapper">
+                                                <h3 class="pbmit-post-title">
+                                                    <a href="blog-single-details.html">How Does One Go About Buying
+                                                        Furniture?</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="pbmit-ele-blog pbmit-blog-style-2 col-md-12">
+                            <div class="post-item">
+                                <div class="pbminfotech-box-content">
+                                    <div class="pbminfotech-content-inner">
+                                        <div class="pbmit-featured-img-wrapper">
+                                            <div class="pbmit-featured-wrapper">
+                                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-03.jpg" class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="pbmit-meta-wraper">
+                                            <div class="pbmit-meta-date-wrapper pbmit-meta-line">
+                                                <div class="pbmit-meta-date">
+                                                    <span class="pbmit-post-date">
+                                                        <i class="pbmit-base-icon-calendar-3"></i>May 09. 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-meta-author pbmit-meta-line">
+                                                <span class="pbmit-post-author">
+                                                    <i class="pbmit-base-icon-user-3"></i>
+                                                    <span>By</span>admin
+                                                </span>
+                                            </div>
+                                            <div class="pbmit-content-wrapper">
+                                                <h3 class="pbmit-post-title">
+                                                    <a href="blog-single-details.html">Four Ways for Creating Extra
+                                                        Space in Small Homes</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-xl-8">
+                <div class="blog-one-right-col">
+                    <article class="pbmit-ele-blog pbmit-blog-style-3">
+                        <div class="post-item d-flex">
+                            <div class="pbmit-featured-container">
+                                <div class="pbmit-bg-image"
+                                    style="background-image:url('{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-04b.jpg')">
+                                    <div class="pbmit-featured-img-wrapper">
+                                        <div class="pbmit-featured-wrapper">
+                                            <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-04.jpg" class="img-fluid"
+                                                alt="blog-01">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pbminfotech-box-wrap">
+                                <div class="pbminfotech-box-content">
+                                    <div class="pbmit-date-admin-wraper d-flex align-items-center">
+                                        <div class="pbmit-meta-date pbmit-meta-line">
+                                            <span class="pbmit-post-date">
+                                                <i class="pbmit-base-icon-calendar-3"></i>May 09. 2024
+                                            </span>
+                                        </div>
+                                        <div class="pbmit-meta-author pbmit-meta-line">
+                                            <span class="pbmit-post-author">
+                                                <i class="pbmit-base-icon-user-3"></i>
+                                                <span>By</span>admin
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <h3 class="pbmit-post-title">
+                                        <a href="blog-single-details.html">How To Choose The Right Furniture Of Your
+                                            Home</a>
+                                    </h3>
+                                    <div class="pbminfotech-box-desc">
+                                        Modest, recently established interior design company that seeks to address a
+                                        variety of topics, including…
+                                    </div>
+                                </div>
+                                <a class="pbmit-blog-btn" href="blog-single-details.html">
+                                    <span class="pbmit-button-icon">
+                                        <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog End -->
 <!-- Contact Form -->
 <section class="pbmit-sticky-section">
     <div class="container">
@@ -474,7 +1577,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 <h2 class="pbmit-title">Happy to answer all your questions</h2>
                                 <div class="pbmit-heading-desc">
                                     <p>Our team is here to help you with any questions you may have. Fill out the form
-                                    and we will get back to you as soon as possible.</p>
+                                        and we will get back to you as soon as possible.</p>
                                 </div>
                             </div>
                         </div>
