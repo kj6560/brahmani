@@ -34,6 +34,8 @@ Route::get('/companyProfile', [SiteController::class, 'companyProfile'])->middle
 Route::get('/pageError', [SiteController::class, 'pageError'])->name('frontend.pageError');
 Route::get('/sitemap', [SiteController::class, 'sitemap'])->middleware([settings::class])->name('frontend.sitemap');
 Route::get('/contact_us', [SiteController::class,'contactUs'])->middleware([settings::class])->name('frontend.contactUs');
+Route::get('/about_us', [SiteController::class,'aboutUs'])->middleware([settings::class])->name('frontend.aboutUs');
+Route::get('/blog', [SiteController::class,'blog'])->middleware([settings::class])->name('frontend.blog');
 Route::post('/storeQuery', [SiteController::class,'storeQuery'])->middleware([settings::class])->name('frontend.storeQuery');
 Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::get('/logout', [AdminController::class, 'logout'])->name('backend.logout');

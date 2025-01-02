@@ -815,7 +815,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
         </div>
         <div class="text-center">
             <div class="pbmit-service-text">
-                <p>Have a specific need? We can help! <span class="pbmit-globalcolor">Contact us</span></p>
+                <p>Have a specific need? We can help! <a href="/contact_us"><span class="pbmit-globalcolor">Contact us</span></a></p>
             </div>
         </div>
     </div>

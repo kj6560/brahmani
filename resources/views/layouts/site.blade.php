@@ -56,6 +56,8 @@ if (!empty($page_data['page_meta'])) {
     <link rel="stylesheet" href="{{asset('brahmani_frontend_assets')}}/css/style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('brahmani_frontend_assets')}}/css/responsive.css">
+    <!-- Twentytwenty CSS -->
+    <link rel="stylesheet" href="{{asset('brahmani_frontend_assets')}}/css/twentytwenty.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php
 echo $settings['gtag'] ?? "";
@@ -161,6 +163,11 @@ if (!empty($settings['schema'])) {
 
                                                 </li>
 
+                                                <li>
+                                                    <a href="/about_us">About Us</a>
+
+                                                </li>
+
                                                 <li class="dropdown">
                                                     <a href="/product_category/0">Products & Services</a>
                                                     <ul>
@@ -170,6 +177,10 @@ if (!empty($settings['schema'])) {
                                                             </li>
                                                         @endforeach
                                                     </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="/blog">Blog</a>
+
                                                 </li>
                                                 <li>
                                                     <a href="/contact_us">Contact Us</a>
@@ -314,7 +325,9 @@ if (!empty($settings['schema'])) {
                     <div class="pbmit-footer-text-inner">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="pbmit-footer-copyright-text-area"> Copyright © {{date('Y')}} {{$settings['Company_Name']??""}}, All Rights Reserved.</div>
+                                <div class="pbmit-footer-copyright-text-area"> Copyright © {{date('Y')}}
+                                    {{$settings['Company_Name'] ?? ""}}, All Rights Reserved.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -400,6 +413,9 @@ if (!empty($settings['schema'])) {
 		============================================ -->
     <!-- jQuery JS -->
     <script src="{{asset('brahmani_frontend_assets')}}/js/jquery.min.js"></script>
+    <!-- Twentytwenty JS -->
+    <script src="{{asset('brahmani_frontend_assets')}}/js/jquery.event.move.js"></script>
+    <script src="{{asset('brahmani_frontend_assets')}}/js/jquery.twentytwenty.js"></script>
     <!-- Popper JS -->
     <script src="{{asset('brahmani_frontend_assets')}}/js/popper.min.js"></script>
     <!-- Bootstrap JS -->
@@ -437,6 +453,7 @@ if (!empty($settings['schema'])) {
     <script src="{{asset('brahmani_frontend_assets')}}/js/isotope.pkgd.min.js"></script>
     <!-- Scripts JS -->
     <script src="{{asset('brahmani_frontend_assets')}}/js/scripts.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var search = "<?php echo isset($settings['search']) ? addslashes($settings['search']) : ''; ?>";
