@@ -36,6 +36,7 @@ Route::get('/sitemap', [SiteController::class, 'sitemap'])->middleware([settings
 Route::get('/contact_us', [SiteController::class,'contactUs'])->middleware([settings::class])->name('frontend.contactUs');
 Route::get('/about_us', [SiteController::class,'aboutUs'])->middleware([settings::class])->name('frontend.aboutUs');
 Route::get('/blog', [SiteController::class,'blog'])->middleware([settings::class])->name('frontend.blog');
+Route::get('/blog_detail', [SiteController::class,'blogDetails'])->middleware([settings::class])->name('frontend.blogDetails');
 Route::post('/storeQuery', [SiteController::class,'storeQuery'])->middleware([settings::class])->name('frontend.storeQuery');
 Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::get('/logout', [AdminController::class, 'logout'])->name('backend.logout');

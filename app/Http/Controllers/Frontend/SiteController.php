@@ -45,6 +45,10 @@ class SiteController extends Controller
     {
         return view('frontend.blog', ['settings' => $request->settings]);
     }
+    public function blogDetails(Request $request)
+    {
+        return view('frontend.blogDetails', ['settings' => $request->settings]);
+    }
     public function storeQuery(Request $request)
     {
         $defaultMessage = "To Get Best Quotes describe your requirements in detail like";

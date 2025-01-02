@@ -40,12 +40,12 @@
 											<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-01b.jpg" class="img-fluid" alt="">
 										</div>
 									</div>
-									<a class="pbmit-blog-btn" href="blog-single-details.html" title="How To Choose The Right  Furniture Of Your Home">
+									<a class="pbmit-blog-btn" href="/blog_detail" title="How To Choose The Right  Furniture Of Your Home">
 										<span class="pbmit-button-icon">
 											<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 										</span>
 									</a>
-									<a class="pbmit-link" href="blog-single-details.html"></a>
+									<a class="pbmit-link" href="/blog_detail"></a>
 								</div>
 								<div class="pbmit-content-wrapper">
 									<div class="pbmit-date-wraper d-flex align-items-center">
@@ -63,7 +63,7 @@
 										</div>
 									</div>
 									<h3 class="pbmit-post-title">
-										<a href="blog-single-details.html">How To Choose The Right  Furniture Of Your Home</a>
+										<a href="/blog_detail">How To Choose The Right  Furniture Of Your Home</a>
 									</h3>
 									<div class="pbminfotech-box-desc">
 										Modest, recently established interior design company that seeks to address a variety of topics, including… 
@@ -81,12 +81,12 @@
 											<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-02b.jpg" class="img-fluid" alt="">
 										</div>
 									</div>
-									<a class="pbmit-blog-btn" href="blog-single-details.html" title="Frequently Utilized Metal Welding System">
+									<a class="pbmit-blog-btn" href="/blog_detail" title="Frequently Utilized Metal Welding System">
 										<span class="pbmit-button-icon">
 											<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 										</span>
 									</a>
-									<a class="pbmit-link" href="blog-single-details.html"></a>
+									<a class="pbmit-link" href="/blog_detail"></a>
 								</div>
 								<div class="pbmit-content-wrapper">
 									<div class="pbmit-date-wraper d-flex align-items-center">
@@ -104,7 +104,7 @@
 										</div>
 									</div>
 									<h3 class="pbmit-post-title">
-										<a href="blog-single-details.html">Frequently Utilized Metal Welding System</a>
+										<a href="/blog_detail">Frequently Utilized Metal Welding System</a>
 									</h3>
 									<div class="pbminfotech-box-desc">
 										Modest, recently established interior design company that seeks to address a variety of topics, including… 
@@ -122,12 +122,12 @@
 											<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-03b.jpg" class="img-fluid" alt="">
 										</div>
 									</div>
-									<a class="pbmit-blog-btn" href="blog-single-details.html" title="How Does One Go About Buying Furniture?">
+									<a class="pbmit-blog-btn" href="/blog_detail" title="How Does One Go About Buying Furniture?">
 										<span class="pbmit-button-icon">
 											<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 										</span>
 									</a>
-									<a class="pbmit-link" href="blog-single-details.html"></a>
+									<a class="pbmit-link" href="/blog_detail"></a>
 								</div>
 								<div class="pbmit-content-wrapper">
 									<div class="pbmit-date-wraper d-flex align-items-center">
@@ -145,7 +145,7 @@
 										</div>
 									</div>
 									<h3 class="pbmit-post-title">
-										<a href="blog-single-details.html">How Does One Go About Buying Furniture?</a>
+										<a href="/blog_detail">How Does One Go About Buying Furniture?</a>
 									</h3>
 									<div class="pbminfotech-box-desc">
 										Modest, recently established interior design company that seeks to address a variety of topics, including… 
@@ -163,12 +163,12 @@
 											<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-04b.jpg" class="img-fluid" alt="">
 										</div>
 									</div>
-									<a class="pbmit-blog-btn" href="blog-single-details.html" title="Four Ways for Creating Extra Space in Small Homes">
+									<a class="pbmit-blog-btn" href="/blog_detail" title="Four Ways for Creating Extra Space in Small Homes">
 										<span class="pbmit-button-icon">
 											<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 										</span>
 									</a>
-									<a class="pbmit-link" href="blog-single-details.html"></a>
+									<a class="pbmit-link" href="/blog_detail"></a>
 								</div>
 								<div class="pbmit-content-wrapper">
 									<div class="pbmit-date-wraper d-flex align-items-center">
@@ -186,7 +186,7 @@
 										</div>
 									</div>
 									<h3 class="pbmit-post-title">
-										<a href="blog-single-details.html">Four Ways for Creating Extra Space in Small Homes</a>
+										<a href="/blog_detail">Four Ways for Creating Extra Space in Small Homes</a>
 									</h3>
 									<div class="pbminfotech-box-desc">
 										Modest, recently established interior design company that seeks to address a variety of topics, including… 
@@ -204,12 +204,12 @@
 											<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-05b.jpg" class="img-fluid" alt="">
 										</div>
 									</div>
-									<a class="pbmit-blog-btn" href="blog-single-details.html" title="Things to Consider While Selecting the Ideal Sofa">
+									<a class="pbmit-blog-btn" href="/blog_detail" title="Things to Consider While Selecting the Ideal Sofa">
 										<span class="pbmit-button-icon">
 											<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 										</span>
 									</a>
-									<a class="pbmit-link" href="blog-single-details.html"></a>
+									<a class="pbmit-link" href="/blog_detail"></a>
 								</div>
 								<div class="pbmit-content-wrapper">
 									<div class="pbmit-date-wraper d-flex align-items-center">
@@ -227,7 +227,7 @@
 										</div>
 									</div>
 									<h3 class="pbmit-post-title">
-										<a href="blog-single-details.html">Things to Consider While Selecting the Ideal Sofa</a>
+										<a href="/blog_detail">Things to Consider While Selecting the Ideal Sofa</a>
 									</h3>
 									<div class="pbminfotech-box-desc">
 										Modest, recently established interior design company that seeks to address a variety of topics, including… 
@@ -245,12 +245,12 @@
 											<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-06b.jpg" class="img-fluid" alt="">
 										</div>
 									</div>
-									<a class="pbmit-blog-btn" href="blog-single-details.html" title="Top 10 Tips for Your Kitchen Interior Design">
+									<a class="pbmit-blog-btn" href="/blog_detail" title="Top 10 Tips for Your Kitchen Interior Design">
 										<span class="pbmit-button-icon">
 											<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 										</span>
 									</a>
-									<a class="pbmit-link" href="blog-single-details.html"></a>
+									<a class="pbmit-link" href="/blog_detail"></a>
 								</div>
 								<div class="pbmit-content-wrapper">
 									<div class="pbmit-date-wraper d-flex align-items-center">
@@ -268,7 +268,7 @@
 										</div>
 									</div>
 									<h3 class="pbmit-post-title">
-										<a href="blog-single-details.html">Top 10 Tips for Your Kitchen Interior Design</a>
+										<a href="/blog_detail">Top 10 Tips for Your Kitchen Interior Design</a>
 									</h3>
 									<div class="pbminfotech-box-desc">
 										Modest, recently established interior design company that seeks to address a variety of topics, including… 
@@ -286,12 +286,12 @@
 											<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-07b.jpg" class="img-fluid" alt="">
 										</div>
 									</div>
-									<a class="pbmit-blog-btn" href="blog-single-details.html" title="The Golden Ratio Rule for Best 2D Sketch">
+									<a class="pbmit-blog-btn" href="/blog_detail" title="The Golden Ratio Rule for Best 2D Sketch">
 										<span class="pbmit-button-icon">
 											<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 										</span>
 									</a>
-									<a class="pbmit-link" href="blog-single-details.html"></a>
+									<a class="pbmit-link" href="/blog_detail"></a>
 								</div>
 								<div class="pbmit-content-wrapper">
 									<div class="pbmit-date-wraper d-flex align-items-center">
@@ -309,7 +309,7 @@
 										</div>
 									</div>
 									<h3 class="pbmit-post-title">
-										<a href="blog-single-details.html">The Golden Ratio Rule for Best 2D Sketch</a>
+										<a href="/blog_detail">The Golden Ratio Rule for Best 2D Sketch</a>
 									</h3>
 									<div class="pbminfotech-box-desc">
 										Modest, recently established interior design company that seeks to address a variety of topics, including… 
@@ -327,12 +327,12 @@
 											<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-08b.jpg" class="img-fluid" alt="">
 										</div>
 									</div>
-									<a class="pbmit-blog-btn" href="blog-single-details.html" title="Color Schemes for Your Home That Will Greet Spring">
+									<a class="pbmit-blog-btn" href="/blog_detail" title="Color Schemes for Your Home That Will Greet Spring">
 										<span class="pbmit-button-icon">
 											<i class="pbmit-base-icon-pbmit-up-arrow"></i>
 										</span>
 									</a>
-									<a class="pbmit-link" href="blog-single-details.html"></a>
+									<a class="pbmit-link" href="/blog_detail"></a>
 								</div>
 								<div class="pbmit-content-wrapper">
 									<div class="pbmit-date-wraper d-flex align-items-center">
@@ -350,7 +350,7 @@
 										</div>
 									</div>
 									<h3 class="pbmit-post-title">
-										<a href="blog-single-details.html">Color Schemes for Your Home That Will Greet Spring</a>
+										<a href="/blog_detail">Color Schemes for Your Home That Will Greet Spring</a>
 									</h3>
 									<div class="pbminfotech-box-desc">
 										Modest, recently established interior design company that seeks to address a variety of topics, including… 
