@@ -53,7 +53,7 @@
 												</span>
 												<span class="pbmit-meta pbmit-meta-date">
 													<i class="pbmit-base-icon-calendar-3"></i>
-													<a href="blog-single-details.html" rel="bookmark">
+													<a href="/blog_detail" rel="bookmark">
 														<time class="entry-date published" datetime="2023-08-29T09:05:54+00:00">May 9, 2024</time>
 														<time class="updated pbmit-hide" datetime="2023-10-19T05:42:54+00:00">May 22, 2024</time>
 													</a>
@@ -129,7 +129,7 @@
 									<nav class="navigation post-navigation" aria-label="Posts">
 										<div class="nav-links">
 											<div class="nav-previous">
-												<a href="blog-single-details.html" rel="prev">
+												<a href="/blog_detail" rel="prev">
 													<span class="pbmit-post-nav-icon">
 														<i class="pbmit-base-icon-left-arrow-1"></i>
 														<span class="pbmit-post-nav-head">Previous Post</span>
@@ -326,41 +326,41 @@
 								<h2 class="widget-title">Recent Posts</h2>
 								<ul class="recent-post-list">
 									<li class="recent-post-list-li"> 
-										<a class="recent-post-thum" href="blog-single-details.html">
+										<a class="recent-post-thum" href="/blog_detail">
 											<img src="{{asset('brahmani_frontend_assets')}}/images/recent-post/blog-01.jpg" class="img-fluid" alt="">
 										</a>
 										<div class="pbmit-rpw-content">
 											<span class="pbmit-rpw-date">
-												<a href="blog-single-details.html">May 9, 2024</a>
+												<a href="/blog_detail">May 9, 2024</a>
 											</span>
 											<span class="pbmit-rpw-title">
-												<a href="blog-single-details.html">How To Choose The Right  Furniture Of Your Home</a>
+												<a href="/blog_detail">How To Choose The Right  Furniture Of Your Home</a>
 											</span>
 										</div> 
 									</li>
 									<li class="recent-post-list-li"> 
-										<a class="recent-post-thum" href="blog-single-details.html">
+										<a class="recent-post-thum" href="/blog_detail">
 											<img src="{{asset('brahmani_frontend_assets')}}/images/recent-post/blog-02.jpg" class="img-fluid" alt="">
 										</a>
 										<div class="pbmit-rpw-content">
 											<span class="pbmit-rpw-date">
-												<a href="blog-single-details.html">May 9, 2024</a>
+												<a href="/blog_detail">May 9, 2024</a>
 											</span>
 											<span class="pbmit-rpw-title">
-												<a href="blog-single-details.html">Frequently Utilized Metal Welding System</a>
+												<a href="/blog_detail">Frequently Utilized Metal Welding System</a>
 											</span>
 										</div> 
 									</li>
 									<li class="recent-post-list-li"> 
-										<a class="recent-post-thum" href="blog-single-details.html">
+										<a class="recent-post-thum" href="/blog_detail">
 											<img src="{{asset('brahmani_frontend_assets')}}/images/recent-post/blog-03.jpg" class="img-fluid" alt="">
 										</a>
 										<div class="pbmit-rpw-content">
 											<span class="pbmit-rpw-date">
-												<a href="blog-single-details.html">May 9, 2024</a>
+												<a href="/blog_detail">May 9, 2024</a>
 											</span>
 											<span class="pbmit-rpw-title">
-												<a href="blog-single-details.html">How Does One Go About Buying Furniture?</a>
+												<a href="/blog_detail">How Does One Go About Buying Furniture?</a>
 											</span>
 										</div> 
 									</li>
