@@ -42,6 +42,9 @@ class DynamicPageController extends Controller
             )
             ->groupBy('products.id')
             ->first();
+        if(!$product){
+            return redirect()->back()->with('error', 'Product not found');
+        }
         return view('frontend.dynamic_product_page', ['settings' => $request->settings, 'product' => $product]);
     }
 }
