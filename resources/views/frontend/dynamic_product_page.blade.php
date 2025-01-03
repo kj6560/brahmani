@@ -39,7 +39,8 @@ $all_images = $product->all_images;
 $allImagesArr = explode(',', $all_images);
 $image_alias = $product->image_aliases;
 $image_aliasArr = explode(',', $image_alias);
-$params = json_decode($product->pro_params);
+$params = !empty($product->pro_params)?json_decode($product->pro_params):[];
+//print_r($params);die;
 ?>
 <div class="page-content">
     <section class="section-md">
@@ -82,15 +83,15 @@ $params = json_decode($product->pro_params);
                     </button>
                     <div class="mt-4">
                         <h5>Key Features:</h5>
-                        <ol>
+                        <ul>
                             @if ($params != null)
-                                @foreach ($params as $key => $value)
-                                    <li>{{$key}}: {{$value}}</li>
+                                @foreach ($params as $p)
+                                    <li>{{$p->name}}: {{$p->value}}</li>
                                 @endforeach
                             
                             @endif
                             
-                        </ol>
+                        </ul>
                     </div>
                 </div>
             </div>
