@@ -112,7 +112,6 @@ if (!empty($settings['schema'])) {
                                                     alt="{{$settings['Company_Name'] ?? ''}}">
                                             @endif
                                         </a>
-                                        {{$settings['Company_Name'] ?? ''}}
                                     </h6>
                                     <div class="pbmit-sticky-corner  pbmit-top-right-corner">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill=""
