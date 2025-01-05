@@ -1613,8 +1613,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 <h4 class="pbmit-subtitle">Contact Us</h4>
                                 <h2 class="pbmit-title">Happy to answer all your questions</h2>
                                 <div class="pbmit-heading-desc">
-                                    <p>Our team is here to help you with any questions you may have. Fill out the form
-                                        and we will get back to you as soon as possible.</p>
+                                    <p>Whether you're a homeowner, contractor, or architect, we're here to help. Get in touch with Brahmani Enterprises for inquiries, quotes, and expert consultations on all your construction material needs and project solutions.</p>
                                 </div>
                             </div>
                         </div>
