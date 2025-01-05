@@ -4,6 +4,12 @@
 
 $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->page_sliders) : [];
 ?>
+<style>
+    .product-image {
+        max-height: 400px;
+        object-fit: cover;
+    }
+</style>
 <div class="pbmit-slider-area pbmit-slider-one">
     <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="true" data-arrows="false"
         data-columns="1" data-margin="0" data-effect="fade">
@@ -301,7 +307,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                 <div class="pbmit-featured-img-wrapper">
                                     <div class="pbmit-featured-wrapper">
                                         <img src="{{asset('storage')}}/{{$categories->pro_cat_image}}" alt="{{$categories->pro_cat_name ?? ''}}"
-                                            class="img-fluid" alt="service-01">
+                                            class="img-fluid product-image" alt="service-01">
                                     </div>
                                 </div>
                             </div>
