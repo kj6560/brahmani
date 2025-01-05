@@ -207,7 +207,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
 <section class="section-lgb">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-xl-3">
+            <div class="col-md-6 col-xl-4">
                 <div class="pbminfotech-ele-fid-style-2">
                     <div class="pbmit-fld-contents">
                         <div class="pbmit-fld-wrap">
@@ -228,7 +228,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3">
+            <div class="col-md-6 col-xl-4">
                 <div class="pbminfotech-ele-fid-style-2">
                     <div class="pbmit-fld-contents">
                         <div class="pbmit-fld-wrap">
@@ -241,15 +241,15 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                             <h4 class="pbmit-fid-inner">
                                 <span class="pbmit-fid-before"></span>
                                 <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits"
-                                    data-from="0" data-to="5483" data-interval="1" data-before="" data-before-style=""
-                                    data-after="" data-after-style="">5483</span>
+                                    data-from="0" data-to="150000" data-interval="5000" data-before=""
+                                    data-before-style="" data-after="" data-after-style="">150000</span>
                                 <span class="pbmit-fid"><sup>+</sup></span>
                             </h4>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3">
+            <div class="col-md-6 col-xl-4">
                 <div class="pbminfotech-ele-fid-style-2">
                     <div class="pbmit-fld-contents">
                         <div class="pbmit-fld-wrap">
@@ -262,35 +262,15 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                             <h4 class="pbmit-fid-inner">
                                 <span class="pbmit-fid-before"></span>
                                 <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits"
-                                    data-from="0" data-to="30" data-interval="1" data-before="" data-before-style=""
-                                    data-after="" data-after-style="">30</span>
+                                    data-from="0" data-to="600" data-interval="50" data-before="" data-before-style=""
+                                    data-after="" data-after-style="">600</span>
                                 <span class="pbmit-fid"><span>+</span></span>
                             </h4>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="pbminfotech-ele-fid-style-2">
-                    <div class="pbmit-fld-contents">
-                        <div class="pbmit-fld-wrap">
-                            <div class="pbmit-fid-icon-title">
-                                <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
-                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-conversation"></i>
-                                </div>
-                                <span class="pbmit-fid-title">Staff members</span>
-                            </div>
-                            <h4 class="pbmit-fid-inner">
-                                <span class="pbmit-fid-before"></span>
-                                <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits"
-                                    data-from="0" data-to="305" data-interval="1" data-before="" data-before-style=""
-                                    data-after="" data-after-style="">305</span>
-                                <span class="pbmit-fid"><sup>+</sup></span>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
@@ -815,7 +795,8 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
         </div>
         <div class="text-center">
             <div class="pbmit-service-text">
-                <p>Have a specific need? We can help! <a href="/contact_us"><span class="pbmit-globalcolor">Contact us</span></a></p>
+                <p>Have a specific need? We can help! <a href="/contact_us"><span class="pbmit-globalcolor">Contact
+                            us</span></a></p>
             </div>
         </div>
     </div>
@@ -1029,8 +1010,8 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbminfotech-box-content">
                             <div class="pbminfotech-titlebox">
                                 <!-- <div class="pbmit-port-cat">
-                                                                                        <a href="portfolio-grid-col-3.html" rel="tag"></a>
-                                                                                    </div> -->
+                                                                                                <a href="portfolio-grid-col-3.html" rel="tag"></a>
+                                                                                            </div> -->
                                 <h3 class="pbmit-portfolio-title">
                                     <a href="/product_category/{{$categories->id}}">{{$categories->pro_cat_name}}</a>
                                 </h3>
@@ -1216,7 +1197,44 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                 </div>
             </div>
         </div>
-
+        <div class="ihbox-style-area">
+            <div class="pbmit-ihbox-style-2">
+                <div class="pbmit-ihbox-headingicon">
+                    <div class="pbmit-ihbox-contents d-flex align-items-center">
+                        <div class="pbmit-title-wrap">
+                            <h2 class="pbmit-element-title">4.82</h2>
+                        </div>
+                        <div class="pbmit-icon-wrap">
+                            <div class="pbmit-ihbox-svg">
+                                <div class="pbmit-ihbox-svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="90.51"
+                                        viewBox="0 0 512 90.51">
+                                        <path
+                                            d="M89.26,29.43l-24.9-3.62L53.23,3.33c-2.2-4.44-9.48-4.44-11.68,0L30.42,25.81,5.58,29.43A6.52,6.52,0,0,0,2,40.55L20,58.11,15.74,82.88a6.51,6.51,0,0,0,9.46,6.87l22.19-11.7,22.25,11.7a6.5,6.5,0,0,0,3,.75,6.51,6.51,0,0,0,6.43-7.62L74.86,58.11l18-17.56a6.52,6.52,0,0,0-3.62-11.12Z">
+                                        </path>
+                                        <path
+                                            d="M193.55,29.43l-24.9-3.62L157.52,3.33c-2.2-4.44-9.48-4.44-11.68,0L134.71,25.81l-24.84,3.62a6.52,6.52,0,0,0-3.61,11.12l18,17.56L120,82.88a6.52,6.52,0,0,0,9.47,6.87l22.19-11.7,22.25,11.7a6.5,6.5,0,0,0,3,.75,6.51,6.51,0,0,0,6.43-7.62l-4.24-24.77,18-17.56a6.52,6.52,0,0,0-3.62-11.12Z">
+                                        </path>
+                                        <path
+                                            d="M297.84,29.43l-24.9-3.62L261.81,3.33c-2.2-4.44-9.48-4.44-11.68,0L239,25.81l-24.84,3.62a6.52,6.52,0,0,0-3.61,11.12l18,17.56-4.25,24.77a6.52,6.52,0,0,0,9.47,6.87L256,78.05l22.25,11.7a6.5,6.5,0,0,0,3,.75,6.51,6.51,0,0,0,6.43-7.62l-4.24-24.77,18-17.56a6.52,6.52,0,0,0-3.62-11.12Z">
+                                        </path>
+                                        <path
+                                            d="M402.13,29.43l-24.9-3.62L366.1,3.33c-2.2-4.44-9.48-4.44-11.69,0L343.29,25.81l-24.84,3.62a6.52,6.52,0,0,0-3.61,11.12l18,17.56L328.6,82.88a6.52,6.52,0,0,0,9.47,6.87l22.18-11.7,22.26,11.7a6.5,6.5,0,0,0,3,.75A6.51,6.51,0,0,0,392,82.88l-4.24-24.77,18-17.56a6.52,6.52,0,0,0-3.61-11.12Z">
+                                        </path>
+                                        <path
+                                            d="M511.68,33.86a6.54,6.54,0,0,0-5.26-4.43l-24.9-3.62L470.39,3.33c-2.2-4.44-9.48-4.44-11.69,0L447.58,25.81l-24.84,3.62a6.52,6.52,0,0,0-3.61,11.12l18,17.56-4.25,24.77a6.52,6.52,0,0,0,6.42,7.62,6.61,6.61,0,0,0,3.05-.75l22.19-11.7,22.26,11.7a6.46,6.46,0,0,0,6.86-.5,6.53,6.53,0,0,0,2.59-6.37L492,58.11l18-17.56A6.54,6.54,0,0,0,511.68,33.86Z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4 class="pbmit-element-heading">
+                                539 Rating
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!-- Testimonial End -->
@@ -1232,12 +1250,14 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                             <h4 class="pbmit-hide">Client 12</h4>
                             <div class="pbmit-client-hover-img">
-                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-01.png" class="img-fluid" alt="">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-01.png"
+                                    class="img-fluid" alt="">
 
                             </div>
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-01.png" class="img-fluid" alt="">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-01.png"
+                                        class="img-fluid" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1249,11 +1269,13 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                             <h4 class="pbmit-hide">Client 12</h4>
                             <div class="pbmit-client-hover-img">
-                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-02.png" class="img-fluid" alt="">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-02.png"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-02.png" class="img-fluid" alt="">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-02.png"
+                                        class="img-fluid" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1265,11 +1287,13 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                             <h4 class="pbmit-hide">Client 12</h4>
                             <div class="pbmit-client-hover-img">
-                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-03.png" class="img-fluid" alt="">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-03.png"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-03.png" class="img-fluid" alt="">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-03.png"
+                                        class="img-fluid" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1281,11 +1305,13 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                             <h4 class="pbmit-hide">Client 12</h4>
                             <div class="pbmit-client-hover-img">
-                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-04.png" class="img-fluid" alt="">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-04.png"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-04.png" class="img-fluid" alt="">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-04.png"
+                                        class="img-fluid" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1297,11 +1323,13 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                             <h4 class="pbmit-hide">Client 12</h4>
                             <div class="pbmit-client-hover-img">
-                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-05.png" class="img-fluid" alt="">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-05.png"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-05.png" class="img-fluid" alt="">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-05.png"
+                                        class="img-fluid" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1313,11 +1341,13 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                             <h4 class="pbmit-hide">Client 12</h4>
                             <div class="pbmit-client-hover-img">
-                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-06.png" class="img-fluid" alt="">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-06.png"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-06.png" class="img-fluid" alt="">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-06.png"
+                                        class="img-fluid" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1329,11 +1359,13 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                             <h4 class="pbmit-hide">Client 12</h4>
                             <div class="pbmit-client-hover-img">
-                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-07.png" class="img-fluid" alt="">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-07.png"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-07.png" class="img-fluid" alt="">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-07.png"
+                                        class="img-fluid" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1345,11 +1377,13 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
                             <h4 class="pbmit-hide">Client 12</h4>
                             <div class="pbmit-client-hover-img">
-                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-08.png" class="img-fluid" alt="">
+                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-08.png"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-08.png" class="img-fluid" alt="">
+                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-08.png"
+                                        class="img-fluid" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1412,7 +1446,8 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                     <div class="pbminfotech-content-inner">
                                         <div class="pbmit-featured-img-wrapper">
                                             <div class="pbmit-featured-wrapper">
-                                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-01.jpg" class="img-fluid" alt="">
+                                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-01.jpg"
+                                                    class="img-fluid" alt="">
                                             </div>
                                         </div>
                                         <div class="pbmit-meta-wraper">
@@ -1446,7 +1481,8 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                     <div class="pbminfotech-content-inner">
                                         <div class="pbmit-featured-img-wrapper">
                                             <div class="pbmit-featured-wrapper">
-                                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-02.jpg" class="img-fluid" alt="">
+                                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-02.jpg"
+                                                    class="img-fluid" alt="">
                                             </div>
                                         </div>
                                         <div class="pbmit-meta-wraper">
@@ -1480,7 +1516,8 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                     <div class="pbminfotech-content-inner">
                                         <div class="pbmit-featured-img-wrapper">
                                             <div class="pbmit-featured-wrapper">
-                                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-03.jpg" class="img-fluid" alt="">
+                                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-03.jpg"
+                                                    class="img-fluid" alt="">
                                             </div>
                                         </div>
                                         <div class="pbmit-meta-wraper">
@@ -1520,8 +1557,8 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                     style="background-image:url('{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-04b.jpg')">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-04.jpg" class="img-fluid"
-                                                alt="blog-01">
+                                            <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/blog/blog-04.jpg"
+                                                class="img-fluid" alt="blog-01">
                                         </div>
                                     </div>
                                 </div>

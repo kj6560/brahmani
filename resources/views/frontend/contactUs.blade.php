@@ -45,8 +45,7 @@
 									<h4 class="pbmit-subtitle">Contact Us</h4>
 									<h2 class="pbmit-title">Happy to answer all your questions</h2>
 									<div class="pbmit-heading-desc">
-										Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labo et dolo
-										cupidatat non proident, sunt in culpa qui officia deserunt anim id est laborum.
+									Whether you're a homeowner, contractor, or architect, we're here to help. Get in touch with Brahmani Enterprises for inquiries, quotes, and expert consultations on all your construction material needs and project solutions.
 									</div>
 								</div>
 							</div>
@@ -66,7 +65,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<textarea name="message" cols="40" rows="10" class="form-control" id="message"
-											placeholder="" required>{{old('message') ?? ""}}</textarea>
+											placeholder="message" required>{{old('message') ?? ""}}</textarea>
 									</div>
 									<div class="col-md-6">
 										<input type="text" class="form-control" placeholder="Your Name *" name="name"
@@ -104,9 +103,7 @@
 	<section class="section-xl">
 		<div class="container-fluid">
 			<div class="iframe-area">
-				<iframe
-					src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
-					title="London Eye, London, United Kingdom" aria-label="London Eye, London, United Kingdom"></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.284474292564!2d73.1693684!3d22.342885000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8d81649c68b%3A0xd37951746ee47c7f!2sBrahmani%20Enterprise%20(PVC%20Panels)!5e0!3m2!1sen!2sin!4v1736101539751!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 		</div>
 	</section>
@@ -115,29 +112,4 @@
 </div>
 <!-- Contact Us Content End -->
 
-@endsection
-@section('custom_javascript')
-<script>
-	const textarea = document.getElementById('message');
-	const placeholderText = `To Get Best Quotes describe your requirements in detail like:
-- What are you looking for
--Features / Specifications
--Application / Usage
--Minimum Order Quantity etc.
-`;
-
-	textarea.value = placeholderText;
-
-	textarea.addEventListener('focus', () => {
-		if (textarea.value === placeholderText) {
-			textarea.value = ''; // Clear placeholder text on focus
-		}
-	});
-
-	textarea.addEventListener('blur', () => {
-		if (textarea.value.trim() === '') {
-			textarea.value = placeholderText; // Restore placeholder text if empty
-		}
-	});
-</script>
 @endsection
