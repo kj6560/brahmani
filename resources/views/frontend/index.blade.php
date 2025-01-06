@@ -295,8 +295,9 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
             </div>
         </div>
         <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false"
-            data-columns="3" data-margin="30" data-effect="slide">
+            data-columns="1" data-margin="30" data-effect="slide">
             <div class="swiper-wrapper">
+                
             @if (!empty($latest_categories) && count($latest_categories) > 0)
             @foreach ($latest_categories as $categories)
                 <!-- Slide -->
