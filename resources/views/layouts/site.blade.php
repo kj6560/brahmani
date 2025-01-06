@@ -240,7 +240,7 @@ if (!empty($settings['schema'])) {
                                     
                                     <li><a href="/blog">Blogs</a></li>
                                     <li><a href="#"></a></li>
-                                    <li><a href="/wishlist">Wishlist</a></li>
+                                    <li><a href="/showWishlist">Wishlist</a></li>
                                     <li><a href="#"></a></li>
                                     <!-- <li><a href="portfolio-detail-style-1.html">Project</a></li> -->
                                 </ul>
