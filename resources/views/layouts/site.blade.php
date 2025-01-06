@@ -265,13 +265,13 @@ if (!empty($settings['schema'])) {
                             <aside class="widget pbmit-two-column-menu">
                                 <ul>
                                     <li><a href="#"></a></li>
-                                    <li><a href="#">Our Products</a></li>
+                                    <li><a href="/product_category/0">Our Products</a></li>
                                     <li><a href="#"></a></li>
-                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="/faq">FAQ</a></li>
                                     <li><a href="#"></a></li>
-                                    <li><a href="#">Sitemap</a></li>
+                                    <li><a href="/sitemap">Sitemap</a></li>
                                     <li><a href="#"></a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="/privacy_policy">Privacy Policy</a></li>
                                 </ul>
                             </aside>
                         </div>

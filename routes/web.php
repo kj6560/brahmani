@@ -44,6 +44,9 @@ Route::get('/wishlist/{id}',[SiteController::class,'wishlist'])->middleware([set
 Route::get('/removeFromWishlist',[SiteController::class,'removeFromWishlist'])->middleware([settings::class])->name('frontend.removeFromWishlist');
 Route::get('/showWishlist',[SiteController::class,'showWishlist'])->middleware([settings::class])->name('frontend.showWishlist');
 Route::get('/raiseQuery',[SiteController::class,'raiseQuery'])->middleware([settings::class])->name('frontend.raiseQuery');
+Route::get('/faq', [SiteController::class, 'faq'])->middleware([settings::class])->name('frontend.faq');
+Route::get('/privacy_policy', [SiteController::class, 'privacy_policy'])->middleware([settings::class])->name('frontend.privacy_policy');
+
 //product_category
 Route::get('/product_category/{id}', [DynamicPageController::class, 'loadProductCategory'])->middleware([settings::class])->name("product_category");
 Route::get('/products/{id}', [DynamicPageController::class, 'loadProducts'])->middleware([settings::class])->name("products.load");

@@ -152,4 +152,17 @@ class SiteController extends Controller
             return response()->json(['success' => false, 'message' => 'Something went wrong. Please try again later']);
         }
     }
+    public function clearWishlist(Request $request)
+    {
+        Session::forget('wishlist');
+        return response()->json(['success' => true, 'message' => 'Wishlist cleared successfully']);
+    }
+    public function faq(Request $request)
+    {
+        return view('frontend.faq', ['settings' => $request->settings]);
+    }
+    public function privacy_policy(Request $request)
+    {
+        return view('frontend.privacyPolicy', ['settings' => $request->settings]);
+    }
 }

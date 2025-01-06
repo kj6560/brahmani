@@ -13,7 +13,7 @@
 						<div class="pbmit-breadcrumb">
 							<div class="pbmit-breadcrumb-inner">
 								<span>
-									<a title="" href="/" class="home"><span>{{$settings['Company_Name']}}</span></a>
+									<a title="" href="/" class="home"><span>Home</span></a>
 								</span>
 								<span class="sep">
 									<i class="pbmit-base-icon-angle-right"></i>
