@@ -63,21 +63,28 @@
 									<input type="text" name="address" value="">
 								</div>
 								<div class="row">
-									<div class="col-md-12">
-										<textarea name="message" cols="40" rows="10" class="form-control" id="message"
-											placeholder="message" required>{{old('message') ?? ""}}</textarea>
-									</div>
+									
 									<div class="col-md-6">
 										<input type="text" class="form-control" placeholder="Your Name *" name="name"
 											value="{{old('name') ?? ''}}" required>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" placeholder="Your Email *" name="email"
+											value="{{old('email') ?? ''}}" required>
 									</div>
 
 									<div class="col-md-6">
 										<input type="tel" class="form-control" placeholder="Your Phone *" name="phone"
 											value="{{old('phone') ?? ''}}" required>
 									</div>
-
-
+									<div class="col-md-6">
+										<input type="tel" class="form-control" placeholder="Your Location *" name="location"
+											value="{{old('location') ?? ''}}" required>
+									</div>
+									<div class="col-md-12">
+										<textarea name="message" cols="40" rows="10" class="form-control" id="message"
+											placeholder="message" required>{{old('message') ?? ""}}</textarea>
+									</div>
 									<div class="col-md-12">
 										<button class="pbmit-btn pbmit-btn-outline">
 											<i

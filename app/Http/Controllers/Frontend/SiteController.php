@@ -61,6 +61,8 @@ class SiteController extends Controller
         }
         $request->validate([
             'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'location' => 'required|string|max:255',
             'phone' => 'required|regex:/^[6-9]\d{9}$/',
             'message' => 'required|string|min:10|max:2000',
         ]);
@@ -77,6 +79,8 @@ class SiteController extends Controller
         $query->name = $data['name'];
         $query->number = $data['phone'];
         $query->message = $data['message'];
+        $query->email = $data['email'];
+        $query->location = $data['location'];
         $query->is_active = 1;
         if($query->save()){
             return redirect()->back()->with('success', 'Your query has been submitted successfully. We will get back to you soon');
