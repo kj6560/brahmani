@@ -295,7 +295,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
             </div>
         </div>
         <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false"
-            data-columns="1" data-margin="30" data-effect="slide">
+            data-columns="3" data-margin="30" data-effect="slide">
             <div class="swiper-wrapper">
                 
             @if (!empty($latest_categories) && count($latest_categories) > 0)
@@ -320,14 +320,14 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                     <a href="#" rel="tag">Kitchen</a>
                                 </div>
                                 <h3 class="pbmit-service-title">
-                                    <a href="service-details.html">PVC Panels</a>
+                                    <a href="/product_category/{{$categories->id ?? ''}}">{{$categories->pro_cat_name ?? ''}}</a>
                                 </h3>
                                 <div class="pbmit-service-description">
                                     <p>Durable, versatile, and easy-to-clean wall and ceiling panels.</p>
                                 </div>
                             </div>
                         </div>
-                        <a class="pbmit-service-btn" href="service-details.html" title="Transforming Rooms">
+                        <a class="pbmit-service-btn" href="/product_category/{{$categories->id ?? ''}}" title="Transforming Rooms">
                             <span class="pbmit-button-icon">
                                 <i class="pbmit-base-icon-pbmit-up-arrow"></i>
                             </span>

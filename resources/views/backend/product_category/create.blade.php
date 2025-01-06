@@ -61,6 +61,18 @@
                                     class="form-control" id="exampleInputUsername1">
                             </div>
                             <div class="form-group">
+                                <label for="exampleSelectGender">Show On Home Page</label>
+                                <select name="show_on_home_page" class="form-select" id="exampleSelectGender">
+                                    <option selected>Select Show On Home Page</option>
+                                    <option value="1" @if(isset($product) && $product->show_on_home_page == 1) selected
+                                    @endif>Yes
+                                    </option>
+                                    <option value="0" @if(isset($product) && $product->show_on_home_page == 0) selected
+                                    @endif>No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleSelectGender">Product Status</label>
                                 <select name="pro_cat_status" class="form-select" id="exampleSelectGender">
                                     <option selected>Select Active</option>
