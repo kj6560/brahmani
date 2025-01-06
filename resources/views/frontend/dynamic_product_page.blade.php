@@ -60,7 +60,7 @@ $params = !empty($product->pro_params) ? json_decode($product->pro_params) : [];
                         class="img-fluid rounded mb-3 product-image" id="mainImage">
                     <div class="d-flex justify-content-between">
                         @for ($i = 0; $i < count($allImagesArr); $i++)
-                            <img src="{{asset('storage')}}/{{$allImagesArr[$i]}}" alt="{{$image_aliasArr[$i]}}"
+                            <img src="{{asset('storage')}}/{{$allImagesArr[$i]}}" alt="{{$image_aliasArr[$i] ?? ''}}"
                                 class="thumbnail rounded {{$i == 0 ? 'active' : ''}}" onclick="changeImage(event, this.src)">
                         @endfor
                     </div>
