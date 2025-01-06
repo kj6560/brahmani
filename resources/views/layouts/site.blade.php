@@ -232,15 +232,17 @@ if (!empty($settings['schema'])) {
                         <div class="col-md-4">
                             <aside class="widget pbmit-two-column-menu">
                                 <ul>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="our-team.html">Our Team</a></li>
-                                    <li><a href="our-history.html">Our History</a></li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
-                                    <li><a href="blog-grid-col-4.html">Blog</a></li>
-                                    <li><a href="service-details.html">Service</a></li>
-                                    <li><a href="team-single-details.html">Team Member</a></li>
-                                    <li><a href="portfolio-detail-style-1.html">Project</a></li>
+                                    <li><a href="/about_us">About Us</a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="/contact_us">Contact Us</a></li>
+                                    
+                                    <li><a href="#"></a></li>
+                                    
+                                    <li><a href="/blog">Blogs</a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="/wishlist">Wishlist</a></li>
+                                    <li><a href="#"></a></li>
+                                    <!-- <li><a href="portfolio-detail-style-1.html">Project</a></li> -->
                                 </ul>
                             </aside>
                         </div>
@@ -262,14 +264,14 @@ if (!empty($settings['schema'])) {
                         <div class="col-md-4">
                             <aside class="widget pbmit-two-column-menu">
                                 <ul>
-                                    <li><a href="#">Style Guide</a></li>
-                                    <li><a href="#">Instructions</a></li>
-                                    <li><a href="#">Licenses</a></li>
-                                    <li><a href="#">Changelog</a></li>
-                                    <li><a href="#">Error 404</a></li>
-                                    <li><a href="#">Password</a></li>
-                                    <li><a href="#">Protected</a></li>
-                                    <li><a href="#">Coming Soon</a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#">Our Products</a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#">Sitemap</a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
                                 </ul>
                             </aside>
                         </div>

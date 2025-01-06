@@ -18,7 +18,10 @@ class SiteController extends Controller
 {
     public function index(Request $request)
     {
-        $product_categories = ProductCategory::where('pro_cat_active', 1)->orderBy('product_category_order', 'asc')->limit(5)->get();
+        $product_categories = ProductCategory::where('pro_cat_active', 1)
+        ->where('show_on_home_page', 1)
+        ->orderBy('product_category_order', 'asc')
+        ->limit(5)->get();
         return view('frontend.index', ['settings' => $request->settings, 'latest_categories' => $product_categories]);
     }
     public function companyProfile(Request $request)

@@ -250,7 +250,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                                     data-from="0" data-to="150000" data-interval="5000" data-before=""
                                     data-before-style="" data-after="" data-after-style="">150000</span>
                                 <span class="pbmit-fid"><sup>+</sup></span>
-                            </h4>
+                            </h4> 
                         </div>
                     </div>
                 </div>

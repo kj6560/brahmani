@@ -84,7 +84,7 @@
 											</div>
 											<h4 class="pbmit-fid-inner">
 												<span class="pbmit-fid-before"></span>
-												<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="5483" data-interval="1" data-before="" data-before-style="" data-after="" data-after-style="">5483</span>
+												<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="150000" data-interval="5000" data-before="" data-before-style="" data-after="" data-after-style="">150000</span>
 												<span class="pbmit-fid"><sup>+</sup></span>
 											</h4>
 										</div>
@@ -101,7 +101,7 @@
 											</div>
 											<h4 class="pbmit-fid-inner">
 												<span class="pbmit-fid-before"></span>
-												<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="30" data-interval="1" data-before="" data-before-style="" data-after="" data-after-style="">30</span>
+												<span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="600" data-interval="50" data-before="" data-before-style="" data-after="" data-after-style="">600</span>
 												<span class="pbmit-fid"><span>+</span></span>
 											</h4>
 										</div>
