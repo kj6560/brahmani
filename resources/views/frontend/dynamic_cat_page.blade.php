@@ -49,17 +49,19 @@
 <!-- Title Bar End-->
 <!-- Filters -->
 
-<form method="GET" action="{{ url()->current() }}" style="float: right; display: flex; align-items: center;margin-right:100px;">
+<form method="GET" action="{{ url()->current() }}" id="filter-form" style="float: right; display: flex; align-items: center;margin-right:100px;">
 <i class="fa-solid fa-filter"></i>
     <select name="filter" class="form-control" style="width: auto; margin-top: 20px;" onchange="handleFilterChange(this)">
         <option value="">Filters</option>
         <option value="price">Price</option>
         <option value="category">Category</option>
+        <option value="in_st">In Stock</option>
+        <option value="wi_pa">With Panelling</option>
+        <option value="wiot_pa">Without Panelling</option>
     </select>
     <select id="price-filter" name="price" class="form-control" style="width: auto; margin-top: 20px; display: none;" onchange="this.form.submit()">
         <option value="">Select Price</option>
-        <option value="low_to_high">Low to High</option>
-        <option value="high_to_low">High to Low</option>
+        <option value="p1">300 - 600</option>
     </select>
     <select id="category-filter" name="category" class="form-control" style="width: auto; margin-top: 20px; display: none;" onchange="this.form.submit()">
         <option value="">Select Category</option>
@@ -120,6 +122,8 @@
             document.getElementById('price-filter').style.display = 'block';
         } else if (select.value === 'category') {
             document.getElementById('category-filter').style.display = 'block';
+        }else{
+            document.getElementById('filter-form').submit();
         }
     }
 </script>
