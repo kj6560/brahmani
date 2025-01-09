@@ -7,19 +7,30 @@
         padding: 30px;
         object-fit: cover;
     }
+
     .pagination-nav {
         display: flex;
         justify-content: space-between;
         padding: 20px 0;
     }
+
     .pagination {
         list-style: none;
         display: flex;
     }
+
     .pagination .page-item {
         margin: 0 5px;
     }
+
+    .filter-form {
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
 </style>
+
 <!-- Title Bar -->
 <div class="pbmit-title-bar-wrapper">
     <div class="container">
@@ -35,37 +46,51 @@
     </div>
 </div>
 <!-- Title Bar End-->
+<!-- Filters -->
 
+<form method="GET" action="{{ url()->current() }}" style="float: right; display: flex; align-items: center;">
+    <i class="fas fa-filter" style="margin-right: 5px;"></i>
+    <select name="filter" class="form-control" style="width: auto; margin-top: 20px;" onchange="handleFilterChange(this)">
+        <option value="">Filters</option>
+        <option value="price">Price</option>
+        <option value="category">Category</option>
+    </select>
+    <select id="price-filter" name="price" class="form-control" style="width: auto; margin-top: 20px; display: none;" onchange="this.form.submit()">
+        <option value="">Select Price</option>
+        <option value="low_to_high">Low to High</option>
+        <option value="high_to_low">High to Low</option>
+    </select>
+    <select id="category-filter" name="category" class="form-control" style="width: auto; margin-top: 20px; display: none;" onchange="this.form.submit()">
+        <option value="">Select Category</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+    </select>
+</form>
+
+
+<!-- Filters End -->
 <!-- Page Content -->
 <div class="page-content">
-
     <!-- Portfolio Grid col 4 -->
     <section class="section-md">
         <div class="container-fluid px-4">
             <div class="row pbmit-element-posts-wrapper">
                 @foreach ($category_products as $category_product)
-                <?php
-                    $all_images = $category_product->all_images;
-                    $allImagesArr = explode(',', $all_images);
-                    $category_product->image = $allImagesArr[0];
-                    $image_alias = $category_product->image_alias;
-                    $image_aliasArr = explode(', ', $image_alias);
-                    $category_product->image_alias = $image_aliasArr[0];
-                ?>
                     <article class="pbmit-ele-portfolio pbmit-portfolio-style-2 col-md-6 col-lg-3">
                         <div class="pbminfotech-post-content">
                             <div class="pbmit-featured-img-wrapper">
                                 <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('storage')}}/{{$category_product->product_banner}}"
-                                        class="img-fluid" alt="{{$category_product->product_name??''}}">
+                                    <img src="{{asset('storage')}}/{{$category_product->product_banner}}" class="img-fluid"
+                                        alt="{{$category_product->product_name ?? ''}}">
                                 </div>
                             </div>
                             <div class="pbminfotech-box-content">
                                 <div class="pbminfotech-titlebox">
                                     <div class="pbmit-port-cat">
-                                        <h2><a href="/products/{{$category_product->id}}" rel="tag">{{$category_product->product_name??""}}</a></h2>
+                                        <h2><a href="/products/{{$category_product->id}}"
+                                                rel="tag">{{$category_product->product_name ?? ""}}</a></h2>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -74,7 +99,7 @@
             </div>
             <!-- Render pagination links -->
             <div class="pagination-wrapper">
-                {{ $category_products->links('vendor.pagination.custom') }}
+                {{ $category_products->appends(request()->query())->links('vendor.pagination.custom') }}
             </div>
         </div>
     </section>
@@ -83,4 +108,18 @@
 </div>
 <!-- Page Content End -->
 
+@endsection
+@section('custom_javascript')
+<script>
+    function handleFilterChange(select) {
+        document.getElementById('price-filter').style.display = 'none';
+        document.getElementById('category-filter').style.display = 'none';
+        
+        if (select.value === 'price') {
+            document.getElementById('price-filter').style.display = 'block';
+        } else if (select.value === 'category') {
+            document.getElementById('category-filter').style.display = 'block';
+        }
+    }
+</script>
 @endsection
