@@ -30,6 +30,50 @@
         border: 1px solid #ddd;
         border-radius: 5px;
     }
+
+    .filter-section {
+        margin-bottom: 20px;
+    }
+
+    .filter-section h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .filter-section label {
+        display: block;
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .filter-section input[type="checkbox"],
+    .filter-section input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    .filter-section select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 10px;
+    }
+
+    .apply-filters {
+        margin-top: 20px;
+    }
+
+    .apply-filters button {
+        width: 100%;
+        padding: 10px;
+        background-color:rgb(47, 78, 24);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .apply-filters button:hover {
+        background-color: #0056b3;
+    }
 </style>
 
 <!-- Title Bar -->
@@ -49,65 +93,83 @@
 <!-- Title Bar End-->
 <!-- Filters -->
 
-<form method="GET" action="{{ url()->current() }}" id="filter-form" style="float: right; display: flex; align-items: center;margin-right:100px;">
-<i class="fa-solid fa-filter"></i>
-    <select name="filter" class="form-control" style="width: auto; margin-top: 20px;" onchange="handleFilterChange(this)">
-        <option value="">Filters</option>
-        <option value="price">Price</option>
-        <option value="category">Category</option>
-        <option value="in_st">In Stock</option>
-        <option value="wi_pa">With Panelling</option>
-        <option value="wiot_pa">Without Panelling</option>
-    </select>
-    <select id="price-filter" name="price" class="form-control" style="width: auto; margin-top: 20px; display: none;" onchange="this.form.submit()">
-        <option value="">Select Price</option>
-        <option value="p1">300 - 600</option>
-    </select>
-    <select id="category-filter" name="category" class="form-control" style="width: auto; margin-top: 20px; display: none;" onchange="this.form.submit()">
-        <option value="">Select Category</option>
-        <option value="electronics">Electronics</option>
-        <option value="fashion">Fashion</option>
-    </select>
-</form>
+
 
 
 <!-- Filters End -->
 <!-- Page Content -->
 <div class="page-content">
-    <!-- Portfolio Grid col 4 -->
-    <section class="section-md">
-        <div class="container-fluid px-4">
-            <div class="row pbmit-element-posts-wrapper">
-                @foreach ($category_products as $category_product)
-                    <article class="pbmit-ele-portfolio pbmit-portfolio-style-2 col-md-6 col-lg-3">
-                        <div class="pbminfotech-post-content">
-                            <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('storage')}}/{{$category_product->product_banner}}" class="img-fluid"
-                                        alt="{{$category_product->product_name ?? ''}}">
-                                </div>
-                            </div>
-                            <div class="pbminfotech-box-content">
-                                <div class="pbminfotech-titlebox">
-                                    <div class="pbmit-port-cat">
-                                        <h2><a href="/products/{{$category_product->id}}"
-                                                rel="tag">{{$category_product->product_name ?? ""}}</a></h2>
-                                    </div>
 
+    <!-- Service Details -->
+    <section class="site-content service-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 service-right-col">
+                    <div class="container-fluid px-4">
+                        <div class="row pbmit-element-posts-wrapper">
+                            @foreach ($category_products as $category_product)
+                            <article class="pbmit-ele-portfolio pbmit-portfolio-style-2 col-md-6 col-lg-3">
+                                <div class="pbminfotech-post-content">
+                                    <div class="pbmit-featured-img-wrapper">
+                                        <div class="pbmit-featured-wrapper">
+                                            <img src="{{asset('storage')}}/{{$category_product->product_banner}}" class="img-fluid"
+                                                alt="{{$category_product->product_name ?? ''}}">
+                                        </div>
+                                    </div>
+                                    <div class="pbminfotech-box-content">
+                                        <div class="pbminfotech-titlebox">
+                                            <div class="pbmit-port-cat">
+                                                <h2><a href="/products/{{$category_product->id}}"
+                                                        rel="tag">{{$category_product->product_name ?? ""}}</a></h2>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </article>
+                            @endforeach
                         </div>
-                    </article>
-                @endforeach
-            </div>
-            <!-- Render pagination links -->
-            <div class="pagination-wrapper">
-                {{ $category_products->appends(request()->query())->links('vendor.pagination.custom') }}
+                        <!-- Render pagination links -->
+                        <div class="pagination-wrapper">
+                            {{ $category_products->appends(request()->query())->links('vendor.pagination.custom') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 service-left-col sidebar">
+                    <aside class="service-sidebar">
+                        <div class="filter-section">
+                            <h3>Category</h3>
+                            <label><input type="checkbox"> Electronics</label>
+                            <label><input type="checkbox"> Clothing</label>
+                            <label><input type="checkbox"> Home & Kitchen</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Price Range</h3>
+                            <label><input type="radio" name="price" value="low"> $0 - $50</label>
+                            <label><input type="radio" name="price" value="mid"> $51 - $200</label>
+                            <label><input type="radio" name="price" value="high"> $201 and above</label>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3>Brand</h3>
+                            <select>
+                                <option value="">Select a brand</option>
+                                <option value="brand1">Brand 1</option>
+                                <option value="brand2">Brand 2</option>
+                                <option value="brand3">Brand 3</option>
+                            </select>
+                        </div>
+
+                        <div class="apply-filters">
+                            <button>Apply Filters</button>
+                        </div>
+                    </aside>
+                </div>
             </div>
         </div>
     </section>
-    <!-- Portfolio Grid col 4 End -->
-
+    <!-- Service Details End -->
 </div>
 <!-- Page Content End -->
 
@@ -117,12 +179,12 @@
     function handleFilterChange(select) {
         document.getElementById('price-filter').style.display = 'none';
         document.getElementById('category-filter').style.display = 'none';
-        
+
         if (select.value === 'price') {
             document.getElementById('price-filter').style.display = 'block';
         } else if (select.value === 'category') {
             document.getElementById('category-filter').style.display = 'block';
-        }else{
+        } else {
             document.getElementById('filter-form').submit();
         }
     }
