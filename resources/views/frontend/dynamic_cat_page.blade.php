@@ -108,7 +108,7 @@
                     <div class="container-fluid px-4">
                         <div class="row pbmit-element-posts-wrapper">
                             @foreach ($category_products as $category_product)
-                            <article class="pbmit-ele-portfolio pbmit-portfolio-style-2 col-md-6 col-lg-3">
+                            <article class="pbmit-ele-portfolio pbmit-portfolio-style-2 col-md-6 col-lg-4">
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
