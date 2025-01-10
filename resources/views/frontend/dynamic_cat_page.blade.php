@@ -135,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 service-left-col sidebar">
+                <div class="col-lg-3 service-left-col sidebar" style="border: 1px solid black;">
                     <aside class="service-sidebar">
                         <div class="filter-section">
                             <h3>Category</h3>
