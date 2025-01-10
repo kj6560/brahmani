@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\BulkPageController;
 use App\Http\Controllers\Backend\EnquiriesController;
 use App\Http\Controllers\Backend\ForwardController;
@@ -132,5 +133,14 @@ Route::prefix('admin')->middleware(['auth:web',settings::class])->group(function
     Route::post('/storeCountries', [SettingsController::class, 'storeCountries'])->name('admin.cities.storeCountries');
     //account settings
     Route::get('/accountSettings', [AdminController::class, 'accountSettings'])->name('admin.accountSettings');
-});
 
+    //blog settings
+    Route::get('/blogSettings', [BlogController::class, 'index'])->name('admin.blogSettings');
+    Route::get('/blogSettings/create', [BlogController::class, 'createBlog'])->name('admin.blogSettings.createBlog');
+    Route::post('/blogSettings/storeBlogPost', [BlogController::class, 'storeBlogPost'])->name('admin.blogSettings.storeBlogPost');
+
+    //blog categories
+    Route::get('/blogSettings/categories', [BlogController::class, 'listCategories'])->name('admin.blogSettings.blogCategories');
+    Route::get('/blogSettings/categories/create', [BlogController::class, 'createCategory'])->name('admin.blogSettings.createCategory');
+    Route::post('/blogSettings/categories/store', [BlogController::class, 'storeCategory'])->name('admin.blogSettings.storeCategory');
+});

@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Star Admin2 </title>
+  <title>{{env('Company_Name')}} </title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('dashboard/assets')}}/vendors/feather/feather.css">
   <link rel="stylesheet" href="{{asset('dashboard/assets')}}/vendors/mdi/css/materialdesignicons.min.css">
@@ -32,6 +32,7 @@
 <body>
   @php
   use App\Http\Controllers\Controller;
+  use Illuminate\Support\Facades\Session;
   $success = Session::get('success');
   $error = Session::get('error');
 @endphp
@@ -46,10 +47,10 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="/">
-            <img src="{{asset('storage')}}/{{$settings['logo']}}" alt="logo" />Brahmani Enterprises
+            <img src="{{asset('storage')}}/{{$settings['logo']}}" alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="/">
-            <img src="{{asset('brahmani_frontend_assets')}}/images/logo.png" alt="logo" />Brahmani Enterprises
+            <img src="{{asset('brahmani_frontend_assets')}}/images/logo.png" alt="logo" />
           </a>
         </div>
       </div>
@@ -157,6 +158,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/admin/createSiteSettings">General Settings</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/admin/categories">Page Settings</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/admin/blogSettings">Blog Settings</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/admin/products">Product
                     Settings</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/admin/enquiries">Enquiries
