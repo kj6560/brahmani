@@ -136,7 +136,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 service-left-col sidebar">
-                    <aside class="service-sidebar" style="border: 1px solid black;margin:2px;padding:5px;">
+                    <aside class="service-sidebar" style="border: 1px solid black;margin:15px;padding:15px;">
                         <div class="filter-section">
                             <h3>Category</h3>
                             <label><input type="checkbox"> Electronics</label>
