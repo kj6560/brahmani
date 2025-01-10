@@ -64,7 +64,7 @@
     .apply-filters button {
         width: 100%;
         padding: 10px;
-        background-color:rgb(47, 78, 24);
+        background-color: rgb(47, 78, 24);
         color: #fff;
         border: none;
         cursor: pointer;
@@ -135,8 +135,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 service-left-col sidebar" style="border: 1px solid black;">
-                    <aside class="service-sidebar">
+                <div class="col-lg-3 service-left-col sidebar">
+                    <aside class="service-sidebar" style="border: 1px solid black;margin:2px;padding:5px;">
                         <div class="filter-section">
                             <h3>Category</h3>
                             <label><input type="checkbox"> Electronics</label>
