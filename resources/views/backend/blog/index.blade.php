@@ -4,23 +4,24 @@
   <div class="card">
     <div class="card-body">
       <div class="row">
-        <h4 class="card-title">Products</h4>
+        <h4 class="card-title">Blogs</h4>
         <div class="col-sm-12">
-          <a class="btn btn-primary" href="/admin/products/create"><i class="fa fa-solid fa-plus"></i>
-            Create Product</a>
-            <a class="btn btn-primary" href="/admin/products/images"><i class="fa fa-solid fa-plus"></i>
-            Product Images</a>
-            <a class="btn btn-primary" href="/admin/products/categories"><i class="fa fa-solid fa-plus"></i>
-            Product Categories</a>
+          <a class="btn btn-primary" href="/admin/blogSettings/create"><i class="fa fa-solid fa-plus"></i>
+            New Blog</a>
+            <a class="btn btn-primary" href="/admin/blogSettings/categories"><i class="fa fa-solid fa-plus"></i>
+            Blog Categories</a>
+            <a class="btn btn-primary" href="/admin/blogSettings/tags"><i class="fa fa-solid fa-plus"></i>
+            Blog Tags</a>
         </div>
       </div>
       <div class="table-responsive text-nowrap" style="margin: 10px;padding: 10px;">
-        <table class="table .table-bordered " id="products">
+        <table class="table .table-bordered " id="blogs">
           <thead>
             <tr class="text-nowrap">
               <th>Id</th>
-              <th>Product Name</th>
-              <th>Status</th>
+              <th>Blog Title</th>
+              <th>Blog Category</th>
+              <th>Active</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -53,13 +54,32 @@
         orderable: true
       },
       {
-        data: 'product_name',
-        name: 'product_name',
+        data: 'title',
+        name: 'title',
         orderable: true
       },
       {
-        data: 'product_status',
-        name: 'product_status',
+        data: 'category',
+        name: 'category',
+        orderable: true
+        // render: function (data, type, row) {
+        //   if (type === 'display') {
+        //     switch (data) {
+        //       case 1:
+        //         return 'Active';
+        //       case 0:
+        //         return 'InActive';
+
+        //       default:
+        //         return 'Unknown';
+        //     }
+        //   }
+        //   return data;
+        // }
+      },
+      {
+        data: 'active',
+        name: 'active',
         orderable: true,
         render: function (data, type, row) {
           if (type === 'display') {
@@ -89,7 +109,7 @@
 
       pagingType: "full_numbers", // Optional: Show full pagination controls
       language: {
-        search: "Search Products:" // Customize the search label
+        search: "Search Blogs:" // Customize the search label
       }
     });
   });

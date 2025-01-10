@@ -4,23 +4,20 @@
   <div class="card">
     <div class="card-body">
       <div class="row">
-        <h4 class="card-title">Products</h4>
+        <h4 class="card-title">Blog Categories</h4>
         <div class="col-sm-12">
-          <a class="btn btn-primary" href="/admin/products/create"><i class="fa fa-solid fa-plus"></i>
-            Create Product</a>
-            <a class="btn btn-primary" href="/admin/products/images"><i class="fa fa-solid fa-plus"></i>
-            Product Images</a>
-            <a class="btn btn-primary" href="/admin/products/categories"><i class="fa fa-solid fa-plus"></i>
-            Product Categories</a>
+          <a class="btn btn-primary" href="/admin/blogSettings/categories/create"><i class="fa fa-solid fa-plus"></i>
+            New Category</a>
         </div>
       </div>
       <div class="table-responsive text-nowrap" style="margin: 10px;padding: 10px;">
-        <table class="table .table-bordered " id="products">
+        <table class="table .table-bordered " id="categories">
           <thead>
             <tr class="text-nowrap">
               <th>Id</th>
-              <th>Product Name</th>
-              <th>Status</th>
+              <th>Category Name</th>
+              <th>Category Slug</th>
+              <th>Active</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -43,7 +40,7 @@
     // Initialize DataTable
     //$('#pages').DataTable();
 
-    $('#products').DataTable({
+    $('#categories').DataTable({
       processing: true,
       serverSide: true,
       ajax: ajaxUrl, // Use the dynamically generated URL
@@ -53,13 +50,18 @@
         orderable: true
       },
       {
-        data: 'product_name',
-        name: 'product_name',
+        data: 'name',
+        name: 'name',
         orderable: true
       },
       {
-        data: 'product_status',
-        name: 'product_status',
+        data: 'slug',
+        name: 'slug',
+        orderable: true
+      },
+      {
+        data: 'active',
+        name: 'active',
         orderable: true,
         render: function (data, type, row) {
           if (type === 'display') {
@@ -89,7 +91,7 @@
 
       pagingType: "full_numbers", // Optional: Show full pagination controls
       language: {
-        search: "Search Products:" // Customize the search label
+        search: "Search Blogs:" // Customize the search label
       }
     });
   });
