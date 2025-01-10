@@ -25,7 +25,7 @@
                         {{!empty($category->name) ? " : " . $category->name : ""}}
                     </h4>
                     @include('backend.errors.formErrors')
-                    <form method="POST" action="/blogSettings/categories/store" enctype="multipart/form-data"
+                    <form method="POST" action="/admin/blogSettings/categories/store" enctype="multipart/form-data"
                         class="forms-sample">
 
                         @if (!empty($category->id))
@@ -37,39 +37,23 @@
 
                         <div class="col" style="margin: 20px;">
                             <div class="form-group">
-                                <label for="exampleInputUsername1">Title</label>
-                                <input type="text" name="title"
-                                    value="{{!empty($category) && $category->title ? $category->title : old('title')}}"
+                                <label for="exampleInputUsername1">Name</label>
+                                <input type="text" name="name"
+                                    value="{{!empty($category) && $category->name ? $category->name : old('name')}}"
                                     class="form-control" id="exampleInputUsername1">
                             </div>
                             
                             <div class="form-group">
-                                <label for="exampleInputUsername1">Post Content</label>
-                                <textarea class="exp_text" name="content" rows="15"
-                                    id="content">{{!empty($category) && $category->content ? $category->content : old('content')}}</textarea>
+                                <label for="exampleInputUsername1">Description</label>
+                                <textarea class="exp_text" name="description" rows="5"
+                                    id="content">{{!empty($category) && $category->description ? $category->description : old('description')}}</textarea>
                             </div>
 
-                            <div class="form-group">
-                                <label for="exampleSelectGender">Post Category</label>
-                                <select name="category_id" class="form-select" id="exampleSelectGender">
-                                    <option selected>Select Post Category</option>
-                                    @foreach ($categories as $category)
-                                        <option value="{{$category->id}}" @if(isset($category) && $category->category_id == $category->id) selected @endif>
-                                            {{$category->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Post Featured Image</label>
-                                <div class="input-group col-xs-12">
-                                    <input type="file" class="form-control file-upload-info" name="featured_image"
-                                        placeholder="featured_image">
-                                </div>
-                            </div>
+                            
+                            
                             <div class="form-group">
 
-                                <label for="exampleSelectGender">Post Status</label>
+                                <label for="exampleSelectGender">Status</label>
                                 <select name="active" class="form-select" id="exampleSelectGender">
                                     <option selected>Select Active</option>
                                     <option value="1" @if( isset($category) && $category->active == 1) selected

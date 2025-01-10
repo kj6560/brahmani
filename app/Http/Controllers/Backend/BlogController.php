@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -128,9 +129,9 @@ class BlogController extends Controller
                     $query->orderBy('active', $order);
                 })
                 ->addColumn('action', function ($row) {
-                    $editUrl = "/admin/blogSettings/edit/{$row->id}";
-                    $deleteUrl = "/admin/blogSettings/delete/{$row->id}";
-                    $disableUrl = "/admin/blogSettings/disable/{$row->id}";
+                    $editUrl = "/admin/blogSettings/category/edit/{$row->id}";
+                    $deleteUrl = "/admin/blogSettings/category/delete/{$row->id}";
+                    $disableUrl = "/admin/blogSettings/category/disable/{$row->id}";
 
                     $editButton = '';
                     $deleteButton = '';
@@ -161,5 +162,20 @@ class BlogController extends Controller
     public function createCategory(Request $request)
     {
         return view('backend.blog.createCategory', ['settings' => $request->settings]);
+    }
+    public function storeCategory(Request $request)
+    {
+        if(!empty($request->id)){
+            $category = BlogCategory::find($request->id);
+        }else{
+            $category = new BlogCategory();
+        }
+        $category->name = $request->name;
+        $category->slug = $this->convertToSlug($request->name);
+        $category->description = $request->description;
+        $category->active = $request->active;
+        $category->save();
+
+        return redirect('/admin/blogSettings/categories')->with('success', 'Category created successfully');
     }
 }
