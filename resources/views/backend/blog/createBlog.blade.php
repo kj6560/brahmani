@@ -25,7 +25,7 @@
                         {{!empty($post->title) ? " : " . $post->title : ""}}
                     </h4>
                     @include('backend.errors.formErrors')
-                    <form method="POST" action="/admin/blogSettings/storeBlogPost" enctype="multipart/form-data"
+                    <form method="POST" action="/admin/blogSettings/blogs/store" enctype="multipart/form-data"
                         class="forms-sample">
 
                         @if (!empty($post->id))

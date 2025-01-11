@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Str;
@@ -18,14 +19,14 @@ class BlogController extends Controller
             $orders = DB::table('blog_posts')
                 ->distinct()
                 ->join('categories', 'blog_posts.category_id', '=', 'categories.id')
-                ->select('blog_posts.id as id', 'blogposts.title as title', 'categories.name as category', 'blog_posts.active as active');
+                ->select('blog_posts.id as id', 'blog_posts.title as title', 'categories.name as category', 'blog_posts.active as active');
 
             return DataTables::of($orders)
                 ->orderColumn('blog_posts.id', function ($query, $order) {
                     $query->orderBy('blog_posts.id', $order);
                 })
-                ->orderColumn('blogposts.title', function ($query, $order) {
-                    $query->orderBy('blogposts.title', $order);
+                ->orderColumn('blog_posts.title', function ($query, $order) {
+                    $query->orderBy('blog_posts.title', $order);
                 })
                 ->orderColumn('categories.name', function ($query, $order) {
                     $query->orderBy('categories.name', $order);
@@ -34,9 +35,9 @@ class BlogController extends Controller
                     $query->orderBy('blog_posts.active', $order);
                 })
                 ->addColumn('action', function ($row) {
-                    $editUrl = "/admin/blogSettings/edit/{$row->id}";
-                    $deleteUrl = "/admin/blogSettings/delete/{$row->id}";
-                    $disableUrl = "/admin/blogSettings/disable/{$row->id}";
+                    $editUrl = "/admin/blogSettings/blogs/edit/{$row->id}";
+                    $deleteUrl = "/admin/blogSettings/blogs/delete/{$row->id}";
+                    $disableUrl = "/admin/blogSettings/blogs/disable/{$row->id}";
 
                     $editButton = '';
                     $deleteButton = '';
@@ -67,7 +68,15 @@ class BlogController extends Controller
     public function createBlog(Request $request)
     {
         $blogCategories = DB::table('categories')->where('active',1)->get();
-        return view('backend.blog.createBlog', ['settings' => $request->settings,'categories' => $blogCategories]);
+        $tags = DB::table('tags')->where('active', 1)->get();
+        return view('backend.blog.createBlog', ['settings' => $request->settings,'categories' => $blogCategories,'tags'=>$tags]);
+    }
+    public function editBlog(Request $request, $id)
+    {
+        $blogPost = BlogPost::find($id);
+        $blogCategories = DB::table('categories')->where('active', 1)->get();
+        $tags = DB::table('tags')->where('active', 1)->get();
+        return view('backend.blog.createBlog', ['settings' => $request->settings, 'post' => $blogPost, 'categories' => $blogCategories,'tags'=>$tags]);
     }
     public function storeBlogPost(Request $request)
     {
@@ -86,6 +95,8 @@ class BlogController extends Controller
         $blogPost->title = $request->title;
         $blogPost->slug = $this->convertToSlug($request->title);
         $blogPost->content = $request->content;
+        $blogPost->user_id = auth()->user()->id;
+        $blogPost->published_at = Date::now();
         $blogPost->category_id = $request->category_id;
         $blogPost->active = $request->active;
         $blogPost->save();
@@ -103,12 +114,7 @@ class BlogController extends Controller
         // If the slug exists, append a number to make it unique
         return $count ? "{$slug}-{$count}" : $slug;
     }
-    public function editBlog(Request $request, $id)
-    {
-        $blogPost = BlogPost::find($id);
-        $blogCategories = DB::table('categories')->where('active', 1)->get();
-        return view('backend.blog.createBlog', ['settings' => $request->settings, 'blogPost' => $blogPost, 'categories' => $blogCategories]);
-    }
+    
     public function listCategories(Request $request)
     {
         if ($request->ajax()) {

@@ -6,7 +6,7 @@
       <div class="row">
         <h4 class="card-title">Blogs</h4>
         <div class="col-sm-12">
-          <a class="btn btn-primary" href="/admin/blogSettings/create"><i class="fa fa-solid fa-plus"></i>
+          <a class="btn btn-primary" href="/admin/blogSettings/blogs/create"><i class="fa fa-solid fa-plus"></i>
             New Blog</a>
             <a class="btn btn-primary" href="/admin/blogSettings/categories"><i class="fa fa-solid fa-plus"></i>
             Blog Categories</a>
@@ -44,7 +44,7 @@
     // Initialize DataTable
     //$('#pages').DataTable();
 
-    $('#products').DataTable({
+    $('#blogs').DataTable({
       processing: true,
       serverSide: true,
       ajax: ajaxUrl, // Use the dynamically generated URL

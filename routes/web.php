@@ -136,8 +136,9 @@ Route::prefix('admin')->middleware(['auth:web',settings::class])->group(function
 
     //blog settings
     Route::get('/blogSettings', [BlogController::class, 'index'])->name('admin.blogSettings');
-    Route::get('/blogSettings/create', [BlogController::class, 'createBlog'])->name('admin.blogSettings.createBlog');
-    Route::post('/blogSettings/storeBlogPost', [BlogController::class, 'storeBlogPost'])->name('admin.blogSettings.storeBlogPost');
+    Route::get('/blogSettings/blogs/create', [BlogController::class, 'createBlog'])->name('admin.blogSettings.createBlog');
+    Route::get('/blogSettings/blogs/edit/{id}', [BlogController::class, 'editBlog'])->name('admin.blogSettings.editBlog');
+    Route::post('/blogSettings/blogs/store', [BlogController::class, 'storeBlogPost'])->name('admin.blogSettings.storeBlogPost');
 
     //blog categories
     Route::get('/blogSettings/categories', [BlogController::class, 'listCategories'])->name('admin.blogSettings.blogCategories');
