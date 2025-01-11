@@ -42,10 +42,14 @@
                                     value="{{!empty($post) && $post->title ? $post->title : old('title')}}"
                                     class="form-control" id="exampleInputUsername1">
                             </div>
-                            
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Post Small Description</label>
+                                <textarea class="exp_text" name="small_desc" rows="5"
+                                    id="content">{{!empty($post) && $post->small_desc ? $post->small_desc : old('small_desc')}}</textarea>
+                            </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Post Content</label>
-                                <textarea class="exp_text" name="content" rows="15"
+                                <textarea class="exp_text" name="content" rows="20"
                                     id="content">{{!empty($post) && $post->content ? $post->content : old('content')}}</textarea>
                             </div>
 

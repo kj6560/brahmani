@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\BlogPost;
 use App\Models\City;
 use App\Models\ContactQuery;
 use App\Models\Country;
@@ -46,11 +47,13 @@ class SiteController extends Controller
     }
     public function blog(Request $request)
     {
-        return view('frontend.blog', ['settings' => $request->settings]);
+        $blogs = BlogPost::join('users','users.id','=','blog_posts.user_id')->where('blog_posts.active', 1)->orderBy('blog_posts.id', 'desc')->paginate(10);
+        return view('frontend.blog', ['settings' => $request->settings,'blogs' => $blogs]);
     }
-    public function blogDetails(Request $request)
+    public function blogDetails(Request $request,$id)
     {
-        return view('frontend.blogDetails', ['settings' => $request->settings]);
+        $blog = BlogPost::join('users', 'users.id', '=', 'blog_posts.user_id')->where('blog_posts.id', $id)->first();
+        return view('frontend.blogDetails', ['settings' => $request->settings,'blog' => $blog]);
     }
     public function storeQuery(Request $request)
     {
