@@ -32,6 +32,7 @@
 	<div class="container-fluid px-4">
 		<div class="row pbmit-element-posts-wrapper">
 			@foreach ($blogs as $blog)
+			
 				<article class="pbmit-ele-blog pbmit-blog-style-1 col-md-6 col-lg-3">
 					<div class="post-item">
 						<div class="pbminfotech-box-content">
@@ -61,7 +62,7 @@
 									</div>
 									<div class="pbmit-meta-author pbmit-meta-line">
 										<span class="pbmit-post-author">
-											<i class="pbmit-base-icon-user-3"></i>{{$blog->name??""}}
+											<i class="pbmit-base-icon-user-3"></i>{{$blog->user_name??""}}
 										</span>
 									</div>
 								</div>

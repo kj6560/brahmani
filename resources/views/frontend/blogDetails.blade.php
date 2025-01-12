@@ -7,7 +7,7 @@
 				<div class="pbmit-title-bar-content-inner">
 					<div class="pbmit-tbar">
 						<div class="pbmit-tbar-inner container">
-							<h1 class="pbmit-tbar-title"> Frequently Utilized Metal Welding System</h1>
+							<h1 class="pbmit-tbar-title"> {{$blog->title??""}}</h1>
 						</div>
 					</div>
 					<div class="pbmit-breadcrumb">
@@ -24,7 +24,7 @@
 							<span class="sep">
 								<i class="pbmit-base-icon-angle-right"></i>
 							</span>
-							<span><span class="post-root post post-post current-item"> Frequently Utilized Metal Welding System</span></span>
+							<span><span class="post-root post post-post current-item"> {{$blog->title??""}}</span></span>
 						</div>
 					</div>
 				</div>
@@ -54,67 +54,19 @@
 												<span class="pbmit-meta pbmit-meta-date">
 													<i class="pbmit-base-icon-calendar-3"></i>
 													<a href="/blog_detail" rel="bookmark">
-														<time class="entry-date published" datetime="2023-08-29T09:05:54+00:00">May 9, 2024</time>
+														<time class="entry-date published" datetime="2023-08-29T09:05:54+00:00">{{date("M d, Y", strtotime($blog->published_at))}}</time>
 														<time class="updated pbmit-hide" datetime="2023-10-19T05:42:54+00:00">May 22, 2024</time>
 													</a>
 												</span>
 												<span class="pbmit-meta pbmit-meta-author">
-													<i class="pbmit-base-icon-user-3"></i>by
-													<a class="pbmit-author-link" href="blog-classic.html">admin</a>
+													<i class="pbmit-base-icon-user-3"></i>by {{$blog->user_name??""}}
 												</span>
 												<span class="pbmit-meta pbmit-meta-comments pbmit-comment-bigger-than-zero">
 													<i class="pbmit-base-icon-chat-3"></i>3 Comments
 												</span>			
 											</div>
 											<div class="pbmit-entry-content">
-												<p class="pbmit-firstletter">
-													Modest, recently established interior design company that seeks to address a variety of topics, including social justice, equality of opportunity, sustainability, and providing space for up-and-coming artists and craftspeople as well as the most underprivileged.
-												</p>
-												<p>Sadly, or thankfully, interiors are not the subject of these notions. In actuality, a product that is inexpensive now will cost more in the long run. To better understand this idea, consider a £20 desk. Although it might appear like a wonderful deal at first, its low cost indicates that it was likely made with subpar materials. The internet is a great place to find inspiration for interior design. However, where do you even begin? Of course, with the greatest blogs about interior design! These decorating blogs include all the subjects you’ll need to make your house feel like home.</p>
-												<blockquote>
-													<p>“Their team are easy to work with and helped me make amazing websites. Thanks guys for all your hard work. Trust us we looked for a very long time.”<cite>satisfied client</cite></p>
-												</blockquote> 
-												<div class="pbmit-block-columns row g-0">
-													<div class="pbmit-block-column col-md-12 col-xl-6">
-										 				<figure>
-															<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-details-01.jpg" class="img-fluid w-100" alt="">
-														</figure>
-													</div>
-													<div class="pbmit-block-column col-md-12 col-xl-6">
-														<figure>
-															<img src="{{asset('brahmani_frontend_assets')}}/images/blog/blog-details-02.jpg" class="img-fluid w-100" alt="">
-														</figure>
-													</div>
-												</div>
-												<h3>The Price Of Affordable Interior Design</h3>
-												<p>Attractive interior design available here like as conceptual development, space planning, communicating with the stakeholders of a project and execution of the design. Full-service design basically means that <span class="pbmit-globalcolor"><u>the interior design studio</u></span>  manages the bulk of the work involved in a renovation. Also designers make interior safe, and beautiful for almost every type of building.</p>
-												<ul class="list-group list-group-borderless">
-													<li class="list-group-item">
-														<span class="pbmit-icon-list-icon">
-															<i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-														</span>
-														<span class="pbmit-icon-list-text">How Can a Computer in a Cabinet Get Cooling?</span>
-													</li>
-													<li class="list-group-item">
-														<span class="pbmit-icon-list-icon">
-															<i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-														</span>
-														<span class="pbmit-icon-list-text">11 Essential Do-It-Yourself Interior Design Tools for Novices!</span>
-													</li>
-													<li class="list-group-item">
-														<span class="pbmit-icon-list-icon">
-															<i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-														</span>
-														<span class="pbmit-icon-list-text">How Can You Design A Special Work Area For Yourself?</span>
-													</li>
-													<li class="list-group-item">
-														<span class="pbmit-icon-list-icon">
-															<i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-														</span>
-														<span class="pbmit-icon-list-text">Five Eye-Catching Self-Adhesive Wallpaper Ideas!</span>
-													</li>
-												</ul>
-												<p>Interior design consulting service that adds sensibility to world-class dining establishments, lodgings, workplaces, and residences. You can trust that our work will be of the highest caliber since we uphold honesty, reliability, and safety.</p>
+												{{$blog->content}}											
 											</div>
 											<div class="pbmit-blog-meta-bottom">
 												<div class="pbmit-blog-meta-bottom-left">
@@ -128,31 +80,36 @@
 									</div> 
 									<nav class="navigation post-navigation" aria-label="Posts">
 										<div class="nav-links">
+											@if (!empty($prevPost->id))
 											<div class="nav-previous">
-												<a href="/blog_detail" rel="prev">
+												<a href="/blog_detail/{{$prevPost->id}}" rel="prev">
 													<span class="pbmit-post-nav-icon">
 														<i class="pbmit-base-icon-left-arrow-1"></i>
 														<span class="pbmit-post-nav-head">Previous Post</span>
 													</span>
 													<span class="pbmit-post-nav-wrapper">
-														<span class="pbmit-post-nav nav-title">How Does One Go About Buying Furniture?</span> 
+														<span class="pbmit-post-nav nav-title">{{$prevPost->title??""}}</span> 
 													</span>
 												</a>
 											</div>
+											@endif
+											@if (!empty($nextPost->id))
 											<div class="nav-next">
-												<a href="#" rel="next">
+												<a href="/blog_detail/{{$nextPost->id}}" rel="next">
 													<span class="pbmit-post-nav-icon">
 														<span class="pbmit-post-nav-head">Next Post</span>
 														<i class="pbmit-base-icon-next"></i>
 													</span>
 													<span class="pbmit-post-nav-wrapper">
-														<span class="pbmit-post-nav nav-title">How To Choose The Right  Furniture Of Your Home</span> 
+														<span class="pbmit-post-nav nav-title">{{$nextPost->title??""}}</span> 
 													</span>
 												</a>
 											</div>
+											@endif
+											
 										</div>
 									</nav>
-									<div class="pbmit-author-box">
+									<!-- <div class="pbmit-author-box">
 										<div class="pbmit-author-image">
 										   <img alt="" src="{{asset('brahmani_frontend_assets')}}/images/author.png" class="img-fluid">			
 										</div>
@@ -162,9 +119,9 @@
 											</span>
 											<p class="pbmit-text pbmit-author-bio">Founder and Creative Director of Blog, an independent digital creative studio based out in 2011. He has over 15 years experience.</p>
 										</div>
-									</div>
+									</div> -->
 								</article>
-								<div class="comments-area">
+								<!-- <div class="comments-area">
 									<h2 class="comments-title">3 Replies to “Frequently Utilized Metal Welding System”</h2>
 									<ul class="comment-list">
 										<li class="comment depth-1">
@@ -268,7 +225,7 @@
 											</form>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div> 
 						</div>
 					</div>

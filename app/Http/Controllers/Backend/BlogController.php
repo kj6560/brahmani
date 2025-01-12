@@ -78,6 +78,12 @@ class BlogController extends Controller
         $tags = DB::table('tags')->where('active', 1)->get();
         return view('backend.blog.createBlog', ['settings' => $request->settings, 'post' => $blogPost, 'categories' => $blogCategories,'tags'=>$tags]);
     }
+    public function deleteBlog(Request $request, $id)
+    {
+        $blogPost = BlogPost::find($id);
+        $blogPost->delete();
+        return redirect('/admin/blogSettings')->with('success', 'Blog post deleted successfully');
+    }
     public function storeBlogPost(Request $request)
     {
         if(!empty($request->id)){

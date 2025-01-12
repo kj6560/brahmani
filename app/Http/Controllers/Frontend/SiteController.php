@@ -47,13 +47,23 @@ class SiteController extends Controller
     }
     public function blog(Request $request)
     {
-        $blogs = BlogPost::join('users','users.id','=','blog_posts.user_id')->where('blog_posts.active', 1)->orderBy('blog_posts.id', 'desc')->paginate(10);
+        $blogs = BlogPost::join('users','users.id','=','blog_posts.user_id')
+                ->where('blog_posts.active', 1)
+                ->select('blog_posts.*', 'users.name as user_name')
+                ->orderBy('blog_posts.id', 'desc')
+                ->paginate(10);
         return view('frontend.blog', ['settings' => $request->settings,'blogs' => $blogs]);
     }
     public function blogDetails(Request $request,$id)
     {
-        $blog = BlogPost::join('users', 'users.id', '=', 'blog_posts.user_id')->where('blog_posts.id', $id)->first();
-        return view('frontend.blogDetails', ['settings' => $request->settings,'blog' => $blog]);
+        $blog = BlogPost::join('users','users.id','=','blog_posts.user_id')
+        ->where('blog_posts.active', 1)
+        ->select('blog_posts.*', 'users.name as user_name')
+        ->where('blog_posts.id', $id)
+        ->first();
+        $prevPost = BlogPost::select('id','title')->where('id', '=', $id-1)->first();
+        $nextPost = BlogPost::select('id','title')->where('id', '=', $id+1)->first();
+        return view('frontend.blogDetails', ['settings' => $request->settings,'blog' => $blog,'prevPost' => $prevPost,'nextPost' => $nextPost]);
     }
     public function storeQuery(Request $request)
     {
