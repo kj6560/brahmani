@@ -16,6 +16,13 @@
         /* Ensure scrollbar if content exceeds height */
     }
 </style>
+<?php 
+$pTags = $post->tags;
+$allPostTags = [];
+foreach($pTags as $tag){
+    $allPostTags[] = $tag->tag_id;
+}
+?>
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-11 grid-margin stretch-card">
@@ -65,15 +72,15 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleSelectTags">Post Tags</label>
-                                <select name="tags[]" class="form-select" style="height: 200px;" id="exampleSelectTags" multiple>
-                                    @foreach ($tags as $tag)
-                                        <option value="{{$tag->id}}" @if(isset($post) && isset($post->tags) && in_array($tag->id, explode(',', $post->tags))) selected @endif>
-                                            {{$tag->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
+                            <label for="exampleSelectTags">Post Tags</label>
+                            <select style="height: 200px;" name="tags[]" class="form-select" id="exampleSelectTags" multiple>
+                                @foreach ($tags as $tag)
+                                    <option value="{{$tag->id}}" @if(isset($selectedTags) && in_array($tag->id, $selectedTags)) selected @endif>
+                                        {{$tag->name}}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
                             <div class="form-group">
                                 <label>Post Featured Image</label>
                                 <div class="input-group col-xs-12">

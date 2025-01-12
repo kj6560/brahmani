@@ -65,20 +65,28 @@ class BlogController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.blog.index',['settings' => $request->settings]);
+        return view('backend.blog.index', ['settings' => $request->settings]);
     }
     public function createBlog(Request $request)
     {
-        $blogCategories = DB::table('categories')->where('active',1)->get();
+        $blogCategories = DB::table('categories')->where('active', 1)->get();
         $tags = DB::table('tags')->where('active', 1)->get();
-        return view('backend.blog.createBlog', ['settings' => $request->settings,'categories' => $blogCategories,'tags'=>$tags]);
+        return view('backend.blog.createBlog', ['settings' => $request->settings, 'categories' => $blogCategories, 'tags' => $tags]);
     }
     public function editBlog(Request $request, $id)
     {
         $blogPost = BlogPost::find($id);
         $blogCategories = DB::table('categories')->where('active', 1)->get();
         $tags = DB::table('tags')->where('active', 1)->get();
-        return view('backend.blog.createBlog', ['settings' => $request->settings, 'post' => $blogPost, 'categories' => $blogCategories,'tags'=>$tags]);
+        $selectedTags = DB::table('post_tags')->where('post_id', $id)->pluck('tag_id')->toArray();
+
+        return view('backend.blog.createBlog', [
+            'settings' => $request->settings,
+            'post' => $blogPost,
+            'categories' => $blogCategories,
+            'tags' => $tags,
+            'selectedTags' => $selectedTags
+        ]);
     }
     public function deleteBlog(Request $request, $id)
     {
@@ -88,14 +96,14 @@ class BlogController extends Controller
     }
     public function storeBlogPost(Request $request)
     {
-        if(!empty($request->id)){
+        if (!empty($request->id)) {
             $blogPost = BlogPost::find($request->id);
-        }else{
+        } else {
             $blogPost = new BlogPost();
         }
 
         $featured_image = $request->file('featured_image');
-        if(!empty($featured_image)){
+        if (!empty($featured_image)) {
             $imageName = time() . '.' . $featured_image->getClientOriginalExtension();
             $productBanner = $featured_image->storeAs('uploads', $imageName, 'public');
             $blogPost->featured_image = $productBanner;
@@ -109,16 +117,14 @@ class BlogController extends Controller
         $blogPost->category_id = $request->category_id;
         $blogPost->active = $request->active;
         $blogPost->save();
-        if(!empty($request->tags)){
-            
-            foreach($request->tags as $tag){
-                $postTags = PostTags::where('post_id', $blogPost->id)->where('tag_id', $tag)->first();
-                if(empty($postTags->post_id)){
-                    $postTags = new PostTags();
-                    $postTags->post_id = $blogPost->id;
-                    $postTags->tag_id = $tag;
-                    $postTags->save();
-                }
+        if (!empty($request->tags)) {
+            $postTags = PostTags::where('post_id', $blogPost->id)->delete();
+
+            foreach ($request->tags as $key => $tag) {
+                $postTags = new PostTags();
+                $postTags->post_id = $blogPost->id;
+                $postTags->tag_id = $tag;
+                $postTags->save();
             }
         }
         return redirect('/admin/blogSettings')->with('success', 'Blog post created successfully');
@@ -134,7 +140,7 @@ class BlogController extends Controller
         // If the slug exists, append a number to make it unique
         return $count ? "{$slug}-{$count}" : $slug;
     }
-    
+
     public function listCategories(Request $request)
     {
         if ($request->ajax()) {
@@ -196,9 +202,9 @@ class BlogController extends Controller
     }
     public function storeCategory(Request $request)
     {
-        if(!empty($request->id)){
+        if (!empty($request->id)) {
             $category = BlogCategory::find($request->id);
-        }else{
+        } else {
             $category = new BlogCategory();
         }
         $category->name = $request->name;
@@ -276,9 +282,9 @@ class BlogController extends Controller
     }
     public function storeTag(Request $request)
     {
-        if(!empty($request->id)){
+        if (!empty($request->id)) {
             $tag = BlogTag::find($request->id);
-        }else{
+        } else {
             $tag = new BlogTag();
         }
         $tag->name = $request->name;
