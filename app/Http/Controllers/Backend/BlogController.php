@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
+use App\Models\BlogTag;
+use App\Models\PostTags;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -107,7 +109,18 @@ class BlogController extends Controller
         $blogPost->category_id = $request->category_id;
         $blogPost->active = $request->active;
         $blogPost->save();
-
+        if(!empty($request->tags)){
+            
+            foreach($request->tags as $tag){
+                $postTags = PostTags::where('post_id', $blogPost->id)->where('tag_id', $tag)->first();
+                if(empty($postTags->post_id)){
+                    $postTags = new PostTags();
+                    $postTags->post_id = $blogPost->id;
+                    $postTags->tag_id = $tag;
+                    $postTags->save();
+                }
+            }
+        }
         return redirect('/admin/blogSettings')->with('success', 'Blog post created successfully');
     }
     public function convertToSlug($title)
@@ -142,9 +155,9 @@ class BlogController extends Controller
                     $query->orderBy('active', $order);
                 })
                 ->addColumn('action', function ($row) {
-                    $editUrl = "/admin/blogSettings/category/edit/{$row->id}";
-                    $deleteUrl = "/admin/blogSettings/category/delete/{$row->id}";
-                    $disableUrl = "/admin/blogSettings/category/disable/{$row->id}";
+                    $editUrl = "/admin/blogSettings/categories/edit/{$row->id}";
+                    $deleteUrl = "/admin/blogSettings/categories/delete/{$row->id}";
+                    $disableUrl = "/admin/blogSettings/categories/disable/{$row->id}";
 
                     $editButton = '';
                     $deleteButton = '';
@@ -176,6 +189,11 @@ class BlogController extends Controller
     {
         return view('backend.blog.createCategory', ['settings' => $request->settings]);
     }
+    public function editCategory(Request $request, $id)
+    {
+        $category = BlogCategory::find($id);
+        return view('backend.blog.createCategory', ['settings' => $request->settings, 'category' => $category]);
+    }
     public function storeCategory(Request $request)
     {
         if(!empty($request->id)){
@@ -190,5 +208,90 @@ class BlogController extends Controller
         $category->save();
 
         return redirect('/admin/blogSettings/categories')->with('success', 'Category created successfully');
+    }
+    public function deleteCategory(Request $request, $id)
+    {
+        $category = BlogCategory::find($id);
+        $category->delete();
+        return redirect('/admin/blogSettings/categories')->with('success', 'Category deleted successfully');
+    }
+    public function listTags(Request $request)
+    {
+        if ($request->ajax()) {
+            $orders = DB::table('tags')
+                ->distinct();
+
+            return DataTables::of($orders)
+                ->orderColumn('id', function ($query, $order) {
+                    $query->orderBy('id', $order);
+                })
+                ->orderColumn('name', function ($query, $order) {
+                    $query->orderBy('name', $order);
+                })
+                ->orderColumn('slug', function ($query, $order) {
+                    $query->orderBy('slug', $order);
+                })
+                ->orderColumn('active', function ($query, $order) {
+                    $query->orderBy('active', $order);
+                })
+                ->addColumn('action', function ($row) {
+                    $editUrl = "/admin/blogSettings/tags/edit/{$row->id}";
+                    $deleteUrl = "/admin/blogSettings/tags/delete/{$row->id}";
+                    $disableUrl = "/admin/blogSettings/tags/disable/{$row->id}";
+
+                    $editButton = '';
+                    $deleteButton = '';
+                    $disableButton = '';
+
+                    $editButton = "<a href='$editUrl' class='dropdown-item'><i class='bx bx-edit-alt me-2'></i> Edit</a>";
+                    $disableButton = "<a href='$disableUrl' class='dropdown-item'><i class='bx bx-edit-alt me-2'></i> Disable</a>";
+                    $deleteButton = "<a href='$deleteUrl' class='dropdown-item'><i class='bx bx-edit-alt me-2'></i> Delete</a>";
+
+                    return "
+                    <div class='dropdown'>
+                        <button type='button' class='btn p-0 dropdown-toggle hide-arrow' data-bs-toggle='dropdown'>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </button>
+                        <div class='dropdown-menu'>
+                            $editButton
+                            $disableButton
+                            $deleteButton
+                        </div>
+                    </div>
+                ";
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('backend.blog.listTags', ['settings' => $request->settings]);
+    }
+    public function createTag(Request $request)
+    {
+        return view('backend.blog.createTag', ['settings' => $request->settings]);
+    }
+    public function editTag(Request $request, $id)
+    {
+        $tag = BlogTag::find($id);
+        return view('backend.blog.createTag', ['settings' => $request->settings, 'tag' => $tag]);
+    }
+    public function storeTag(Request $request)
+    {
+        if(!empty($request->id)){
+            $tag = BlogTag::find($request->id);
+        }else{
+            $tag = new BlogTag();
+        }
+        $tag->name = $request->name;
+        $tag->slug = $this->convertToSlug($request->name);
+        $tag->active = $request->active;
+        $tag->save();
+
+        return redirect('/admin/blogSettings/tags')->with('success', 'Tag created successfully');
+    }
+    public function deleteTag(Request $request, $id)
+    {
+        $tag = BlogTag::find($id);
+        $tag->delete();
+        return redirect('/admin/blogSettings/tags')->with('success', 'Tag deleted successfully');
     }
 }

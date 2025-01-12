@@ -65,6 +65,16 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="exampleSelectTags">Post Tags</label>
+                                <select name="tags[]" class="form-select" style="height: 200px;" id="exampleSelectTags" multiple>
+                                    @foreach ($tags as $tag)
+                                        <option value="{{$tag->id}}" @if(isset($post) && isset($post->tags) && in_array($tag->id, explode(',', $post->tags))) selected @endif>
+                                            {{$tag->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label>Post Featured Image</label>
                                 <div class="input-group col-xs-12">
                                     <input type="file" class="form-control file-upload-info" name="featured_image"
@@ -76,11 +86,9 @@
                                 <label for="exampleSelectGender">Post Status</label>
                                 <select name="active" class="form-select" id="exampleSelectGender">
                                     <option selected>Select Active</option>
-                                    <option value="1" @if( isset($post) && $post->active == 1) selected
-                                    @endif>Yes
+                                    <option value="1" @if(isset($post) && $post->active == 1) selected @endif>Yes
                                     </option>
-                                    <option value="0" @if(isset($post) && $post->active == 0) selected
-                                    @endif>No
+                                    <option value="0" @if(isset($post) && $post->active == 0) selected @endif>No
                                     </option>
                                 </select>
 
