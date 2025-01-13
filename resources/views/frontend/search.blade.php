@@ -68,11 +68,11 @@
 </style>
 <div class="body">
 <div class="applied-filters" id="applied-filters">
-        <h6>Applied Filters:</h6>
+Applied Filters:
         <!-- Applied filters will be listed here -->
     </div>
     <div class="filters">
-        <h2>Filters</h2>
+    Filters
         <label for="category">Category:</label>
         <select id="category" onchange="filterProducts()">
             <option value="all">All</option>
