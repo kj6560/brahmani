@@ -68,7 +68,7 @@
 </style>
 <div class="body">
 <div class="applied-filters" id="applied-filters">
-        <h2>Applied Filters:</h2>
+        <h6>Applied Filters:</h6>
         <!-- Applied filters will be listed here -->
     </div>
     <div class="filters">
@@ -130,7 +130,7 @@
 
         // List all applied filters
         urlParams.forEach((value, key) => {
-            if (key !== 's') { // Ensure 's' filter cannot be removed
+            if (key !== 's' && value !='all') { // Ensure 's' filter cannot be removed
                 const filterElement = document.createElement('span');
                 filterElement.innerHTML = `${key}: ${value} <a href="#" data-key="${key}" data-value="${value}">&times;</a>`;
                 appliedFiltersContainer.appendChild(filterElement);
