@@ -24,19 +24,38 @@ class settings
         //header search
         if (isset($request->s)) {
             $query = $request->s;
-            if (strlen($query) > 2) {
-                $product = Product::join('product_category as pc', 'pc.id', '=', 'products.product_category')
-                    ->select(
-                        'products.id as id',
-                        'products.product_name as product_name',
-                        'products.product_banner as product_banner',
-                        'products.product_description as product_description',
-                        'pc.pro_cat_name as category_name'
-                    )
-                    ->where('products.product_name', 'like', '%' . $query . '%')
-                    ->get();
-                $allSettings['search'] = $product;
+            $category = $request->category;
+            $price = $request->price;
+            $product = Product::join('product_category as pc', 'pc.id', '=', 'products.product_category')
+                ->select(
+                    'products.id as id',
+                    'products.product_name as product_name',
+                    'products.product_banner as product_banner',
+                    'products.product_description as product_description',
+                    'products.product_price as product_price',
+                    'pc.pro_cat_name as category_name'
+                );
+            if (strlen($category) > 0 && $category != 'all') {
+                $product = $product->where('pc.pro_cat_name', 'like', '%' . $category . '%');
+                
             }
+            if ( $price != 'all') {
+                if($price=='high'){
+                    $product = $product->where('products.product_price', '>', 100);
+                }else if($price == 'mid'){
+                    $product = $product->where('products.product_price', '<', 100)->where('products.product_price', '>', 50);
+                }else if($price =='low'){
+                    $product = $product->where('products.product_price', '<=', 50);
+                }
+            }
+            if ($query != null && strlen($query) > 2) {
+
+                $product = $product->where('products.product_name', 'like', '%' . $query . '%');
+
+            }
+
+            $product = $product->get();
+            $allSettings['search'] = $product;
         }
         //fetch general website settings
         $settings = WebsiteSetting::where('is_active', 1)->first();
@@ -47,7 +66,7 @@ class settings
             }
         }
         //fetch product categories for menu
-        $productCategories = ProductCategory::where('pro_cat_active', 1)->orderBy('product_category_order','asc')->get();
+        $productCategories = ProductCategory::where('pro_cat_active', 1)->orderBy('product_category_order', 'asc')->get();
         $allSettings['product_categories'] = $productCategories;
         //page settings
         $current_url = parse_url(url()->current());
@@ -58,9 +77,9 @@ class settings
         }
         if (!empty($page->id)) {
             $allSettings['page_data'] = $page;
-            
+
         }
-        
+
         $request->merge(['settings' => $allSettings]);
         return $next($request);
 

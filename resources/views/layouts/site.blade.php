@@ -375,34 +375,7 @@ if (!empty($settings['schema'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                @if(isset($settings['search']))
-                    @foreach ($settings['search'] as $pro)
-                        <!-- Modal Body -->
-                        <div class="modal-body">
-                            <div class="row">
-                                <!-- Product Image -->
-                                <div class="col-md-5">
-                                    <img src="{{asset('storage')}}/{{$pro->product_banner ?? ''}}" class="img-fluid rounded"
-                                        alt="{{$pro->product_name ?? ''}}">
-                                </div>
-
-                                <!-- Product Details -->
-                                <div class="col-md-7">
-                                    <h3>{{$pro->product_name ?? ""}}</h3>
-                                    <p class="text-muted">Category: {{$pro->category_name ?? ""}}</p>
-                                    <p>
-                                        {{$pro->product_description ?? ""}}
-                                    </p>
-                                    <div class="mt-3">
-                                        <button class="btn btn-success" id="wishlist"
-                                            onclick="processWishlist({{$pro->id}})">Add to Wishlist</button>
-                                        <a class="btn btn-secondary " href="/products/{{$pro->id ?? 1}}">See Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                @endif
+                @include('frontend.search')
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

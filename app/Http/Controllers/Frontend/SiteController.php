@@ -3,16 +3,19 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\City;
 use App\Models\ContactQuery;
 use App\Models\Country;
 use App\Models\Pages;
+use App\Models\PostTags;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class SiteController extends Controller
@@ -20,9 +23,9 @@ class SiteController extends Controller
     public function index(Request $request)
     {
         $product_categories = ProductCategory::where('pro_cat_active', 1)
-        ->where('show_on_home_page', 1)
-        ->orderBy('product_category_order', 'asc')
-        ->limit(5)->get();
+            ->where('show_on_home_page', 1)
+            ->orderBy('product_category_order', 'asc')
+            ->limit(5)->get();
         return view('frontend.index', ['settings' => $request->settings, 'latest_categories' => $product_categories]);
     }
     public function companyProfile(Request $request)
@@ -47,23 +50,40 @@ class SiteController extends Controller
     }
     public function blog(Request $request)
     {
-        $blogs = BlogPost::join('users','users.id','=','blog_posts.user_id')
-                ->where('blog_posts.active', 1)
-                ->select('blog_posts.*', 'users.name as user_name')
-                ->orderBy('blog_posts.id', 'desc')
-                ->paginate(10);
-        return view('frontend.blog', ['settings' => $request->settings,'blogs' => $blogs]);
+        $blogs = BlogPost::join('users', 'users.id', '=', 'blog_posts.user_id')
+
+            ->where('blog_posts.active', 1)
+            ->select('blog_posts.*', 'users.name as user_name')
+            ->orderBy('blog_posts.id', 'desc')
+            ->paginate(10);
+
+        return view('frontend.blog', ['settings' => $request->settings, 'blogs' => $blogs]);
     }
-    public function blogDetails(Request $request,$id)
+    public function blogDetails(Request $request, $id)
     {
-        $blog = BlogPost::join('users','users.id','=','blog_posts.user_id')
-        ->where('blog_posts.active', 1)
-        ->select('blog_posts.*', 'users.name as user_name')
-        ->where('blog_posts.id', $id)
-        ->first();
-        $prevPost = BlogPost::select('id','title')->where('id', '=', $id-1)->first();
-        $nextPost = BlogPost::select('id','title')->where('id', '=', $id+1)->first();
-        return view('frontend.blogDetails', ['settings' => $request->settings,'blog' => $blog,'prevPost' => $prevPost,'nextPost' => $nextPost]);
+        $blog = BlogPost::join('users', 'users.id', '=', 'blog_posts.user_id')
+            ->leftJoin('post_tags', 'post_tags.post_id', '=', 'blog_posts.id')
+            ->leftJoin('tags', 'tags.id', '=', 'post_tags.tag_id')
+            ->where('blog_posts.active', 1)
+            ->where('blog_posts.id', $id)
+            ->select(
+                'blog_posts.*',
+                'users.name as user_name',
+                DB::raw("GROUP_CONCAT(DISTINCT tags.name SEPARATOR ', ') as tag_names")
+            )
+            ->groupBy('blog_posts.id') // Group by the blog post ID
+            ->first();
+            $recentBlogs = BlogPost::where('blog_posts.active', 1)
+            ->whereNotIn('blog_posts.id', [$id])
+            ->orderBy('blog_posts.id', 'desc')
+            ->limit(5)
+            ->get();
+        $allTags = DB::table('tags')->get();
+        $prevPost = BlogPost::select('id', 'title')->where('id', '=', $id - 1)->first();
+        $nextPost = BlogPost::select('id', 'title')->where('id', '=', $id + 1)->first();
+        $blogCategories = BlogCategory::all();
+        
+        return view('frontend.blogDetails', ['settings' => $request->settings,'recent'=>$recentBlogs, 'blog' => $blog,'allTags'=>$allTags, 'prevPost' => $prevPost, 'nextPost' => $nextPost,'blogCategories'=>$blogCategories]);
     }
     public function storeQuery(Request $request)
     {
@@ -79,13 +99,13 @@ class SiteController extends Controller
             'phone' => 'required|regex:/^[6-9]\d{9}$/',
             'message' => 'required|string|min:10|max:2000',
         ]);
-        if (str_contains($data['message'],$defaultMessage)) {
+        if (str_contains($data['message'], $defaultMessage)) {
             return redirect()->back()->with('error', 'Please describe your requirements in detail');
         }
-        if(!$this->validateMobileNumber($data['phone'])){
+        if (!$this->validateMobileNumber($data['phone'])) {
             return redirect()->back()->with('error', 'Please enter valid mobile number');
         }
-        if(empty($data['name'])){
+        if (empty($data['name'])) {
             return redirect()->back()->with('error', 'Please enter your name');
         }
         $query = new ContactQuery();
@@ -95,16 +115,17 @@ class SiteController extends Controller
         $query->email = $data['email'];
         $query->location = $data['location'];
         $query->is_active = 1;
-        if($query->save()){
+        if ($query->save()) {
             return redirect()->back()->with('success', 'Your query has been submitted successfully. We will get back to you soon');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Something went wrong. Please try again later');
         }
     }
-    public function validateMobileNumber($number) {
+    public function validateMobileNumber($number)
+    {
         // Regular expression for Indian mobile numbers
         $pattern = '/^[6-9]\d{9}$/';
-    
+
         if (preg_match($pattern, $number)) {
             return true;
         } else {
@@ -115,7 +136,7 @@ class SiteController extends Controller
     {
         return view('frontend.pageError');
     }
-    public function wishlist(Request $request,$id)
+    public function wishlist(Request $request, $id)
     {
         $product_ids = Session::get('wishlist', []);
         if (!in_array($id, $product_ids)) {
@@ -134,7 +155,7 @@ class SiteController extends Controller
                 $products[] = $product;
             }
         }
-        return view('frontend.wishlist', ['products' => $products,'settings' => $request->settings]);
+        return view('frontend.wishlist', ['products' => $products, 'settings' => $request->settings]);
     }
     public function removeFromWishlist(Request $request)
     {
@@ -154,10 +175,10 @@ class SiteController extends Controller
         $queryContact->number = $phone;
         $queryContact->message = "I want to raise query for following products: " . implode(", ", $product_ids);
         $queryContact->is_active = 1;
-        if($product_ids != null && !empty($product_ids)){
+        if ($product_ids != null && !empty($product_ids)) {
             $queryContact->product_ids = json_encode($product_ids);
         }
-        
+
         if ($queryContact->save()) {
             Session::forget('wishlist');
             return response()->json(['success' => true, 'message' => 'Query raised successfully']);
