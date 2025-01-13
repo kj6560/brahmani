@@ -73,6 +73,8 @@ Applied Filters:
     </div>
     <div class="filters">
     Filters
+    <br>
+    <br>
         <label for="category">Category:</label>
         <select id="category" onchange="filterProducts()">
             <option value="all">All</option>
@@ -80,7 +82,7 @@ Applied Filters:
                 <option value="{{$cat->pro_cat_name}}">{{$cat->pro_cat_name}}</option>
             @endforeach
         </select>
-
+        <br>
         <label for="price">Price Range:</label>
         <select id="price" onchange="filterProducts()">
             <option value="all">All</option>
