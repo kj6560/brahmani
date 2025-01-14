@@ -38,6 +38,8 @@ Route::get('/contact_us', [SiteController::class,'contactUs'])->middleware([sett
 Route::get('/about_us', [SiteController::class,'aboutUs'])->middleware([settings::class])->name('frontend.aboutUs');
 Route::get('/blog', [SiteController::class,'blog'])->middleware([settings::class])->name('frontend.blog');
 Route::get('/blog_detail/{id}', [SiteController::class,'blogDetails'])->middleware([settings::class])->name('frontend.blogDetails');
+Route::get('/blogByTags/{id}', [SiteController::class,'blogByTags'])->middleware([settings::class])->name('frontend.blogByTags');
+Route::get('/blogByCategory/{id}', [SiteController::class,'blogByCategory'])->middleware([settings::class])->name('frontend.blogByCategory');
 Route::post('/storeQuery', [SiteController::class,'storeQuery'])->middleware([settings::class])->name('frontend.storeQuery');
 Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::get('/logout', [AdminController::class, 'logout'])->name('backend.logout');

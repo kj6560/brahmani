@@ -85,6 +85,32 @@ class SiteController extends Controller
         
         return view('frontend.blogDetails', ['settings' => $request->settings,'recent'=>$recentBlogs, 'blog' => $blog,'allTags'=>$allTags, 'prevPost' => $prevPost, 'nextPost' => $nextPost,'blogCategories'=>$blogCategories]);
     }
+    public function blogByTags(Request $request,$id){
+        $blogs = BlogPost::join('users', 'users.id', '=', 'blog_posts.user_id')
+            ->leftJoin('post_tags', 'post_tags.post_id', '=', 'blog_posts.id')
+            ->leftJoin('tags', 'tags.id', '=', 'post_tags.tag_id')
+            ->where('blog_posts.active', 1)
+            ->where('tags.id', $id)
+            ->select(
+                'blog_posts.*',
+                'users.name as user_name'
+            )
+            ->orderBy('blog_posts.id', 'desc')
+            ->paginate(10);
+        return view('frontend.blog', ['settings' => $request->settings, 'blogs' => $blogs]);
+    }
+    public function blogByCategory(Request $request,$id){
+        $blogs = BlogPost::join('users', 'users.id', '=', 'blog_posts.user_id')
+            ->where('blog_posts.active', 1)
+            ->where('blog_posts.category_id', $id)
+            ->select(
+                'blog_posts.*',
+                'users.name as user_name'
+            )
+            ->orderBy('blog_posts.id', 'desc')
+            ->paginate(10);
+        return view('frontend.blog', ['settings' => $request->settings, 'blogs' => $blogs]);
+    }
     public function storeQuery(Request $request)
     {
         $defaultMessage = "To Get Best Quotes describe your requirements in detail like";
