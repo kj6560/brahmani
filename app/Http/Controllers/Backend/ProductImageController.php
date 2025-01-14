@@ -73,16 +73,22 @@ class ProductImageController extends Controller
         $data = $request->all();
         unset($data['settings']);
         $images = $request->file('images');
-        foreach ($images as $image) {
-            $productImage = new ProductImages();
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $slide = $image->storeAs('uploads', $imageName, 'public');
-            $productImage->image = $slide;
-            $productImage->product_id = $data['product_id'];
-            $productImage->image_alias = $data['image_alias'];
-            $productImage->image_status = $data['image_status'];
-            $productImage->save();
+        
+        if ($images && is_array($images)) {
+            foreach ($images as $image) {
+                $productImage = new ProductImages();
+                $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                $slide = $image->storeAs('uploads', $imageName, 'public');
+                $productImage->image = $slide;
+                $productImage->product_id = $data['product_id'];
+                $productImage->image_alias = $data['image_alias'];
+                $productImage->image_status = $data['image_status'];
+                $productImage->save();
+            }
+        } else {
+            return redirect()->back()->with('error', "No images found");
         }
+        
         return redirect()->back()->with('success', "Product images uploaded");
     }
     public function disable(Request $request, $id)
