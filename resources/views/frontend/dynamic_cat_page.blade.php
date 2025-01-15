@@ -1,6 +1,8 @@
 @extends('layouts.site')
 @section('content')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
     .img-fluid {
         width: 392px !important;
@@ -84,6 +86,7 @@
                 <div class="pbmit-tbar">
                     <div class="pbmit-tbar-inner container">
                         <h1 class="pbmit-tbar-title"> {{$category->pro_cat_name ?? ""}}</h1>
+                        
                     </div>
                 </div>
             </div>
@@ -108,25 +111,25 @@
                     <div class="container-fluid px-4">
                         <div class="row pbmit-element-posts-wrapper">
                             @foreach ($category_products as $category_product)
-                            <article class="pbmit-ele-portfolio pbmit-portfolio-style-2 col-md-6 col-lg-4">
-                                <div class="pbminfotech-post-content">
-                                    <div class="pbmit-featured-img-wrapper">
-                                        <div class="pbmit-featured-wrapper">
-                                            <img src="{{asset('storage')}}/{{$category_product->product_banner}}" class="img-fluid"
-                                                alt="{{$category_product->product_name ?? ''}}">
-                                        </div>
-                                    </div>
-                                    <div class="pbminfotech-box-content">
-                                        <div class="pbminfotech-titlebox">
-                                            <div class="pbmit-port-cat">
-                                                <h2><a href="/products/{{$category_product->id}}"
-                                                        rel="tag">{{$category_product->product_name ?? ""}}</a></h2>
+                                <article class="pbmit-ele-portfolio pbmit-portfolio-style-2 col-md-6 col-lg-4">
+                                    <div class="pbminfotech-post-content">
+                                        <div class="pbmit-featured-img-wrapper">
+                                            <div class="pbmit-featured-wrapper">
+                                                <img src="{{asset('storage')}}/{{$category_product->product_banner}}"
+                                                    class="img-fluid" alt="{{$category_product->product_name ?? ''}}">
                                             </div>
+                                        </div>
+                                        <div class="pbminfotech-box-content">
+                                            <div class="pbminfotech-titlebox">
+                                                <div class="pbmit-port-cat">
+                                                    <h2><a href="/products/{{$category_product->id}}"
+                                                            rel="tag">{{$category_product->product_name ?? ""}}</a></h2>
+                                                </div>
 
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
                             @endforeach
                         </div>
                         <!-- Render pagination links -->
@@ -136,35 +139,101 @@
                     </div>
                 </div>
                 <div class="col-lg-3 service-left-col sidebar">
-                    <aside class="service-sidebar" style="border: 1px solid black;margin:15px;padding:15px;">
-                        <div class="filter-section">
-                            <h3>Category</h3>
-                            <label><input type="checkbox"> Electronics</label>
-                            <label><input type="checkbox"> Clothing</label>
-                            <label><input type="checkbox"> Home & Kitchen</label>
-                        </div>
+                    <form action="/product_category/{{$category->id ?? ""}}" method="get">
+                        <aside class="service-sidebar" style="border: 1px solid black;margin:15px;padding:15px;">
+                            <div class="filter-section">
+                                <h3>Usage Of Panels</h3>
+                                <select name="usage_of_panels">
+                                    <option value="">Select Panel Usage</option>
+                                    <option value="1">Wall</option>
+                                    <option value="0">Ceiling</option>
+                                </select>
+                            </div>
 
-                        <div class="filter-section">
-                            <h3>Price Range</h3>
-                            <label><input type="radio" name="price" value="low"> $0 - $50</label>
-                            <label><input type="radio" name="price" value="mid"> $51 - $200</label>
-                            <label><input type="radio" name="price" value="high"> $201 and above</label>
-                        </div>
+                            <div class="filter-section">
+                                <h3>Stock Status</h3>
+                                <select name="instock">
+                                    <option value="">Select Stock Status</option>
+                                    <option value="1">InStock</option>
+                                    <option value="0">Out Of Stock</option>
+                                </select>
+                            </div>
 
-                        <div class="filter-section">
-                            <h3>Brand</h3>
-                            <select>
-                                <option value="">Select a brand</option>
-                                <option value="brand1">Brand 1</option>
-                                <option value="brand2">Brand 2</option>
-                                <option value="brand3">Brand 3</option>
-                            </select>
-                        </div>
+                            <div class="filter-section">
+                                <h3>Panel Included</h3>
+                                <select name="panel_included">
+                                    <option value="">Select Panel Included</option>
+                                    <option value="1">With Panelling</option>
+                                    <option value="0">Without Panelling</option>
+                                </select>
+                            </div>
 
-                        <div class="apply-filters">
-                            <button>Apply Filters</button>
-                        </div>
-                    </aside>
+                            <div class="filter-section">
+                                <h3>Length</h3>
+                                <select name="length">
+                                    <option value="">Select a length</option>
+                                    <option value="8">8 ft</option>
+                                    <option value="9.5">9.5 ft</option>
+                                    <option value="10.0">10.0 ft</option>
+                                </select>
+                            </div>
+                            <div class="filter-section">
+                                <h3>Width</h3>
+                                <select name="width">
+                                    <option value="">Select a width</option>
+                                    <option value="5.0">5.0 inches</option>
+                                    <option value="6.0">6.0 inches</option>
+                                    <option value="6.25">6.25 inches</option>
+                                    <option value="6.50">6.5 inches</option>
+                                    <option value="8.0">8.0 inches</option>
+                                    <option value="10.0">10.0 inches</option>
+                                    <option value="12.0">12.0 inches</option>
+                                    <option value="16.0">16.0 inches</option>
+                                    <option value="48">48 inches</option>
+                                </select>
+                            </div>
+                            <div class="filter-section">
+                                <h3>Thickness</h3>
+                                <select name="thickness">
+                                    <option value="">Select a thickness</option>
+                                    <option value="1.2">1.2 mm</option>
+                                    <option value="3.0">3.0 mm</option>
+                                    <option value="5.5">5.5 mm</option>
+                                    <option value="6.0">6.0 mm</option>
+                                    <option value="6.5">6.5 mm</option>
+                                    <option value="7.0">7.0 mm</option>
+                                    <option value="7.5">7.5 mm</option>
+                                    <option value="8.5">8.5 mm</option>
+                                    <option value="9.5">9.5 mm</option>
+                                    <option value="10.0">10.0 mm</option>
+                                    <option value="11.0">11.0 mm</option>
+                                    <option value="12.0">12.0 mm</option>
+                                    <option value="17.0">17.0 mm</option>
+                                    <option value="23.0">23.0 mm</option>
+                                    <option value="24.0">24.0 mm</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-section">
+                                <h3>Select Min Price</h3>
+                                <label for="customRange1" class="form-label"><span id="sliderValue">0</span></label>
+                                <input type="range" name="min_price" class="form-range"
+                                    oninput="updateSliderValue(this.value)" id="customRange1" min="1" max="10000">
+                            </div>
+
+                            <div class="filter-section">
+                                <h3>Select Max Price</h3>
+                                <label for="customRange1" class="form-label"><span id="sliderValue">0</span></label>
+                                <input type="range" name="max_price" class="form-range"
+                                    oninput="updateSliderValue(this.value)" id="customRange1" min="1" max="10000">
+                            </div>
+
+                            <div class="apply-filters">
+                                <button>Apply Filters</button>
+                            </div>
+                        </aside>
+                    </form>
+
                 </div>
             </div>
         </div>
@@ -176,6 +245,23 @@
 @endsection
 @section('custom_javascript')
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Set initial slider value to 0
+        const slider = document.getElementById('price-slider');
+        const sliderValueDisplay = document.getElementById('sliderValue');
+        slider.value = 0;
+        sliderValueDisplay.textContent = 0;
+
+        // Update slider value display when the slider value changes
+        slider.addEventListener('input', function () {
+            updateSliderValue(slider.value);
+        });
+    });
+
+    function updateSliderValue(value) {
+        document.getElementById('sliderValue').textContent = value;
+    }
+
     function handleFilterChange(select) {
         document.getElementById('price-filter').style.display = 'none';
         document.getElementById('category-filter').style.display = 'none';

@@ -59,31 +59,31 @@ class ProductController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.product.index',['settings' => $request->settings]);
+        return view('backend.product.index', ['settings' => $request->settings]);
     }
     public function create(Request $request)
     {
         $categories = DB::table('product_category')->get();
-        return view('backend.product.create',['categories'=>$categories,'product'=>null,'settings' => $request->settings]);
+        return view('backend.product.create', ['categories' => $categories, 'product' => null, 'settings' => $request->settings]);
     }
-    public function edit(Request $request,$id)
+    public function edit(Request $request, $id)
     {
         $product = DB::table('products')->where('id', $id)->first();
         $categories = DB::table('product_category')->get();
-        return view('backend.product.create',['categories'=>$categories,'product'=>$product,'settings' => $request->settings]);
+        return view('backend.product.create', ['categories' => $categories, 'product' => $product, 'settings' => $request->settings]);
     }
     public function store(Request $request)
     {
         $data = $request->all();
         unset($data['settings']);
-        if(!empty($data['id'])){
+        if (!empty($data['id'])) {
             $product = Product::find($data['id']);
-        }else{
+        } else {
             $product = new Product();
         }
         $product->product_name = $data['product_name'];
         $product_banner = $request->file('product_banner');
-        if(!empty($product_banner)){
+        if (!empty($product_banner)) {
             $imageName = time() . '.' . $product_banner->getClientOriginalExtension();
             $productBanner = $product_banner->storeAs('uploads', $imageName, 'public');
             $product->product_banner = $productBanner;
@@ -93,24 +93,31 @@ class ProductController extends Controller
         $product->product_short_description = $data['product_short_description'];
         $product->product_category = $data['product_category'];
         $product->product_description = $data['product_description'];
+        $product->length = $data['length'];
+        $product->width = $data['width'];
+        $product->thickness = $data['thickness'];
+        $product->color = $data['color'];
+        $product->usage_of_panel = $data['usage_of_panels'];
+        $product->instock = $data['instock'];
+        $product->as_per_order = $data['instock'] == 1 ? 0 : 1;
+        $product->panel_included = $data['panel_included'];
         $product->product_status = $data['product_status'];
-        if(!empty($data['pro_params']))
-        {
+        if (!empty($data['pro_params'])) {
             $product->pro_params = json_encode($this->processProductParams($data['pro_params']));
         }
-        if($product->save()){
+        if ($product->save()) {
             return redirect()->back()->with('success', 'Product created successfully.');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Something went wrong.');
         }
-        
+
     }
     public function delete(Request $request, $id)
     {
         $product = Product::find($id);
-        if($product->delete()){
+        if ($product->delete()) {
             return redirect()->back()->with('success', 'Product deleted successfully.');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Something went wrong.');
         }
     }
@@ -118,9 +125,9 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->product_status = 0;
-        if($product->save()){
+        if ($product->save()) {
             return redirect()->back()->with('success', 'Product disabled successfully.');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Something went wrong.');
         }
     }

@@ -61,7 +61,8 @@ $params = !empty($product->pro_params) ? json_decode($product->pro_params) : [];
                     <div class="d-flex justify-content-between">
                         @for ($i = 0; $i < count($allImagesArr); $i++)
                             <img src="{{asset('storage')}}/{{$allImagesArr[$i]}}" alt="{{$image_aliasArr[$i] ?? ''}}"
-                                class="thumbnail rounded {{$i == 0 ? 'active' : ''}}" onclick="changeImage(event, this.src)">
+                                class="thumbnail rounded {{$i == 0 ? 'active' : ''}}"
+                                onclick="changeImage(event, this.src)">
                         @endfor
                     </div>
                 </div>
@@ -93,13 +94,29 @@ $params = !empty($product->pro_params) ? json_decode($product->pro_params) : [];
                     <div class="mt-4">
                         <h5>Key Features:</h5>
                         <ul>
-                            @if ($params != null)
-                                @foreach ($params as $p)
-                                    <li>{{$p->name}}: {{$p->value}}</li>
-                                @endforeach
-
+                            <li>Length: {{$product->length ?? "Not Available"}} Ft.</li>
+                            <li>Width: {{$product->width ?? "Not Available"}} Inches</li>
+                            <li>Thickness: {{$product->thickness ?? "Not Available"}} mm</li>
+                            <li>Color: {{!empty($product->color) ?ucwords($product->color): "Not Available"}}</li>
+                            @if (isset($product->usage_of_panel))
+                                <li>Usage Of Panels: {{$product->usage_of_panel == 1 ? "Wall" : "Ceiling"}}</li>
+                            @else
+                                <li>Usage Of Panels: Not Available</li>
                             @endif
 
+                            @if (isset($product->panel_included))
+                                <li>Panel Status: {{$product->panel_included == 1 ? "With Panelling" : "Without Panelling"}}
+                                </li>
+                            @else
+                                <li>Panel Status: Not Available</li>
+                            @endif
+
+                            @if (isset($product->instock))
+                                <li>Instock: {{$product->instock == 1 ? "Yes" : "No"}}</li>
+                            @else
+                                <li>Instock: Not Available</li>
+                            @endif
+                            </li>
                         </ul>
                     </div>
                 </div>

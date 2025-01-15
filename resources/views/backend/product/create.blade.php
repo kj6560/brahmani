@@ -86,20 +86,77 @@
                                 <textarea class="exp_text" name="product_description" rows="5"
                                     id="product_description">{{$product && !empty($product) && $product->product_description ? $product->product_description : old('product_description')}}</textarea>
                             </div>
-
                             <div class="form-group">
-
+                                <label for="exampleInputUsername1">Product Length</label>
+                                <input type="text" name="length"
+                                    value="{{$product && !empty($product) && $product->length ? $product->length : old('length')}}"
+                                    class="form-control" id="exampleInputUsername1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Product Width</label>
+                                <input type="text" name="width"
+                                    value="{{$product && !empty($product) && $product->width ? $product->width : old('width')}}"
+                                    class="form-control" id="exampleInputUsername1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Product Thickness</label>
+                                <input type="text" name="thickness"
+                                    value="{{$product && !empty($product) && $product->thickness ? $product->thickness : old('thickness')}}"
+                                    class="form-control" id="exampleInputUsername1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Product Color</label>
+                                <input type="text" name="color"
+                                    value="{{$product && !empty($product) && $product->color ? $product->color : old('color')}}"
+                                    class="form-control" id="exampleInputUsername1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleSelectGender">Product Usage Of Panels</label>
+                                <select name="usage_of_panels" class="form-select" id="exampleSelectGender">
+                                    <option selected>Select Usage Of Panels</option>
+                                    <option value="1" @if($product && isset($product->usage_of_panel) && $product->usage_of_panel == 1) selected
+                                    @endif>Wall
+                                    </option>
+                                    <option value="0" @if($product && isset($product->usage_of_panel) && $product->usage_of_panel == 0) selected
+                                    @endif>Ceiling
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleSelectGender">Product Stock Status</label>
+                                <select name="instock" class="form-select" id="exampleSelectGender">
+                                    <option selected>Select Stock Status</option>
+                                    <option value="1" @if($product && isset($product->instock) && $product->instock == 1) selected
+                                    @endif>In Stock
+                                    </option>
+                                    <option value="0" @if($product && isset($product->instock) && $product->instock == 0) selected
+                                    @endif>Out Of Stock
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleSelectGender">Product Panel Included</label>
+                                <select name="panel_included" class="form-select" id="exampleSelectGender">
+                                    <option selected>Select Panel Included</option>
+                                    <option value="1" @if($product && isset($product->panel_included) && $product->panel_included == 1) selected
+                                    @endif>With Panelling
+                                    </option>
+                                    <option value="0" @if($product && isset($product->panel_included) && $product->panel_included == 0) selected
+                                    @endif>Without Panelling
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleSelectGender">Product Status</label>
                                 <select name="product_status" class="form-select" id="exampleSelectGender">
                                     <option selected>Select Active</option>
-                                    <option value="1" @if($product && isset($product) && $product->product_status == 1) selected
+                                    <option value="1" @if($product && isset($product->product_status) && $product->product_status == 1) selected
                                     @endif>Yes
                                     </option>
-                                    <option value="0" @if($product && isset($product) && $product->product_status == 0) selected
+                                    <option value="0" @if($product && isset($product->product_status) && $product->product_status == 0) selected
                                     @endif>No
                                     </option>
                                 </select>
-
                             </div>
                             <div class="form-group">
                             <?php 
