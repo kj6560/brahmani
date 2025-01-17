@@ -3,6 +3,7 @@
         font-family: Arial, sans-serif;
         margin: 10px;
         display: flex;
+        
         flex-direction: row;
         gap: 10px;
     }
@@ -15,6 +16,7 @@
 
     .products {
         display: flex;
+        max-height: 90%;
         flex-direction: column;
         gap: 10px;
         overflow-y: auto;
