@@ -17,17 +17,40 @@ class DynamicPageController extends Controller
     }
     public function loadProductCategory(Request $request, $id)
     {
-
+        $filters = $request->all();
         $product_category = ProductCategory::find($id);
         $category_products = Product::
             where('product_status', 1)
             ->groupBy('id');
         if($id!=0){
             $category_products = $category_products->where('product_category', $id);
-            
+        }
+        if((isset($filters['min_price']) && $filters['min_price'] != '') && ($filters['min_price'] != 1 && $filters['max_price'] != 1)){
+            $category_products = $category_products->where('product_price', '>=', $filters['min_price']);
+        }
+        if(isset($filters['length']) && $filters['length'] != ''){
+            $category_products = $category_products->where('length', $filters['length']);
+        }
+        if(isset($filters['width']) && $filters['width'] != ''){
+            $category_products = $category_products->where('width', $filters['width']);
+        }
+        if(isset($filters['thickness']) && $filters['thickness'] != ''){
+            $category_products = $category_products->where('thickness', $filters['thickness']);
+        }
+        if(isset($filters['color']) && $filters['color'] != ''){
+            $category_products = $category_products->where('color', $filters['color']);
+        }
+        if(isset($filters['usage_of_panels']) && $filters['usage_of_panels'] != ''){
+            $category_products = $category_products->where('usage_of_panel', $filters['usage_of_panels']);
+        }
+        if(isset($filters['instock']) && $filters['instock'] != ''){
+            $category_products = $category_products->where('instock', $filters['instock']);
+        }
+        if(isset($filters['panel_included']) && $filters['panel_included'] != ''){
+            $category_products = $category_products->where('panel_included', $filters['panel_included']);
         }
         $category_products = $category_products->paginate(12);
-        return view('frontend.dynamic_cat_page', ['settings' => $request->settings, 'category' => $product_category, 'category_products' => $category_products]);
+        return view('frontend.dynamic_cat_page', ['settings' => $request->settings, 'category' => $product_category, 'category_products' => $category_products,'filters' => $filters]);
     }
     public function loadProducts(Request $request, $id)
     {
