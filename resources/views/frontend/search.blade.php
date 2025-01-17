@@ -245,15 +245,15 @@
             <div class="filter-section">
                 <h6>Select Min Price</h6>
                 <label for="customRange1" class="form-label"><span id="sliderValue1">0</span></label>
-                <input type="range" name="min_price" class="form-range" oninput="filterProducts()" id="slider1" min="1"
-                    max="7000">
+                <input type="range" name="min_price" class="form-range" oninput="filterProducts()"
+                    id="slider1" min="1" max="7000">
             </div>
 
             <div class="filter-section">
                 <h6>Select Max Price</h6>
                 <label for="customRange1" class="form-label"><span id="sliderValue2">0</span></label>
-                <input type="range" name="max_price" class="form-range" oninput="filterProducts()" id="slider2" min="1"
-                    max="7000">
+                <input type="range" name="max_price" class="form-range" oninput="filterProducts()"
+                    id="slider2" min="1" max="7000">
             </div>
         </div>
     </div>
@@ -281,7 +281,17 @@
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
-
+    document.querySelector('select[name="usage_of_panels"]').value = urlParams.get('usage_of_panels') ?? 'all';
+    document.querySelector('select[name="instock"]').value = urlParams.get('instock') ?? 'all';
+    document.querySelector('select[name="panel_included"]').value = urlParams.get('panel_included') ?? 'all';
+    document.querySelector('select[name="length"]').value = urlParams.get('length') ?? 'all';
+    document.querySelector('select[name="width"]').value = urlParams.get('width') ?? 'all';
+    document.querySelector('select[name="thickness"]').value = urlParams.get('thickness') ?? 'all';
+    document.querySelector('select[name="color"]').value = urlParams.get('color') ?? 'all';
+    document.querySelector('input[name="min_price"]').value = urlParams.get('min_price') ?? '';
+    document.querySelector('input[name="max_price"]').value = urlParams.get('max_price') ?? '';
+    updateSliderValue1(min_price);
+    updateSliderValue2(max_price);
     function filterProducts() {
         const usage_of_panels = document.querySelector('select[name="usage_of_panels"]').value;
         const instock = document.querySelector('select[name="instock"]').value;
@@ -298,17 +308,6 @@
     }
     document.addEventListener('DOMContentLoaded', function () {
         const urlParams = new URLSearchParams(window.location.search);
-        document.querySelector('select[name="usage_of_panels"]').value = urlParams.get('usage_of_panels') ?? 'all';
-        document.querySelector('select[name="instock"]').value = urlParams.get('instock') ?? 'all';
-        document.querySelector('select[name="panel_included"]').value = urlParams.get('panel_included') ?? 'all';
-        document.querySelector('select[name="length"]').value = urlParams.get('length') ?? 'all';
-        document.querySelector('select[name="width"]').value = urlParams.get('width') ?? 'all';
-        document.querySelector('select[name="thickness"]').value = urlParams.get('thickness') ?? 'all';
-        document.querySelector('select[name="color"]').value = urlParams.get('color') ?? 'all';
-        document.querySelector('input[name="min_price"]').value = urlParams.get('min_price') ?? '';
-        document.querySelector('input[name="max_price"]').value = urlParams.get('max_price') ?? '';
-        updateSliderValue1(min_price);
-        updateSliderValue2(max_price);
         const appliedFiltersContainer = document.getElementById('applied-filters');
 
         // List all applied filters
@@ -331,7 +330,7 @@
                 window.location.search = urlParams.toString();
             }
         });
-
+        
     });
     function updateSliderValue2(value) {
         document.getElementById('sliderValue2').textContent = value;
