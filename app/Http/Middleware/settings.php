@@ -24,8 +24,8 @@ class settings
         //header search
         if (isset($request->s)) {
             $query = $request->s;
-            $category = $request->category;
-            $price = $request->price;
+            $filters = $request->all();
+            
             $product = Product::join('product_category as pc', 'pc.id', '=', 'products.product_category')
                 ->select(
                     'products.id as id',
@@ -35,19 +35,30 @@ class settings
                     'products.product_price as product_price',
                     'pc.pro_cat_name as category_name'
                 );
-            if (strlen($category) > 0 && $category != 'all') {
-                $product = $product->where('pc.pro_cat_name', 'like', '%' . $category . '%');
-                
-            }
-            if ( $price != 'all') {
-                if($price=='high'){
-                    $product = $product->where('products.product_price', '>', 100);
-                }else if($price == 'mid'){
-                    $product = $product->where('products.product_price', '<', 100)->where('products.product_price', '>', 50);
-                }else if($price =='low'){
-                    $product = $product->where('products.product_price', '<=', 50);
+                if((isset($filters['min_price']) && $filters['min_price'] != '') && ($filters['min_price'] != 1 && $filters['max_price'] != 1)){
+                    $product = $product->where('product_price', '>=', $filters['min_price']);
                 }
-            }
+                if(isset($filters['length']) && $filters['length'] != ''){
+                    $product = $product->where('length', $filters['length']);
+                }
+                if(isset($filters['width']) && $filters['width'] != ''){
+                    $product = $product->where('width', $filters['width']);
+                }
+                if(isset($filters['thickness']) && $filters['thickness'] != ''){
+                    $product = $product->where('thickness', $filters['thickness']);
+                }
+                if(isset($filters['color']) && $filters['color'] != ''){
+                    $product = $product->where('color', $filters['color']);
+                }
+                if(isset($filters['usage_of_panels']) && $filters['usage_of_panels'] != ''){
+                    $product = $product->where('usage_of_panel', $filters['usage_of_panels']);
+                }
+                if(isset($filters['instock']) && $filters['instock'] != ''){
+                    $product = $product->where('instock', $filters['instock']);
+                }
+                if(isset($filters['panel_included']) && $filters['panel_included'] != ''){
+                    $product = $product->where('panel_included', $filters['panel_included']);
+                }
             if ($query != null && strlen($query) > 2) {
 
                 $product = $product->where('products.product_name', 'like', '%' . $query . '%');
