@@ -138,7 +138,8 @@
                     </div>
                 </div>
                 <div class="col-lg-3 service-left-col sidebar">
-                    <form action="/product_category/{{$category->id ?? ''}}" method="get">
+                    <label for="filt">Filters</label>
+                    <form action="/product_category/{{$category->id ?? ''}}" method="get" id="filt">
                         <aside class="service-sidebar" style="border: 1px solid black;margin:15px;padding:15px;">
                             <div class="filter-section">
                                 <h3>Usage Of Panels</h3>
