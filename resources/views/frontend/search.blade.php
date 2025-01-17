@@ -290,8 +290,8 @@
     document.querySelector('select[name="color"]').value = urlParams.get('color') ?? 'all';
     document.querySelector('input[name="min_price"]').value = urlParams.get('min_price') ?? '';
     document.querySelector('input[name="max_price"]').value = urlParams.get('max_price') ?? '';
-    updateSliderValue1(min_price);
-    updateSliderValue2(max_price);
+    updateSliderValue1(urlParams.get('min_price') ?? 1);
+    updateSliderValue2(urlParams.get('max_price') ?? 1);
     function filterProducts() {
         const usage_of_panels = document.querySelector('select[name="usage_of_panels"]').value;
         const instock = document.querySelector('select[name="instock"]').value;
