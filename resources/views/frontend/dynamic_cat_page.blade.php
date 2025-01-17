@@ -144,8 +144,8 @@
                                 <h3>Usage Of Panels</h3>
                                 <select name="usage_of_panels">
                                     <option value="">Select Panel Usage</option>
-                                    <option value="1" @if ($filters['usage_of_panels'] == 1) selected @endif>Wall</option>
-                                    <option value="0" @if ($filters['usage_of_panels'] == 0) selected @endif>Ceiling</option>
+                                    <option value="1" @if (isset($filters['usage_of_panels']) && $filters['usage_of_panels'] == 1) selected @endif>Wall</option>
+                                    <option value="0" @if (isset($filters['usage_of_panels']) && $filters['usage_of_panels'] == 0) selected @endif>Ceiling</option>
                                 </select>
                             </div>
 
@@ -153,8 +153,8 @@
                                 <h3>Stock Status</h3>
                                 <select name="instock">
                                     <option value="">Select Stock Status</option>
-                                    <option value="1" @if ($filters['instock'] == 1) selected @endif>InStock</option>
-                                    <option value="0" @if ($filters['instock'] == 0) selected @endif>Out Of Stock</option>
+                                    <option value="1" @if (isset($filters['instock']) && $filters['instock'] == 1) selected @endif>InStock</option>
+                                    <option value="0" @if (isset($filters['instock']) && $filters['instock'] == 0) selected @endif>Out Of Stock</option>
                                 </select>
                             </div>
 
@@ -162,8 +162,8 @@
                                 <h3>Panel Included</h3>
                                 <select name="panel_included">
                                     <option value="">Select Panel Included</option>
-                                    <option value="1" @if ($filters['panel_included'] == 1) selected @endif>With Panelling</option>
-                                    <option value="0"@if ($filters['panel_included'] == 0) selected @endif>Without Panelling</option>
+                                    <option value="1" @if (isset($filters['panel_included']) && $filters['panel_included'] == 1) selected @endif>With Panelling</option>
+                                    <option value="0"@if (isset($filters['panel_included']) && $filters['panel_included'] == 0) selected @endif>Without Panelling</option>
                                 </select>
                             </div>
 
@@ -171,76 +171,76 @@
                                 <h3>Length</h3>
                                 <select name="length">
                                     <option value="">Select a length</option>
-                                    <option value="8" @if ($filters['length'] == 8) selected @endif>8 ft</option>
-                                    <option value="9.5" @if ($filters['length'] == 9.5) selected @endif>9.5 ft</option>
-                                    <option value="10.0" @if ($filters['length'] == 10.0) selected @endif>10.0 ft</option>
+                                    <option value="8" @if (isset($filters['length']) && $filters['length'] == 8) selected @endif>8 ft</option>
+                                    <option value="9.5" @if (isset($filters['length']) && $filters['length'] == 9.5) selected @endif>9.5 ft</option>
+                                    <option value="10.0" @if (isset($filters['length']) && $filters['length'] == 10.0) selected @endif>10.0 ft</option>
                                 </select>
                             </div>
                             <div class="filter-section">
                                 <h3>Width</h3>
                                 <select name="width">
                                     <option value="">Select a width</option>
-                                    <option value="5.0" @if ($filters['width'] == 5.0) selected @endif>5.0 inches</option>
-                                    <option value="6.0" @if ($filters['width'] == 6.0) selected @endif>6.0 inches</option>
-                                    <option value="6.25" @if ($filters['width'] == 6.25) selected @endif>6.25 inches</option>
-                                    <option value="6.50" @if ($filters['width'] == 6.50) selected @endif>6.5 inches</option>
-                                    <option value="8.0" @if ($filters['width'] == 8.0) selected @endif>8.0 inches</option>
-                                    <option value="10.0" @if ($filters['width'] == 10.0) selected @endif>10.0 inches</option>
-                                    <option value="12.0" @if ($filters['width'] == 12.0) selected @endif>12.0 inches</option>
-                                    <option value="16.0" @if ($filters['width'] == 16.0) selected @endif>16.0 inches</option>
-                                    <option value="48.0" @if ($filters['width'] == 48.0) selected @endif>48 inches</option>
+                                    <option value="5.0" @if (isset($filters['width']) && $filters['width'] == 5.0) selected @endif>5.0 inches</option>
+                                    <option value="6.0" @if (isset($filters['width']) && $filters['width'] == 6.0) selected @endif>6.0 inches</option>
+                                    <option value="6.25" @if (isset($filters['width']) && $filters['width'] == 6.25) selected @endif>6.25 inches</option>
+                                    <option value="6.50" @if (isset($filters['width']) && $filters['width'] == 6.50) selected @endif>6.5 inches</option>
+                                    <option value="8.0" @if (isset($filters['width']) && $filters['width'] == 8.0) selected @endif>8.0 inches</option>
+                                    <option value="10.0" @if (isset($filters['width']) && $filters['width'] == 10.0) selected @endif>10.0 inches</option>
+                                    <option value="12.0" @if (isset($filters['width']) && $filters['width'] == 12.0) selected @endif>12.0 inches</option>
+                                    <option value="16.0" @if (isset($filters['width']) && $filters['width'] == 16.0) selected @endif>16.0 inches</option>
+                                    <option value="48.0" @if (isset($filters['width']) && $filters['width'] == 48.0) selected @endif>48 inches</option>
                                 </select>
                             </div>
                             <div class="filter-section">
                                 <h3>Thickness</h3>
                                 <select name="thickness">
                                     <option value="">Select a thickness</option>
-                                    <option value="1.2" @if ($filters['thickness'] == 1.2) selected @endif>1.2 mm</option>
-                                    <option value="3.0" @if ($filters['thickness'] == 3.0) selected @endif>3.0 mm</option>
-                                    <option value="5.5" @if ($filters['thickness'] == 5.5) selected @endif>5.5 mm</option>
-                                    <option value="6.0" @if ($filters['thickness'] == 6.0) selected @endif>6.0 mm</option>
-                                    <option value="6.5" @if ($filters['thickness'] == 6.5) selected @endif>6.5 mm</option>
-                                    <option value="7.0" @if ($filters['thickness'] == 7.0) selected @endif>7.0 mm</option>
-                                    <option value="7.5" @if ($filters['thickness'] == 7.5) selected @endif>7.5 mm</option>
-                                    <option value="8.5" @if ($filters['thickness'] == 8.5) selected @endif>8.5 mm</option>
-                                    <option value="9.5" @if ($filters['thickness'] == 9.5) selected @endif>9.5 mm</option>
-                                    <option value="10.0" @if ($filters['thickness'] == 10.0) selected @endif>10.0 mm</option>
-                                    <option value="11.0" @if ($filters['thickness'] == 11.0) selected @endif>11.0 mm</option>
-                                    <option value="12.0" @if ($filters['thickness'] == 12.0) selected @endif>12.0 mm</option>
-                                    <option value="17.0" @if ($filters['thickness'] == 17.0) selected @endif>17.0 mm</option>
-                                    <option value="23.0" @if ($filters['thickness'] == 23.0) selected @endif>23.0 mm</option>
-                                    <option value="24.0" @if ($filters['thickness'] == 24.0) selected @endif>24.0 mm</option>
+                                    <option value="1.2" @if (isset($filters['thickness']) && $filters['thickness'] == 1.2) selected @endif>1.2 mm</option>
+                                    <option value="3.0" @if (isset($filters['thickness']) && $filters['thickness'] == 3.0) selected @endif>3.0 mm</option>
+                                    <option value="5.5" @if (isset($filters['thickness']) && $filters['thickness'] == 5.5) selected @endif>5.5 mm</option>
+                                    <option value="6.0" @if (isset($filters['thickness']) && $filters['thickness'] == 6.0) selected @endif>6.0 mm</option>
+                                    <option value="6.5" @if (isset($filters['thickness']) && $filters['thickness'] == 6.5) selected @endif>6.5 mm</option>
+                                    <option value="7.0" @if (isset($filters['thickness']) && $filters['thickness'] == 7.0) selected @endif>7.0 mm</option>
+                                    <option value="7.5" @if (isset($filters['thickness']) && $filters['thickness'] == 7.5) selected @endif>7.5 mm</option>
+                                    <option value="8.5" @if (isset($filters['thickness']) && $filters['thickness'] == 8.5) selected @endif>8.5 mm</option>
+                                    <option value="9.5" @if (isset($filters['thickness']) && $filters['thickness'] == 9.5) selected @endif>9.5 mm</option>
+                                    <option value="10.0" @if (isset($filters['thickness']) && $filters['thickness'] == 10.0) selected @endif>10.0 mm</option>
+                                    <option value="11.0" @if (isset($filters['thickness']) && $filters['thickness'] == 11.0) selected @endif>11.0 mm</option>
+                                    <option value="12.0" @if (isset($filters['thickness']) && $filters['thickness'] == 12.0) selected @endif>12.0 mm</option>
+                                    <option value="17.0" @if (isset($filters['thickness']) && $filters['thickness'] == 17.0) selected @endif>17.0 mm</option>
+                                    <option value="23.0" @if (isset($filters['thickness']) && $filters['thickness'] == 23.0) selected @endif>23.0 mm</option>
+                                    <option value="24.0" @if (isset($filters['thickness']) && $filters['thickness'] == 24.0) selected @endif>24.0 mm</option>
                                 </select>
                             </div>
                             <div class="filter-section">
                                 <h3>Color</h3>
                                 <select name="color">
                                     <option value="">Select a Color</option>
-                                    <option value="Black" @if ($filters['color'] == 'Black') selected @endif>Black</option>
-                                    <option value="White" @if ($filters['color'] == 'White') selected @endif>White</option>
-                                    <option value="Red" @if ($filters['color'] == 'Red') selected @endif>Red</option>
-                                    <option value="Green" @if ($filters['color'] == 'Green') selected @endif>Green</option>
-                                    <option value="Yellow" @if ($filters['color'] == 'Yellow') selected @endif>Yellow</option>
-                                    <option value="Blue" @if ($filters['color'] == 'Blue') selected @endif>Blue</option>
-                                    <option value="Brown" @if ($filters['color'] == 'Brown') selected @endif>Brown</option>
-                                    <option value="Orange" @if ($filters['color'] == 'Orange') selected @endif>Orange</option>
-                                    <option value="Pink" @if ($filters['color'] == 'Pink') selected @endif>Pink</option>
-                                    <option value="Purple" @if ($filters['color'] == 'Purple') selected @endif>Purple</option>
-                                    <option value="Grey" @if ($filters['color'] == 'Grey') selected @endif>Grey</option>
+                                    <option value="Black" @if (isset($filters['color']) && $filters['color'] == 'Black') selected @endif>Black</option>
+                                    <option value="White" @if (isset($filters['color']) && $filters['color'] == 'White') selected @endif>White</option>
+                                    <option value="Red" @if (isset($filters['color']) && $filters['color'] == 'Red') selected @endif>Red</option>
+                                    <option value="Green" @if (isset($filters['color']) && $filters['color'] == 'Green') selected @endif>Green</option>
+                                    <option value="Yellow" @if (isset($filters['color']) && $filters['color'] == 'Yellow') selected @endif>Yellow</option>
+                                    <option value="Blue" @if (isset($filters['color']) && $filters['color'] == 'Blue') selected @endif>Blue</option>
+                                    <option value="Brown" @if (isset($filters['color']) && $filters['color'] == 'Brown') selected @endif>Brown</option>
+                                    <option value="Orange" @if (isset($filters['color']) && $filters['color'] == 'Orange') selected @endif>Orange</option>
+                                    <option value="Pink" @if (isset($filters['color']) && $filters['color'] == 'Pink') selected @endif>Pink</option>
+                                    <option value="Purple" @if (isset($filters['color']) && $filters['color'] == 'Purple') selected @endif>Purple</option>
+                                    <option value="Grey" @if (isset($filters['color']) && $filters['color'] == 'Grey') selected @endif>Grey</option>
                                 </select>
                             </div>
                             <div class="filter-section">
                                 <h3>Select Min Price</h3>
                                 <label for="customRange1" class="form-label"><span id="sliderValue1">0</span></label>
                                 <input type="range" name="min_price" class="form-range"
-                                    oninput="updateSliderValue(this.value)" id="slider1" min="1" max="10000">
+                                    oninput="updateSliderValue(this.value)" id="slider1" min="1" max="7000">
                             </div>
 
                             <div class="filter-section">
                                 <h3>Select Max Price</h3>
                                 <label for="customRange1" class="form-label"><span id="sliderValue2">0</span></label>
                                 <input type="range" name="max_price" class="form-range"
-                                    oninput="updateSliderValue(this.value)" id="slider2" min="1" max="10000">
+                                    oninput="updateSliderValue(this.value)" id="slider2" min="1" max="7000">
                             </div>
 
                             <div class="apply-filters">
