@@ -2036,8 +2036,8 @@ body {
 
 /** Style 2 **/
 .pbminfotech-ele-fid-style-2 .pbmit-fid-inner {
-	font-size: 90px;
-	line-height: 90px;
+	font-size: 70px;
+	line-height: 70px;
 }
 .pbminfotech-ele-fid-style-2 .pbmit-fid-title {
 	color: var(--pbmit-global-color);
@@ -2195,7 +2195,7 @@ body {
 	color: var(--pbmit-blackish-color);
 }
 .pbminfotech-ele-fid-style-5 .pbmit-number-rotate{
-	font-weight: 700;
+	font-weight: 200;
 	letter-spacing: -2px;
 	color: transparent;
 	-webkit-text-stroke: 1px var(--pbmit-global-color);

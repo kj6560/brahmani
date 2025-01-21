@@ -114,19 +114,18 @@
                                     <div class="pbminfotech-post-content">
                                         <div class="pbmit-featured-img-wrapper">
                                             <div class="pbmit-featured-wrapper">
-                                                <img src="{{asset('storage')}}/{{$category_product->product_banner}}"
-                                                    class="img-fluid" alt="{{$category_product->product_name ?? ''}}">
+                                            <a href="/products/{{$category_product->id}}"
+                                            rel="tag"><img src="{{asset('storage')}}/{{$category_product->product_banner}}"
+                                                    class="img-fluid" alt="{{$category_product->product_name ?? ''}}"></a>
                                             </div>
                                         </div>
-                                        <div class="pbminfotech-box-content">
-                                            <div class="pbminfotech-titlebox">
-                                                <div class="pbmit-port-cat">
+                                        <div class="pbminfotech-titlebox">
+                                                <div class="pbmit-port-cat text-center">
                                                     <h2><a href="/products/{{$category_product->id}}"
                                                             rel="tag">{{$category_product->product_name ?? ""}}</a></h2>
                                                 </div>
 
                                             </div>
-                                        </div>
                                     </div>
                                 </article>
                             @endforeach
