@@ -758,24 +758,7 @@ $sliders = !empty($settings['page_data']) ? json_decode($settings['page_data']->
                         </div>
                     </div>
                 </article>
-                <!-- Slide3 -->
-                <article class="pbmit-client-style-1 swiper-slide">
-                    <div class="pbmit-border-wrapper">
-                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-                            <h4 class="pbmit-hide">Client 12</h4>
-                            <div class="pbmit-client-hover-img">
-                                <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-global-03.png"
-                                    class="img-fluid" alt="">
-                            </div>
-                            <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
-                                    <img src="{{asset('brahmani_frontend_assets')}}/images/homepage-1/client/client-grey-03.png"
-                                        class="img-fluid" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                
                 <!-- Slide4 -->
                 <article class="pbmit-client-style-1 swiper-slide">
                     <div class="pbmit-border-wrapper">
