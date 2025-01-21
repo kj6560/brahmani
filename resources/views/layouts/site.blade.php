@@ -93,6 +93,16 @@ if (!empty($settings['schema'])) {
     use App\Http\Controllers\Controller;
     $success = Session::get('success');
     $error = Session::get('error');
+    
+    $errorText = "";
+    if(!empty(Session::get("errors"))){
+        $er = get_object_vars(json_decode(Session::get("errors")));
+        foreach($er as $key => $value){
+            $errorText .= $value[0].'\n';
+        } 
+    }
+                               
+ 
 @endphp
 
 <body>
@@ -384,7 +394,7 @@ if (!empty($settings['schema'])) {
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
     <!-- JS
 		============================================ -->
@@ -477,7 +487,8 @@ if (!empty($settings['schema'])) {
         }
         var success = "{{!empty($success) ? $success : 'NA'}}";
         var error = "{{!empty($error) ? $error : 'NA'}}";
-        console.log(success, error);
+        var errorText = "{{!empty($errorText) ? $errorText : 'NA'}}";
+        console.log(success, error,errorText);
         if (success != 'NA') {
             Swal.fire({
                 title: 'Done',
@@ -500,6 +511,16 @@ if (!empty($settings['schema'])) {
 
             });
         }
+        if (errorText != 'NA') {
+            Swal.fire({
+                title: 'Failed!',
+                text: errorText,
+                icon: 'error',
+                confirmButtonText: 'Okay',
+
+            });
+        }
+        
     </script>
 </body>
 @yield('custom_javascript')

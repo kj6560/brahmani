@@ -118,7 +118,7 @@ class SiteController extends Controller
         if (!empty($request->input('address'))) {
             return back()->with('error', 'Spam detected. Submission rejected.');
         }
-        $request->validate([
+        $validate  = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'location' => 'required|string|max:255',

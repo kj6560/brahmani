@@ -57,6 +57,14 @@
 								<h2 class="pbmit-title">Send a Message</h2>
 
 							</div>
+							<?php
+                            if(!empty(Session::get('errors'))){
+                                $er = get_object_vars(json_decode(Session::get("errors")));
+                                foreach($er as $key => $value){
+                                    echo '<div class="alert alert-danger">'.$value[0].'</div>';
+                                }
+                            }
+                        ?>
 							<form class="contact-form" method="post" action="/storeQuery">
 								@csrf
 								<div style="display: none;">
